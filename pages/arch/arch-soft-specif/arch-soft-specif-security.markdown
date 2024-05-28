@@ -1,8 +1,7 @@
 ---
 layout: page
-title: External systems & APIs to integrate
-permalink: /arch-soft-specif-security
-page_content_classes: table-container
+title: Architecture logicielle du module Security
+permalink: /arch-soft-specif-security/
 
 ---
 
