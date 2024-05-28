@@ -43,7 +43,10 @@ L'envergure du projet impose de mettre en place un système qui permette de suiv
 Le contrôle d'accès est un élément central pour la gestion de la sécurité et le choix qui est fait est de mettre en place un système basé sur un modèle simple, robuste et éprouvé, RBAC : Role-Based Access Control. 
 
 
-<img src="/assets/images/arch-security-rbac.svg" alt="Security - RBAC" />
-          
+{% include img.html
+        src="assets/images/arch-security-rbac.svg"
+        alt="Security - RBAC"
+        width="1000"
+%}
 
 
