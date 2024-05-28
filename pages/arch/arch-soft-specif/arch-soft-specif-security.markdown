@@ -1,3 +1,11 @@
+---
+layout: page
+title: External systems & APIs to integrate
+permalink: /arch/
+page_content_classes: table-container
+
+---
+
  <img src="https://avenirs-esr.github.io/dev-doc/assets/images/avenir-esr-logo_small.jpg"> <img src="https://avenirs-esr.github.io/dev-doc/assets/images/esup-portail-logo_small.png"/> 
  # Avenirs-ESR / ePortfolio - Dossier architecture logicielle : Module Security 
 
