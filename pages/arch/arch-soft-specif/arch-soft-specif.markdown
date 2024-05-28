@@ -51,7 +51,7 @@ L'architecture mise en place devrait combiner plusieurs types d'archtecture clas
 
 [Back Office](./architecture-back-office.markdown) : module d'administration, API eportfolio et gestion de l'interoperabilité.
 
-[Security](./arch-soft-specif-security.markdown) : gestion de l'authentification et des contrôles d'accès.
+[Security](./arch-soft-specif-security) : gestion de l'authentification et des contrôles d'accès.
 
 [Data storage](./architecture-data-storage.markdown): stockage de données structurées/semi/non structurées. Gestion du cache, de l'indexation et du cycle de vie des données.
 

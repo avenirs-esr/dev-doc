@@ -1,7 +1,7 @@
 ---
 layout: page
 title: External systems & APIs to integrate
-permalink: /arch/
+permalink: /arch-soft-specif-security
 page_content_classes: table-container
 
 ---
