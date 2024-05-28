@@ -3,7 +3,7 @@ layout: page
 title: Dossier d'Architecture logicielle - module Security
 permalink: /arch-soft-specif-security/
 up: ../arch-soft-specif/
-
+page_content_classes: table-container
 
 ---
 **Projet :** Avenirs-ESR / ePortfolio. <br/>
@@ -44,23 +44,250 @@ L'envergure du projet impose de mettre en place un système qui permette de suiv
         caption="Security module - Main components"
 %}
 
-## Role Based Access Control (RBAC)
-Le contrôle d'accès est un élément central pour la gestion de la sécurité et le choix qui est fait est de mettre en place un système basé sur un modèle simple, robuste et éprouvé, RBAC : Role-Based Access Control. 
+## Rôle Based Access Control (RBAC)
+Le contrôle d'accès est un élément central pour la gestion de la sécurité et le choix qui est fait est de mettre en place un système basé sur un modèle simple, robuste et éprouvé, RBAC : Rôle-Based Access Control. 
 
-### RBAC - Schéma de fonctionnement général
-Une action est autorisée ou non en fonction des rôles actifs des utilisateurs, de la ressource impliquée et du contexte d'exécution.
-Un rôle peut être assigné à un utilisateur avec un scope qui correspond aux ressources pour lesquelles il s'applique. Il peut être associé également à un contexte d'application, par exemple une période de validité ou un établissement.  
+Il doit pemettre de  :
+- déterminer si un utilistaeur peut réaliser une action.
+- lister les rôles/permissions d'un utlisateur.
+- Lister les utilisateurs diposant d'un rôle donné, eventuellement pour un scope et un contexte d'application. 
+
+## RBAC - Fonctionnement
+
+Une action est autorisée ou non en fonction des rôles actifs des utilisateurs, de la ressource impliquée et du contexte d'exécution.<br>
+Un rôle peut être assigné à un utilisateur avec un scope qui correspond aux ressources pour lesquelles il s'applique. <br>
+Il peut être associé également à un contexte d'application, par exemple une période de validité ou un établissement.  
 
 {% include img.html
         src="assets/images/architecture-security-rbac.png"
         alt="Security - RBAC"
-        caption="Role Based Access Control"
+        caption="Rôle Based Access Control"
 %}
 
-### RBAC - Exemple pour le partage d'une ressource
+<br>
+### RBAC - Exemple pour le partage d'une ressource
+Dans l'exemple suivant un utilisateur veut partager en lecture une de ses ressources, pour une période donnée.<br>
+**Remarques:**
+- Les libellés associés au rôles et permissions ne sont que des exemples.
+- L'exemple ne tient pas compte d'une éventuelle hiérarchie de rôles et permissions.
 
 {% include img.html
         src="assets/images/architecture-security-rbac-ex.png"
         alt="Security - RBAC"
-        caption="RBAC - Partage en lecture"
+        caption="RBAC - Partage  d'une ressource en lecture"
 %}
+
+## Extensions possibles du modèle RBAC
+- Utilisation de contraintes, sous forme de prédicat, pour l'assignation des permissions aux rôles et des utilisateurs au rôles.
+- Rôle prerequis : prédicat basé sur l'appartenance à un rôle. Exemple appartenance au rôle administrateur pédagogique possible uniquement si appartient au rôle enseignant.
+- Rôles qui s'excluent mutuellement, par exemple Pair / Enseignant.
+- Nombre max d'assignements à un rôle ; peut-être intéressant pour les super admins.
+- Utiliser un modèle réactif, non couplé à la session utilisateur. Cela permettrait par exemple de maintenir en temps réel la liste des partages associés.
+
+## Proposition : classification des actions par niveau de dangerosité
+
+Il pourrait être intéressant d'attributer un niveau de dangerosité aux actions. Cela permettrait de définir des zones dans l'application en fonction de la dangerosité des actions qui y sont menées et d'ajuster les contrôles, logs, alertes, audits, etc. à réaliser. 
+
+**Exemple :** 
+- Faible : Pas de réel enjeu, concerne ce qui est publique. Par exemple, afficher la liste des portfolios sans en montrer le contenu. 
+- Moyenne : Enjeu lié à la confidentialité. Par exemple, lire le contenu partagé d'un portfolio.
+- Forte : Concerne les opérations de modification réversibles. La réversibilité implique un versionning ou à minima la possibilité de restaurer à partir de backup. Exemple : réaliser / modifier un retour, modifier le contenu. 
+- Critique : opérations dangereuses, difficilement réversibles, à fort effet de bord. Ce niveau implique le renforcement maximal des mesures de sécurité. Exemple : supprimer un portfolio, modifier les droits d'accès, partager en écriture. 
+
+**Remarque :** voir comment peut être intégré la donnée et son niveau de confidentialité.
+
+
+## Actions utilisateur par type de population
+
+<table>
+    <thead>
+        <th>Population</th>
+        <th>Activité dans l'application</th> 
+        <th>Criticité</th> 
+        <th>Action RBAC</th>
+        <th>Description / remarques</th> 
+    </thead>
+    <tbody>
+     <tr>
+            <td rowspan=6>
+                Personnel technique 
+                <font style="font-size:smaller;color:grey;">Exploitants, super administrateurs</font>
+            </td>
+
+            <td>
+               Ouvrir le portfolio pour un ou plusieurs établissements  (ou pour une formation, correspondrait à "gestion basique de l'ouverture du portfolio pour une formation")
+            </td>
+            <td rowspan=6>
+            Critique
+            </td>
+            <td>
+                ADM_OPEN_PORTFOLIO_ETAB
+            </td>
+            <td>
+               Opération préalable à la mise en oeuvre du portfolio pour un établissement, par exemple pour que l'administrateur pédagogique puisse ouvrir le portfolio pour une formation. 
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                Assigner/Révoquer des rôles aux utilisateurs
+            </td>
+                    
+            <td>
+                ADM_ASSIGN_ROLE / ADM_DIMISS_ROLE
+
+            </td>
+            <td>
+                Par exemple assigner/révoquer le rôle d'administrateur pédagogique à un enseignant (ou un personnel administratif ?)
+            </td>
+            
+        </tr>
+
+         <tr>
+            <td>
+            </td>
+        
+            <td>
+                
+            </td>
+            <td>
+                
+            </td>
+            <td>
+            </td>
+        </tr>
+         <tr>
+            <td>
+            </td>
+        
+            <td>
+                
+            </td>
+            <td>
+                
+            </td>
+            <td>
+            </td>
+            
+        </tr>
+         <tr>
+            <td>
+            </td>
+        
+            <td>
+                
+            </td>
+            <td>
+                
+            </td>
+            <td>
+            </td>
+            
+        </tr>
+         <tr>
+            <td>
+            </td>
+        
+            <td>
+                
+            </td>
+            <td>
+                
+            </td>
+            <td>
+            </td>
+            
+        </tr>
+        
+        <tr>
+            <td rowspan=1>
+                Enseignant
+            </td>
+            <td>
+            1
+            </td>
+            <td>
+            2
+            </td>
+            <td>
+            3
+            </td>
+            <td>
+            4
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan=1>
+                Personnel administratif
+            </td>
+            <td>
+            1
+            </td>
+            <td>
+            2
+            </td>
+            <td>
+            3
+            </td>
+            <td>
+            4
+            </td>
+        </tr>
+
+    
+        <tr>
+            <td rowspan=2>
+                Etudiant
+            </td>
+            <td>
+            1
+            </td>
+            <td>
+            2
+            </td>
+            <td>
+            3
+            </td>
+            <td>
+            4
+            </td>
+        </tr>
+         <tr>
+           
+            <td>
+            1
+            </td>
+            <td>
+            2
+            </td>
+            <td>
+            3
+            </td>
+            <td>
+            4
+            </td>
+        </tr>
+
+
+
+         <tr>
+            <td rowspan=1>
+                Externe
+            </td>
+            <td>
+            1
+            </td>
+            <td>
+            2
+            </td>
+            <td>
+            3
+            </td>
+            <td>
+            4
+            </td>
+        </tr>
+
+    </tbody>
+</table>

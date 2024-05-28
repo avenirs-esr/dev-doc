@@ -23,16 +23,17 @@ Cette version doit pouvoir être déployée en mode SASS multi-établissements a
 La nouvelle version doit reprendre une majeure partie des fonctionalités proposées par Karuta, en les adaptant le cas échéant, ainsi que de nouvelles fonctionnalités. Un focus particulier est porté sur l'ergononomie et l'accessiblité.
 
 Forte interropérabilité : le nouveau ePortfolio doit être en mesure de communiquer avec 
-- le SI scholarité établissement, Pégase, Apogée. 
--  des services déployés dans les établissement ou en mode SASS, esup stage, POD, LMS, ...
-- différents référentiels, existants : RNCP, ROM4.0, etc, ou à venir : réferentiel de formations modélisées en APC (projet connexe porté par Avenirs).
-- différents portfolios, scolaire, professionnel afin que les utilisateurs puissent concerver leur portfolio au court des différentes étapes de leur vie.
-- et Karuta pour permette aux établissements de migrer sur le nouveau portfolio.
+- Le SI scolarité établissement, Pégase, Apogée. 
+- Des services déployés dans les établissement ou en mode SASS, esup stage, POD, LMS, ...
+- Différents référentiels, existants : RNCP, ROM4.0, etc, ou à venir : réferentiel de formations modélisées en APC (projet connexe porté par Avenirs).
+- Différents portfolios, scolaire, professionnel afin que les utilisateurs puissent concerver leur portfolio au court des différentes étapes de leur vie.
+- Karuta pour permette aux établissements de migrer sur le nouveau portfolio.
+  
 La notion de sécurité est centrale et doit être intégrée à chaque étape du cycle de développement puis d'exploitation du portfolio industriel. Une démarche d'amélioration continue de type [security by design](../security-by-design/index.markdown) est mise en place pour répondre à cet objectif.
 
 ## Type d'architecture
 L'architecture mise en place devrait combiner plusieurs types d'archtecture classiques :
-- Client serveur : le frontend est séparé du backend et la communication entre les deux est réalisée par l'intermédiaire d'API. A terme plusieurs clients pourraient être proposés, par exemple mobile.
+- Client serveur : le frontend est séparé du backend et la communication entre les deux est réalisée par l'intermédiaire d'API. A terme plusieurs clients pourraient être proposés, par exemple web et mobile.
 - Architecture modulaire : le découpage est réalisé par grands groupes fonctionnels (cf. section suivante). Ces grands modules doivent viser à être le plus autonomes et découplés possible.
 - Architecture pilotée par les évènements : limité au domaine des notifications  et l'aspect réactif des interfaces utilisateur.
 - Modele/Vue/Controlleur : pour les interfaces utilisateur.
