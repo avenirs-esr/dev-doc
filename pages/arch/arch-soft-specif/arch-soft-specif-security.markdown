@@ -48,7 +48,7 @@ Le contrôle d'accès est un élément central pour la gestion de la sécurité 
 
 
 {% include img.html
-        src="assets/images/arch-security-rbac.png"
+        src="assets/images/architecture-security-rbac.png"
         alt="Security - RBAC"
         width="100%"
 %}
