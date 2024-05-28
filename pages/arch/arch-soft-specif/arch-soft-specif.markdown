@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sofwtare Architecture Specification
+title: Software Architecture Specification
 permalink: /arch-soft-specif/
 up: ../arch/
 ---
