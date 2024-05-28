@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Sofwtare Architecture Specification
-permalink: /arch-soft-specification/
+permalink: /arch-soft-specif/
 ---
 
  <img src="https://avenirs-esr.github.io/dev-doc/assets/images/avenir-esr-logo_small.jpg"> <img src="https://avenirs-esr.github.io/dev-doc/assets/images/esup-portail-logo_small.png"/> 
