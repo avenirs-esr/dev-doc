@@ -10,3 +10,4 @@ order: 20
 - [Architecture - Main modules](../arch-main-modules/)
 - [Architecture - Components](../arch-components/)
 - [Development Environment](../srv-dev/)
+- [Software Architecture Specification](../arch-soft-specif/)
