@@ -37,14 +37,18 @@ L'envergure du projet impose de mettre en place un système qui permette de suiv
 
 ## Principaux composants
 
-<img src="../../assets/images/architecture-security.png" alt="Security" />
+{% include img.html
+        src="assets/images/architecture-security.png"
+        alt="Security - Main components"
+        width="100%"
+%}
 
 ## Access Control
 Le contrôle d'accès est un élément central pour la gestion de la sécurité et le choix qui est fait est de mettre en place un système basé sur un modèle simple, robuste et éprouvé, RBAC : Role-Based Access Control. 
 
 
 {% include img.html
-        src="assets/images/arch-security-rbac.svg"
+        src="assets/images/arch-security-rbac.png"
         alt="Security - RBAC"
         width="100%"
 %}
