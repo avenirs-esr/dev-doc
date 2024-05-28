@@ -44,14 +44,23 @@ L'envergure du projet impose de mettre en place un système qui permette de suiv
         caption="Security module - Main components"
 %}
 
-## Access Control
+## Role Based Access Control (RBAC)
 Le contrôle d'accès est un élément central pour la gestion de la sécurité et le choix qui est fait est de mettre en place un système basé sur un modèle simple, robuste et éprouvé, RBAC : Role-Based Access Control. 
 
+### RBAC - Schéma de fonctionnement général
+Une action est autorisée ou non en fonction des rôles actifs des utilisateurs, de la ressource impliquée et du contexte d'exécution.
+Un rôle peut être assigné à un utilisateur avec un scope qui correspond aux ressources pour lesquelles il s'applique. Il peut être associé également à un contexte d'application, par exemple une période de validité ou un établissement.  
 
 {% include img.html
         src="assets/images/architecture-security-rbac.png"
         alt="Security - RBAC"
-        caption="Role-based Access Control"
+        caption="Role Based Access Control"
 %}
 
+### RBAC - Exemple pour le partage d'une ressource
 
+{% include img.html
+        src="assets/images/architecture-security-rbac-ex.png"
+        alt="Security - RBAC"
+        caption="RBAC - Partage en lecture"
+%}
