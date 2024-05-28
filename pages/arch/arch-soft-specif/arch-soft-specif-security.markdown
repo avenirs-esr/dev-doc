@@ -40,7 +40,7 @@ L'envergure du projet impose de mettre en place un système qui permette de suiv
 {% include img.html
         src="assets/images/architecture-security.png"
         alt="Security - Main components"
-        width="100%"
+        caption="Security module - Main components"
 %}
 
 ## Access Control
@@ -50,7 +50,7 @@ Le contrôle d'accès est un élément central pour la gestion de la sécurité 
 {% include img.html
         src="assets/images/architecture-security-rbac.png"
         alt="Security - RBAC"
-        width="100%"
+        caption="Role-based Access Control"
 %}
 
 

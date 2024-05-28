@@ -46,6 +46,7 @@ L'architecture mise en place devrait combiner plusieurs types d'archtecture clas
         src="assets/images/architecture-components-diagram.png"
         alt="Modules and their interractions"
         width="100%"
+        caption="Main modules"
 %}
 
 ## Liste des modules
