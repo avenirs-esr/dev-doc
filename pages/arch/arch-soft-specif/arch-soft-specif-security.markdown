@@ -1,12 +1,8 @@
 ---
 layout: page
-title: Architecture logicielle du module Security
+title: Dossier d'Architecture logicielle - module Security
 permalink: /arch-soft-specif-security/
 
----
-
- <img src="https://avenirs-esr.github.io/dev-doc/assets/images/avenir-esr-logo_small.jpg"> <img src="https://avenirs-esr.github.io/dev-doc/assets/images/esup-portail-logo_small.png"/> 
- # Avenirs-ESR / ePortfolio - Dossier architecture logicielle : Module Security 
 
 ---
 **Projet :** Avenirs-ESR / ePortfolio. <br/>
@@ -47,6 +43,6 @@ L'envergure du projet impose de mettre en place un système qui permette de suiv
 Le contrôle d'accès est un élément central pour la gestion de la sécurité et le choix qui est fait est de mettre en place un système basé sur un modèle simple, robuste et éprouvé, RBAC : Role-Based Access Control. 
 
 
-<img src="../../assets/images/rbac.svg" alt="Security" />
+<img src="assets/images/arch-security-rbac.svg" alt="Security" />
 
 
