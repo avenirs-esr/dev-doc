@@ -4,9 +4,6 @@ title: Sofwtare Architecture Specification
 permalink: /arch-soft-specif/
 ---
 
- <img src="https://avenirs-esr.github.io/dev-doc/assets/images/avenir-esr-logo_small.jpg"> <img src="https://avenirs-esr.github.io/dev-doc/assets/images/esup-portail-logo_small.png"/> 
- # Avenirs-ESR / ePortfolio - Dossier architecture logicielle
-
 ---
 **Projet :** Avenirs-ESR / ePortfolio. <br/>
 **Objet :** Description de l'architecture logicielle.<br/>
