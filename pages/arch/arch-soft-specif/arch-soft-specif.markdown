@@ -40,10 +40,7 @@ L'architecture mise en place devrait combiner plusieurs types d'archtecture clas
 - Architecture pilotée par les évènements : limité au domaine des notifications  et l'aspect réactif des interfaces utilisateur.
 - Modele/Vue/Controlleur : pour les interfaces utilisateur.
 
- ## Principaux modules
-
-## Vue d'ensemble des modules et de leurs interractions
-
+## Vue d'ensemble des principaux modules et de leurs interractions
 
 {% include img.html
         src="assets/images/architecture-components-diagram.png"
