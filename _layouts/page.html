@@ -4,10 +4,12 @@ layout: default
 
 
 
-
 <article class="page">
-
   <header class="page-header">
+    
+    {%- if page.up  -%}
+    <a class="up" href="{{page.up}}" >&#x21e7;</a>
+    {%- endif -%}
     <h1 class="page-title">{{ page.title | escape }}</h1>
     {%- if page.rss  %}
    

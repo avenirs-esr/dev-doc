@@ -2,9 +2,9 @@
 layout: page
 title: Sofwtare Architecture Specification
 permalink: /arch-soft-specif/
+up: ../arch/
 ---
 
----
 **Projet :** Avenirs-ESR / ePortfolio. <br/>
 **Objet :** Description de l'architecture logicielle.<br/>
 

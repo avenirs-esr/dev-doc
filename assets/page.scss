@@ -3,7 +3,18 @@
     display: flex;
     margin-bottom: 1em;
     align-items: baseline;
-  }
+    position: relative; 
+      a.up {
+        position: absolute;
+        left: -1em;
+        font-size: 2em;
+        color: $grey-m;
+        &:hover {
+          color: $grey-d;
+        }
+      }
+    }
+  
 
   .page-title {
     font-size: 2em;
