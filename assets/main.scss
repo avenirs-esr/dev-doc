@@ -30,6 +30,10 @@ ul,
 figure {
     margin: 0;
     padding: 0;
+    &.center {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, .highlight { 

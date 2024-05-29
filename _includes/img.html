@@ -4,8 +4,8 @@
 {% if include.url %}
 <a href="{{include.url}}" aria-label="Link to the site associated to the image/logo" target="_blank">
 {% endif %}
-<figure>
-<img class="{{include.class}}" src="{{include.src | relative_url }}" alt="{{alt | escape }}" width="{{include.width}}" height="{{include.height}}"/>
+<figure class="{{include.figure-class}}">
+<img class="{{include.img-class}}" src="{{include.src | relative_url }}" alt="{{alt | escape }}" width="{{include.width}}" height="{{include.height}}"/>
 </figure>
 {% if include.caption %}
 <figcaption>{{include.caption}}</figcaption>
