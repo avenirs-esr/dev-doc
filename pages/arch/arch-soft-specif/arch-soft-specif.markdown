@@ -5,15 +5,12 @@ permalink: /arch-soft-specif/
 up: ../arch/
 ---
 <br/>
-----
 **Projet :** Avenirs-ESR / ePortfolio. <br/>
 **Objet :** Description de l'architecture logicielle.<br/>
-
 **Révision :** 1.0.0<br/>
 **Date :** 25/04/2024<br/>
 **Auteur :** A. Deman<br/>
 **Commentaire :** Version initiale<br/>
------
 <br/>
 
 ## Contexte
