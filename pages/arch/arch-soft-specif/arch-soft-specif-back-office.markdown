@@ -2,7 +2,7 @@
 layout: page
 title: Dossier d'Architecture logicielle - module Back Office
 permalink: /arch-soft-specif-back-office/
-up: ../arch-soft-specif/
+up: ../arch-soft-specif-index/
 page_content_classes: table-container
 ---
 
@@ -13,9 +13,10 @@ page_content_classes: table-container
 **Révision :** 1.0.0<br/>
 **Date :** 25/04/2024<br/>
 **Auteur :** A. Deman<br/>
-**Commentaire :** Version initiale - Draft<br/>
+**Commentaire :** Version initiale<br/>
 <br/>
 
+## Contexte 
 Ce module porte les fonctionnalités d'administration du site, des APIs ePortfolio et de la gestion de l’interopérabilité.
 
 ## Objectifs
@@ -39,10 +40,10 @@ Les services peuvent être accessible en mode SASS ou directement dans les étab
 
 L'importation doit être réalisée à la demande pour un utilisateur ou un groupe d'utilisateurs par un administrateur pédagogique ou le responsable d'une formation. L'objectif est de ne pas charger la plateforme inutilement.
 
-
 ## Principaux composants
+
 {% include img.html
-        src="assets/images/architecture-security.png"
+        src="assets/images/architecture-back-office.png"
         alt="Back Office - Main components"
         caption="Back Office - Main components"
 %}

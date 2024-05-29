@@ -2,19 +2,18 @@
 layout: page
 title: Dossier d'Architecture logicielle - module Security
 permalink: /arch-soft-specif-security/
-up: ../arch-soft-specif/
+up: ../arch-soft-specif-index/
 page_content_classes: table-container
-
 ---
 
 <br/>
 **Projet :** Avenirs-ESR / ePortfolio. <br/>
 **Objet :** Architecture logicielle du module Security.<br/>
-
+<br/>
 **Révision :** 1.0.0<br/>
 **Date :** 25/04/2024<br/>
 **Auteur :** A. Deman<br/>
-**Commentaire :** Version initiale - Draft<br/>
+**Commentaire :** Version initiale<br/>
 <br/>
 
 ## Contexte
@@ -81,7 +80,7 @@ Dans l'exemple suivant un utilisateur veut partager en lecture une de ses ressou
 
 ## Extensions possibles du modèle RBAC
 - Utilisation de contraintes, sous forme de prédicat, pour l'assignation des permissions aux rôles et des utilisateurs au rôles.
-- Rôle prerequis : prédicat basé sur l'appartenance à un rôle. Exemple appartenance au rôle administrateur pédagogique possible uniquement si appartient au rôle enseignant.
+- Rôle prérequis : prédicat basé sur l'appartenance à un rôle. Exemple appartenance au rôle administrateur pédagogique possible uniquement si appartient au rôle enseignant.
 - Rôles qui s'excluent mutuellement, par exemple Pair / Enseignant.
 - Nombre max d'assignements à un rôle ; peut-être intéressant pour les super admins.
 - Utiliser un modèle réactif, non couplé à la session utilisateur. Cela permettrait par exemple de maintenir en temps réel la liste des partages associés.

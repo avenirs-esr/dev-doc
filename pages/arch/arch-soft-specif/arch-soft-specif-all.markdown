@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Software Architecture Specification
-permalink: /arch-soft-specif/
-up: ../arch/
+title: Software Architecture Specification - all modules
+permalink: /arch-soft-specif-all/
+up: ../arch-soft-specif-index/
 ---
 <br/>
 **Projet :** Avenirs-ESR / ePortfolio. <br/>
@@ -53,15 +53,15 @@ L'architecture mise en place devrait combiner plusieurs types d'architecture cla
 
 [Security](../arch-soft-specif-security) : gestion de l'authentification et des contrôles d'accès.
 
-[Data storage](./architecture-data-storage.markdown): stockage de données structurées/semi/non structurées. Gestion du cache, de l'indexation et du cycle de vie des données.
+[Data storage](../arch-soft-specif-storage): stockage de données structurées/semi/non structurées. Gestion du cache, de l'indexation et du cycle de vie des données.
 
-[Monitoring](./architecture-monitoring.markdown) : gestion des statistiques d'usage, des logs, des learning analitics.
+[Monitoring](../arch-soft-specif-monitoring) : gestion des statistiques d'usage, des logs, des learning analitics.
 
-[Communication](./architecture-communication.markdown): notifications utilisateur/système et communication entre utilisateurs.
+[Communication](../arch-soft-specif-communication): notifications utilisateur/système et communication entre utilisateurs.
 
-[Front Office](./architecture-front-office.markdown): contient les interfaces utilisateurs et les règles métier par grand domaine : APC, Projet de vie, CV, etc.
+[Front Office](../arch-soft-specif-front-office): contient les interfaces utilisateurs et les règles métier par grand domaine : APC, Projet de vie, CV, etc.
 
-[API Manager](./architecture-apim.markdown): il s'agit d'un module particulier, non développé, mais paramétré. Il s'interface avec l'ensemble des API internes qui doivent être exposées et facilite la prise en compte des problématiques de sécurité et d'exploitation. 
+[API Manager](../arch-soft-specif-apim): il s'agit d'un module particulier, non développé, mais paramétré. Il s'interface avec l'ensemble des API internes qui doivent être exposées et facilite la prise en compte des problématiques de sécurité et d'exploitation. 
 
 
 
