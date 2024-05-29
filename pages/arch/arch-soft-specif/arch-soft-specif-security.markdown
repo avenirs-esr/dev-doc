@@ -49,9 +49,11 @@ L'envergure du projet impose de mettre en place un système qui permette de suiv
 Le contrôle d'accès est un élément central pour la gestion de la sécurité et le choix qui est fait est de mettre en place un système basé sur un modèle simple, robuste et éprouvé, RBAC : Rôle-Based Access Control. 
 
 Il doit permettre de  :
-- déterminer si un utilisateur peut réaliser une action.
-- lister les rôles/permissions d'un utilisateur.
+- Déterminer si un utilisateur peut réaliser une action.
+- Lister les rôles/permissions d'un utilisateur.
 - Lister les utilisateurs disposant d'un rôle donné, éventuellement pour un scope et un contexte d'application. 
+- Lister les utilisateurs disposant d'une permission donnée. 
+- [TODO] La notion d'historique est-elle importante ? Est-ce que l'on veut être capable de réaliser les 3 listing pour une date donnée ?
 
 ## RBAC - Fonctionnement
 
