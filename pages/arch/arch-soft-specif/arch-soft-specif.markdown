@@ -18,8 +18,8 @@ Il s'agit de redévelopper entièrement une version industrielle d'un ePortfolio
 
 ## Objectifs
 L'objectif de cette version industrielle est de permettre un passage à l'échelle en terme de charge, d'évolution et d'exploitation. 
-Cette version doit pouvoir être déployée en mode SASS multi-établissements ainsi qu'en mode hybride : seuls certains services / réferentiels resteraient centralisés.
-La nouvelle version doit reprendre une majeure partie des fonctionalités proposées par Karuta, en les adaptant le cas échéant, ainsi que de nouvelles fonctionnalités. Un focus particulier est porté sur l'ergononomie et l'accessiblité.
+Cette version doit pouvoir être déployée en mode SASS multi-établissements ainsi qu'en mode hybride : seuls certains services / référentiels resteraient centralisés.
+La nouvelle version doit reprendre une majeure partie des fonctionnalités proposées par Karuta, en les adaptant le cas échéant, ainsi que de nouvelles fonctionnalités. Un focus particulier est porté sur l’ergonomie et l’accessibilité.
 
 ## Contraintes
 Forte interopérabilité : le nouveau ePortfolio doit être en mesure de communiquer avec 
@@ -49,13 +49,13 @@ L'architecture mise en place devrait combiner plusieurs types d'architecture cla
 
 ## Liste des modules
 
-[Back Office](./architecture-back-office.markdown) : module d'administration, API ePortfolio et gestion de l'interoperabilité.
+[Back Office](../arch-soft-specif-back-office) : module d'administration, API ePortfolio et gestion de l’interopérabilité.
 
 [Security](../arch-soft-specif-security) : gestion de l'authentification et des contrôles d'accès.
 
 [Data storage](./architecture-data-storage.markdown): stockage de données structurées/semi/non structurées. Gestion du cache, de l'indexation et du cycle de vie des données.
 
-[Monitoring](./architecture-monitoring.markdown) : gestion des statisiques d'usage, des logs, des learning analitics.
+[Monitoring](./architecture-monitoring.markdown) : gestion des statistiques d'usage, des logs, des learning analitics.
 
 [Communication](./architecture-communication.markdown): notifications utilisateur/système et communication entre utilisateurs.
 
