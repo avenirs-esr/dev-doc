@@ -98,6 +98,8 @@ Il pourrait être intéressant d'attributer un niveau de dangerosité aux action
 **Remarque :** voir comment peut être intégré la donnée et son niveau de confidentialité.
 
 
+**TRAVAIL EN COURS**
+
 ## Actions utilisateur par type de population
 
 <table>
@@ -204,17 +206,17 @@ Il pourrait être intéressant d'attributer un niveau de dangerosité aux action
             <td rowspan=1>
                 Enseignant
             </td>
+            
             <td>
-            1
             </td>
+
             <td>
-            2
             </td>
+
             <td>
-            3
             </td>
+
             <td>
-            4
             </td>
         </tr>
 
@@ -222,17 +224,17 @@ Il pourrait être intéressant d'attributer un niveau de dangerosité aux action
             <td rowspan=1>
                 Personnel administratif
             </td>
+            
             <td>
-            1
             </td>
+            
             <td>
-            2
             </td>
+            
             <td>
-            3
             </td>
+            
             <td>
-            4
             </td>
         </tr>
 
@@ -241,52 +243,49 @@ Il pourrait être intéressant d'attributer un niveau de dangerosité aux action
             <td rowspan=2>
                 Etudiant
             </td>
+            
             <td>
-            1
             </td>
+            
             <td>
-            2
             </td>
+            
             <td>
-            3
             </td>
+            
             <td>
-            4
             </td>
         </tr>
          <tr>
            
             <td>
-            1
             </td>
+            
             <td>
-            2
             </td>
+            
             <td>
-            3
             </td>
+            
             <td>
-            4
             </td>
         </tr>
-
-
 
          <tr>
             <td rowspan=1>
                 Externe
             </td>
+
             <td>
-            1
             </td>
+
             <td>
-            2
             </td>
+
             <td>
-            3
             </td>
+
             <td>
-            4
             </td>
         </tr>
 
