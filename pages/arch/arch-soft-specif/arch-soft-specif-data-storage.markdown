@@ -18,7 +18,7 @@ page_content_classes: table-container
 
 ## Contexte 
  
-Partie Stockage du portfolio industriel, qui permet de gérer le stockage de données structurée, semi ou non structurée ainsi que de la gestion du cache côté backend et l'indexation. [TODO] Déterminer si l'indexation est effectivement nécessaire.
+Partie Stockage du portfolio industriel, qui permet de gérer le stockage de données structurées, semi ou non structurées. Il continent également la gestion du cache côté backend et l'indexation. [TODO] Déterminer si l'indexation est effectivement nécessaire.
 
 ## Objectifs
 Ce module doit permettre la persistance des données suivant différentes modalités en fonction de leur type. 
@@ -32,8 +32,8 @@ A ce stade plusieurs types de stockages sont envisagés :
 * Contrainte de performances et de fiabilité : pas de ralentissement et pas de perte de données. 
 * Gestion du cycle de vie des données.
 * Certaines données doivent être versionnées, par exemple les traces.
-* La question de la restauration des données utilisateurs reste ouverte : quelles données peuvent être restaurées pour un utilisateur à une date donnée ? [TODO] 
-* Les données sensibles ne doivent pas être mises en cache. Il peut s'agir, par exemple, du résultat la validation du token d'authentification par le provider OIDC.
+* La question de la restauration des données utilisateurs reste ouverte : quelles données peuvent être restaurées pour un utilisateur à une date donnée ? [TODO] Arbitrages nécessaires
+* Les données sensibles ne doivent pas être mises en cache. Il peut s'agir, par exemple, du résultat de la validation du token d'authentification par le provider OIDC.
 
 ## Principaux composants
 {% include img.html

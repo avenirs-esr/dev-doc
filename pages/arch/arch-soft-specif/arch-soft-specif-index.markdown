@@ -1,18 +1,10 @@
 ---
 layout: page
-title: Software Architecture Specification - Index
+title: Dossier d'architecture logicielle
 permalink: /arch-soft-specif-index/
 up: ../arch/
 ---
 
-
-
-## Objet
-Le but de ce dossier est de décrire l'architecture logicielle du  portfolio suivant deux directions :
-* une vue d'ensemble des composants du système et de leurs interactions.
-* Une présentation de la structure et des spécificités de chacun des module avec un niveau de finesse suffisant.
-
-L'objectif ultime est d'aboutir à un système le plus fiable et évolutif possible, en conservant la maîtrise de la compréhension de l'ensemble du système. Cette maîtrise doit être maintenue malgré une complexité et une richesse fonctionnelle importante. Documenter les choix structurants afin de pouvoir les évaluer et, le cas échéant revenir dessus au cours de la vie du logiciel.
 
 {% include img.html
         src="assets/images/architecture-visuel-index.png"
@@ -20,7 +12,21 @@ L'objectif ultime est d'aboutir à un système le plus fiable et évolutif possi
         
 %}
 
-## Documents d'architecture logicielle
+## Objet
+Le but de ce dossier est de décrire l'architecture logicielle du  portfolio suivant deux axes principaux :
+* Une vue d'ensemble des composants du système et de leurs interactions.
+* Une présentation plus détaillée de la structure et des spécificités de chacun des modules.<br/>
+
+Les questions relatives à la sécurité et  à la confidentialité sont intégrées dès les premières étapes de conception.
+
+L'objectif final est d'aboutir à un système le plus fiable et évolutif possible, en conservant la maîtrise de la compréhension de l'ensemble du système. <br/>
+Cette maîtrise doit être maintenue malgré une complexité et une richesse fonctionnelle importante.<br/>
+Documenter les choix structurants est important afin de pouvoir les évaluer et, le cas échéant revenir dessus au cours de la vie du logiciel.<br/>
+
+
+
+
+## Documents d'architecture des principaux modules
 
 [Vue d'ensemble ](../arch-soft-specif-all) : vue d'ensemble des principaux modules et de leurs interactions.
 
