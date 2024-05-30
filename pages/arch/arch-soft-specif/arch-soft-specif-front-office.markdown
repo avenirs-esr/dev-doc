@@ -18,7 +18,7 @@ page_content_classes: table-container
 
 ## Contexte 
 Il s'agit de la partie Front du portfolio industriel, qui permet fourni les interfaces utilisateur.
-Plusieurs grands groupes de fonctionalités sont présentes dans ce module :
+Plusieurs grands groupes de fonctionnalités sont présentes dans ce module :
 - Module APC
 - Mon Projet de vie
 - CV

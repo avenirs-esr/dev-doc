@@ -22,17 +22,17 @@ Module de communication du portfolio industriel, qui permet de gérer les notifi
 ## Objectifs 
 - Faciliter les usages : 
   - Notamment autour des Activités de Mise en Situation ou de l'évaluation par des pairs. 
-  - Permetre aux utilisateurs d'avoir accès à la bonne information au bon moment, sans être noyé par un flux trop important de messages.
+  - Permettre aux utilisateurs d'avoir accès à la bonne information au bon moment, sans être noyé par un flux trop important de messages.
   - Guider les utilisateurs avec une communication claire, contextualisée et des indications pertinentes.
 - Servir de base technique pour la mise en place de fonctionnalités temps réel.
 
 
 ## Contraintes
 - Les notifications doivent être en temps réel.
-- Le service doit pouvoir etre controlé finement et les limites doivent être bien positionnées pour éviter le SPAM et les usages détournés ou abusifs. Il peut s'agir, par exemple, d'être en mesure de mettre hors ligne tout ou partie des fonctonnalités de communication. [TODO] déterminer le périmètre : ensemble du système, établissement, catégories d'utilistateurs, utilisateurs spécifiques ?
+- Le service doit pouvoir être contrôlé finement et les limites doivent être bien positionnées pour éviter le SPAM et les usages détournés ou abusifs. Il peut s'agir, par exemple, d'être en mesure de mettre hors ligne tout ou partie des fonctionnalités de communication. [TODO] déterminer le périmètre : ensemble du système, établissement, catégories d'utilisateurs, utilisateurs spécifiques ?
 - Gestion du système de messagerie : possibilité de s'appuyer sur une infra existante pour le service SMTP ? 
 - Contrainte de performance, à valider surtout au niveau des notifications système, basées sur les web sockets.
-- Maintenir une cohérence, notament en terme de format de messages sur l'ensemble de la plateforme.
+- Maintenir une cohérence, notamment en terme de format de messages sur l'ensemble de la plateforme.
 
 
 ## Principaux composants

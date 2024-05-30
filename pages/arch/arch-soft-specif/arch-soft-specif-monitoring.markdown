@@ -20,7 +20,7 @@ page_content_classes: table-container
 Le module de monitoring est responsable de la gestion des logs, traces, alertes et statistiques d'usage. Il est en lien étroit avec l'API Manager et les outils du Data Lakehouse.
 
 ## Objectifs 
-Ce module doit fournir les outils permmettant de suivre au plus près le fonctionnement du portfolio avec :
+Ce module doit fournir les outils permettant de suivre au plus près le fonctionnement du portfolio avec :
 - GLa gestion des logs et le monitoring pour l'exploitation.
 - Les statistiques d'usages / learning analitics pour l'ingénierie pédagogique, les tableaux de bord, les remontées d'informations. 
 

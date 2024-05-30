@@ -25,7 +25,7 @@ Ce module doit permettre la persistance des données suivant différentes modali
 A ce stade plusieurs types de stockages sont envisagés :
 [TODO] à vérifier / corriger / compléter
 - SGBDR : pour les données structurées, par exemple le paramétrage, les préférences utilisateur. Un cluster PostgreSQL à été mis en oeuvre pour tests dans l'environnement de développement.
-- NoSQL : pour les données non structurées, par exemple les métadatas ou des données d'indexation.
+- NoSQL : pour les données non structurées, par exemple les metadata ou des données d'indexation.
 - S3 : pour les traces et la gestion des versions.
 
 ## Contraintes

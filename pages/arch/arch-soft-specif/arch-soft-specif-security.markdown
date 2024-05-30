@@ -17,7 +17,7 @@ page_content_classes: table-container
 <br/>
 
 ## Contexte
-La prise en compte des problématiques de sécurité est un élément centrale du projet et s'appuie sur la mise en place d'une démarche d'amélioration continue de type [security by design](../security-by-design/index.markdown).
+La prise en compte des problématiques de sécurité est un élément central du projet et s'appuie sur la mise en place d'une démarche d'amélioration continue de type [security by design](../security-by-design/index.markdown).
 
 Le portfolio est amené à devenir un élément central dans la vie des enseignants et des étudiants pour les formations en APC. La compromission d'un compte pourrait donc avoir de très lourdes conséquences que ce soit pour l'activité possessionnelle des enseignants ou la réussite des étudiants et renforcent encore, si besoin était la criticité des problématiques de sécurité.  
 
