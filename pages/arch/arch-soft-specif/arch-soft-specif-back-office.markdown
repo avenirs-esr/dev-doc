@@ -50,3 +50,42 @@ L'importation doit être réalisée à la demande pour un utilisateur ou un grou
         alt="Back Office - Main components"
         caption="Back Office - Main components"
 %}
+
+
+### Catalogues de services.
+
+Certains services dans les établissements, tels que PStage, POD ou les LMS, devront pouvoir être accédés par le portfolio. Pour déterminer les informations relatives aux modalités d'accès, un catalogue de services sera mis en place.
+Ce catalogue doit s'interfacer souplement avec l'API manager pour adapter les requêtes aux spécificités de l'établissement.
+
+Une expérimentation à été réalisée avec Apisix afin de vérifier que les capacités de l'outil permettent de répondre à ce besoin.
+
+Le schéma suivant décrit cette expérimentationn qui consiste en un Mock du catalogue de services et le paramétrage de 4 plugins d'APISIX :
+- Openid-connect : vérifie qu'un accès token valide est transmis avec la requête
+- Serverless-function : permet d'exécuter du code LUA avant le traitement de la requête. Ce code interagit avec le catalogue de services pour terminer les caractéristiques du point d'accès sur la base de l'utilisateur associé à l'access token.
+- Trafic split : permet de sélectionner l'upstream défini dans APISIX sur la base des informations transmises par le catalogue de services.
+- Proxy rewrite : prise en compte du point d'accès associé au service.
+
+{% include img.html
+        src="assets/images/architecture-back-office-services-catalog.png"
+        alt="Back Office - Services catalog experiment"
+        caption="Back Office - Services catalog experiment with APISIX."
+%}
+
+
+### Résultats de l'expérimentation
+
+**Points positifs :**
+- Peut être réalisé avec les plugins natifs d'APISIX.
+- Un seul point d'accès par type de service.
+- Permet de traiter l'ensemble des requêtes via l'API Manager.
+
+**Points négatifs :**
+- La partie serverless est à réaliser en LUA et n'est pas très user friendly à mettre en oeuvre. 
+- L'ensemble des upstreams, c'est à dire les adresses et ports des serveurs doivent êtres connus et paramétrés à l'avance. Les URI des services peuvent être dynamiques mais pas les noeuds d'accès (addresses, ports, etc.) 
+
+**Points à vérifier :**
+- Tenue à la charge : à vérifier, notamment lié à la fonction serverless. [TODO] déterminer la méthodologie pour les stress tests.
+- Gestion des erreurs, des problèmes transitoires de connexion aux services. N.B. : indépendant de l'implémentation retenue.
+
+**Solution de replis si nécessaire :**
+Si nécessaire la logique d'aiguillage et de réalisation de la requête pourrait être faite directement au niveau du catalogue de services. L'inconvénient est qu'une partie de la requête n'est plus traitée via l'API manager.
