@@ -52,7 +52,7 @@ L'importation doit être réalisée à la demande pour un utilisateur ou un grou
 %}
 
 
-### Catalogues de services.
+## Catalogues de services.
 
 Certains services dans les établissements, tels que PStage, POD ou les LMS, devront pouvoir être accédés par le portfolio. Pour déterminer les informations relatives aux modalités d'accès, un catalogue de services sera mis en place.
 Ce catalogue doit s'interfacer souplement avec l'API manager pour adapter les requêtes aux spécificités de l'établissement.
@@ -61,7 +61,7 @@ Une expérimentation à été réalisée avec Apisix afin de vérifier que les c
 
 Le schéma suivant décrit cette expérimentation qui consiste en un Mock du catalogue de services et le paramétrage de 4 plugins d'APISIX :
 - **Openid-connect :** vérifie qu'un accès token valide est transmis avec la requête
-- **Serverless-function :** permet d'exécuter du code LUA avant le traitement de la requête. Ce code interagit avec le catalogue de services pour terminer les caractéristiques du point d'accès sur la base de l'utilisateur associé à l'access token.
+- **Serverless-pre-function :** permet d'exécuter du code LUA avant le traitement de la requête. Ce code interagit avec le catalogue de services pour terminer les caractéristiques du point d'accès sur la base de l'utilisateur associé à l'access token.
 - **Trafic split :** permet de sélectionner l'upstream défini dans APISIX sur la base des informations transmises par le catalogue de services.
 - **Proxy rewrite :** prise en compte du point d'accès associé au service.
 
@@ -72,7 +72,7 @@ Le schéma suivant décrit cette expérimentation qui consiste en un Mock du cat
 %}
 
 
-### Résultats de l'expérimentation
+## Résultats de l'expérimentation
 
 **Points positifs :**
 - Peut être réalisé avec les plugins natifs d'APISIX.
