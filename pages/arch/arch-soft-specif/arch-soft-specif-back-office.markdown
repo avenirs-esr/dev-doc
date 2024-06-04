@@ -57,13 +57,13 @@ L'importation doit être réalisée à la demande pour un utilisateur ou un grou
 Certains services dans les établissements, tels que PStage, POD ou les LMS, devront pouvoir être accédés par le portfolio. Pour déterminer les informations relatives aux modalités d'accès, un catalogue de services sera mis en place.
 Ce catalogue doit s'interfacer souplement avec l'API manager pour adapter les requêtes aux spécificités de l'établissement.
 
-Une expérimentation à été réalisée avec Apisix afin de vérifier que les capacités de l'outil permettent de répondre à ce besoin.
+Une expérimentation à été réalisée avec Apisix afin de vérifier que les capacités de l'outil permettent de répondre à ce besoin. Cette expérimentation correspond à la branche [apisix-dynamic-upstream](https://github.com/avenirs-esr/srv-dev/blob/apisix-dynamic-upstream/) dans le dépôt GitHub. Voir, notamment, le [script de définition de la route APISIX.](https://github.com/avenirs-esr/srv-dev/blob/apisix-dynamic-upstream/services/apisix/scripts/routes/experiments/dynamic-upstream.curl.sh)
 
-Le schéma suivant décrit cette expérimentationn qui consiste en un Mock du catalogue de services et le paramétrage de 4 plugins d'APISIX :
-- Openid-connect : vérifie qu'un accès token valide est transmis avec la requête
-- Serverless-function : permet d'exécuter du code LUA avant le traitement de la requête. Ce code interagit avec le catalogue de services pour terminer les caractéristiques du point d'accès sur la base de l'utilisateur associé à l'access token.
-- Trafic split : permet de sélectionner l'upstream défini dans APISIX sur la base des informations transmises par le catalogue de services.
-- Proxy rewrite : prise en compte du point d'accès associé au service.
+Le schéma suivant décrit cette expérimentation qui consiste en un Mock du catalogue de services et le paramétrage de 4 plugins d'APISIX :
+- **Openid-connect :** vérifie qu'un accès token valide est transmis avec la requête
+- **Serverless-function :** permet d'exécuter du code LUA avant le traitement de la requête. Ce code interagit avec le catalogue de services pour terminer les caractéristiques du point d'accès sur la base de l'utilisateur associé à l'access token.
+- **Trafic split :** permet de sélectionner l'upstream défini dans APISIX sur la base des informations transmises par le catalogue de services.
+- **Proxy rewrite :** prise en compte du point d'accès associé au service.
 
 {% include img.html
         src="assets/images/architecture-back-office-services-catalog.png"
@@ -88,4 +88,6 @@ Le schéma suivant décrit cette expérimentationn qui consiste en un Mock du ca
 - Gestion des erreurs, des problèmes transitoires de connexion aux services. N.B. : indépendant de l'implémentation retenue.
 
 **Solution de replis si nécessaire :**
-Si nécessaire la logique d'aiguillage et de réalisation de la requête pourrait être faite directement au niveau du catalogue de services. L'inconvénient est qu'une partie de la requête n'est plus traitée via l'API manager.
+Si nécessaire, la logique d'aiguillage et de réalisation de la requête pourrait être faite directement au niveau du catalogue de services. L'inconvénient est qu'une partie de la requête n'est plus traitée via l'API manager, on perd donc en cohérence ainsi qu'en terme d'utilisation des fonctionnalités d'APISIX.
+
+
