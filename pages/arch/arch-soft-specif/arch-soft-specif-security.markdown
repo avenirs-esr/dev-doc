@@ -387,7 +387,7 @@ Il pourrait être intéressant d'attributer un niveau de dangerosité aux action
             </td>
             
             <td>
-                DO_FEED_BACK
+                DO_FEEDBACK
             </td>
             
             <td>
