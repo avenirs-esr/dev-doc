@@ -45,6 +45,14 @@ L'envergure du projet impose de mettre en place un système qui permette de suiv
         caption="Security module - Main components"
 %}
 
+## Base de données
+
+{% include img.html
+        src="assets/images/architecture-security-db.png"
+        alt="Security - Database"
+        caption="Security module - Database"
+%}
+
 ## Rôle Based Access Control (RBAC)
 Le contrôle d'accès est un élément central pour la gestion de la sécurité et le choix qui est fait est de mettre en place un système basé sur un modèle simple, robuste et éprouvé, RBAC : Rôle-Based Access Control. 
 
