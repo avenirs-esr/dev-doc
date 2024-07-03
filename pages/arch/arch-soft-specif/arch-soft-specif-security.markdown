@@ -510,20 +510,20 @@ Une fois le tableau précédent complété, il est possible de définir les rôl
 
 ## Premières expérimentations 
 
-# Modèle de données
+### Modèle de données
 
 
 {% include img.html
         src="assets/images/avenirs_access_control_db.png"
         alt="Security - Main components"
-        caption="Security module - Main components"
+        caption="Access control - Database"
 %}
 
-# Données de test
+### Données de test
 
 
 {% include img.html
         src="assets/images/access_control_fixtures.png"
         alt="Security - Main components"
-        caption="Security module - Main components"
+        caption="Access control - Fixtures"
 %}
