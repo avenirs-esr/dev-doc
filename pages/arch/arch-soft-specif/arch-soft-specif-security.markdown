@@ -62,6 +62,7 @@ Il doit permettre de  :
 - Lister les utilisateurs disposant d'un rôle donné, éventuellement pour un scope et un contexte d'application. 
 - Lister les utilisateurs disposant d'une permission donnée. 
 - [TODO] La notion d'historique est-elle importante ? Est-ce que l'on veut être capable de réaliser les 3 listing pour une date donnée ?
+=> Risque de complexifier le système : peut-être dans une première approche passer par la notion de revue de droits.
 
 ## RBAC - Fonctionnement
 
