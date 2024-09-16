@@ -51,7 +51,7 @@ L'architecture mise en place devrait combiner plusieurs types d'architecture cla
 
 [Back Office](../arch-soft-specif-back-office) : module d'administration, API ePortfolio et gestion de l’interopérabilité.
 
-[Security](../arch-soft-specif-security) : gestion de l'authentification et des contrôles d'accès.
+[Security](../security/arch-soft-specif-security) : gestion de l'authentification et des contrôles d'accès.
 
 [Data storage](../arch-soft-specif-storage): stockage de données structurées/semi/non structurées. Gestion du cache, de l'indexation et du cycle de vie des données.
 
