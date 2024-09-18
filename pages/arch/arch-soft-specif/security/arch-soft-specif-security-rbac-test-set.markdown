@@ -23,5 +23,6 @@ page_content_classes: table-container
         src="assets/images/access_control_fixtures-case1.svg"
         alt="Security - Main components"
         caption="Access control - Fixtures"
+        width="100%"
 %}
 <br/>[Retour](arch-soft-specif-security.markdown)
