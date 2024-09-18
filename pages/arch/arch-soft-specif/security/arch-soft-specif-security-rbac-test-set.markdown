@@ -18,6 +18,11 @@ page_content_classes: table-container
 
 ## RBAC - Données de test
 
+### Cas de test 1
+
+- L'utilisateur deman est propriétaire du portfolio ptf_0000
+- Tous les accès sont autorisés pour le portfolio ptf_0000 et aucun sur un autre portfolio.
+
 
 {% include img.html
         src="assets/images/access_control_fixtures-case1.svg"
