@@ -20,7 +20,7 @@ page_content_classes: table-container
 
 
 {% include img.html
-        src="assets/images/access_control_fixtures.png"
+        src="assets/images/access_control_fixtures-case1.png"
         alt="Security - Main components"
         caption="Access control - Fixtures"
 %}
