@@ -24,7 +24,6 @@ page_content_classes: table-container
 - Tous les accès sont autorisés pour le portfolio ptf_0000 pour l'utilisateur deman.
 - tous les accès sont refusés pour un autre portfolio pour l'utilisateur deman.
 - tous les accès sont refusés pour le portfolio ptf_0000 pour un autre utilisateur.
- portfolio.
 
 Les vérification sont faites au niveau du contrôleur.
 
@@ -36,3 +35,4 @@ Les vérification sont faites au niveau du contrôleur.
         width="100%"
 %}
 <br/>[Retour](arch-soft-specif-security.markdown)
+
