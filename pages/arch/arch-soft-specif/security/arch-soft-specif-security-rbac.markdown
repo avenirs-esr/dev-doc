@@ -29,6 +29,14 @@ Il doit permettre de  :
 - [TODO] La notion d'historique est-elle importante ? Est-ce que l'on veut être capable de réaliser les 3 listing pour une date donnée ?
 => Risque de complexifier le système : peut-être dans une première approche passer par la notion de revue de droits.
 
+### Concepts
+{% include img.html
+        src="assets/images/RBAC-concepts.png"
+        alt="Security - RBAC - Concepts"
+        caption="Rôle Based Access Control- Concepts"
+%}
+
+
 ## RBAC - Fonctionnement
 
 Une action est autorisée ou non en fonction des rôles actifs des utilisateurs, de la ressource impliquée et du contexte d'exécution.<br>
@@ -42,6 +50,15 @@ Il peut être associé également à un contexte d'application, par exemple une 
 %}
 
 <br>
+
+## RBAC - Algorithme
+
+{% include img.html
+        src="assets/images/RBAC-algo.png"
+        alt="Security - RBAC - Algorithm"
+        caption="Rôle Based Access Control - Algorithme"
+%}
+
 ### RBAC - Exemple pour le partage d'une ressource
 Dans l'exemple suivant un utilisateur veut partager en lecture une de ses ressources, pour une période donnée.<br>
 **Remarques:**

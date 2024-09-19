@@ -21,7 +21,12 @@ page_content_classes: table-container
 ### Cas de test 1
 
 - L'utilisateur deman est propriétaire du portfolio ptf_0000
-- Tous les accès sont autorisés pour le portfolio ptf_0000 et aucun sur un autre portfolio.
+- Tous les accès sont autorisés pour le portfolio ptf_0000 pour l'utilisateur deman.
+- tous les accès sont refusés pour un autre portfolio pour l'utilisateur deman.
+- tous les accès sont refusés pour le portfolio ptf_0000 pour un autre utilisateur.
+ portfolio.
+
+Les vérification sont faites au niveau du contrôleur.
 
 
 {% include img.html
