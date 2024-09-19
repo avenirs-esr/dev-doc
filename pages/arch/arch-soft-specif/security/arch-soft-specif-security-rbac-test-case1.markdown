@@ -29,7 +29,9 @@ Les vérification sont faites au niveau du contrôleur.
 
 #### Remarques 
 - Les end points sont sans doute à revoir : un end point pour la création/modification/suppression et méthode http correspondante. Un end point général type "resource" ou plutôt un end point par type de resource ? 
-- 
+- Le role owner donne toutes les permissions -> pas trop de sens pour feedback ?
+- Note: pas de hiérarchie pour les permissions du type delete->edit->display. Le coût est assez limité : quelques enregistrements en base de données pour un gain de simplicité de performance : pas de calcul à faire, on vérifie qu'un liste de permissions accordées contient la liste des permissions requises directement, [cf. RBAC Algorithme](https://xxx/dev-doc/arch-soft-specif-security-rbac/#rbac---algorithme)
+
 
 
 {% include img.html
