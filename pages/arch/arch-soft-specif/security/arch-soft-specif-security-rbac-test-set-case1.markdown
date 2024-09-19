@@ -1,14 +1,14 @@
 ---
 layout: page
-title: Dossier d'Architecture logicielle - module Security - RBAC - Données de test
-permalink: /arch-soft-specif-security-rbac-test-set/
+title: Dossier d'Architecture logicielle - module Security - RBAC - Données de test Cas 1
+permalink: /arch-soft-specif-security-rbac-test-set-case1/
 up: ../../arch-soft-specif-index/
 page_content_classes: table-container
 ---
 [Retour](arch-soft-specif-security.markdown)<br/>
 <br/>
 **Projet :** Avenirs-ESR / ePortfolio. <br/>
-**Objet :** Architecture logicielle du module Security - RBAC - MCD.<br/>
+**Objet :** Architecture logicielle du module Security - RBAC - Test case 1.<br/>
 <br/>
 **Révision :** 1.0.0<br/>
 **Date :** 15/06/2024<br/>
@@ -26,6 +26,10 @@ page_content_classes: table-container
 - tous les accès sont refusés pour le portfolio ptf_0000 pour un autre utilisateur.
 
 Les vérification sont faites au niveau du contrôleur.
+
+#### Remarques 
+- Les end points sont sans doute à revoir : un end point pour la création/modification/suppression et méthode http correspondante. Un end point général type "resource" ou plutôt un end point par type de resource ? 
+- 
 
 
 {% include img.html
