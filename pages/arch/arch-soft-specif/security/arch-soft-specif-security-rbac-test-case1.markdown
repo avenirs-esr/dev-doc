@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Dossier d'Architecture logicielle - module Security - RBAC - Données de test Cas 1
+title: Dossier d'Architecture logicielle - module Security - RBAC - Cas de test 1
 permalink: /arch-soft-specif-security-rbac-test-case1/
 up: ../../arch-soft-specif-index/
 page_content_classes: table-container
@@ -36,8 +36,8 @@ Les vérification sont faites au niveau du contrôleur.
 
 {% include img.html
         src="assets/images/access_control_fixtures-case1.svg"
-        alt="Security - Main components"
-        caption="Access control - Fixtures"
+        alt="Security - RBAC - Test case1"
+        caption="Access control - Cas de test 1"
         width="100%"
 %}
 <br/>[Retour](arch-soft-specif-security.markdown)
