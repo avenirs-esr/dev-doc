@@ -22,9 +22,10 @@ page_content_classes: table-container
 
 - L'utilisateur gribonvald est pair de la SAE (Nom ?) sae_0000 pour une période donnée.
 - Seuls les accès d'affichage et de commentaire sont autorisés.
+- Tout les autres accès sont refusés.
 - Vérification du contexte d'application du rôle (la période de validité dans ce cas) par rapport au context d'exécution (la date d'exécution).
 
-Les vérification sont faites au niveau du contrôleur.
+Les vérifications sont faites au niveau du contrôleur.
 
 
 
