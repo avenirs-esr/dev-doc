@@ -25,7 +25,7 @@ page_content_classes: table-container
 - tous les accès sont refusés pour un autre portfolio pour l'utilisateur deman.
 - tous les accès sont refusés pour le portfolio ptf_0000 pour un autre utilisateur.
 
-Les vérification sont faites au niveau du contrôleur.
+Les vérifications sont faites au niveau du contrôleur.
 
 #### Remarques 
 - Les end points sont sans doute à revoir : un end point pour la création/modification/suppression et méthode http correspondante. Un end point général type "resource" ou plutôt un end point par type de resource ? 
