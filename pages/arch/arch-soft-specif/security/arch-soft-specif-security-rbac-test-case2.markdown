@@ -27,7 +27,7 @@ page_content_classes: table-container
 
 Les vérifications sont faites au niveau du contrôleur.
 
-
+[Test unitaire correspondant](https://github.com/avenirs-esr/avenirs-portfolio-security/blob/main/src/test/java/fr/avenirsesr/portfolio/security/controllers/AccessControlControllerCase2Test.java)
 
 {% include img.html
         src="assets/images/access_control_fixtures-case2.svg"

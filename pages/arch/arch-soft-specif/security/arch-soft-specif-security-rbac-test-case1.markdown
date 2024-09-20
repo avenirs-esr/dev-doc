@@ -32,6 +32,7 @@ Les vérifications sont faites au niveau du contrôleur.
 - Le role owner donne toutes les permissions -> pas trop de sens pour feedback ?
 - Note: pas de hiérarchie pour les permissions du type delete->edit->display. Le coût est assez limité : quelques enregistrements en base de données pour un gain de simplicité de performance : pas de calcul à faire, on vérifie qu'un liste de permissions accordées contient la liste des permissions requises directement, [cf. RBAC Algorithme.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#rbac---algorithme)
 
+[Test unitaire correspondant](https://github.com/avenirs-esr/avenirs-portfolio-security/blob/main/src/test/java/fr/avenirsesr/portfolio/security/controllers/AccessControlControllerCase1Test.java)
 
 
 {% include img.html
