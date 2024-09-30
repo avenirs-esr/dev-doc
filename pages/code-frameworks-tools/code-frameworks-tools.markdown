@@ -15,7 +15,7 @@ order: 30
 - [Spring boot 3.3](https://endoflife.date/spring-boot)
 - [Node.js 20](https://endoflife.date/nodejs)
 
-##### Java & Mave version managment with sdkman
+**Java & Mave version managment with sdkman**
 
 [Sdkman](https://sdkman.io/) can help to manage the version of different tools.
 
@@ -33,7 +33,7 @@ cat $HOME/.sdkman/etc/config
 sdkman_auto_env=true
 ```
 
-#### Node version managment with nvm
+**Node version managment with nvm**
 [Nvm](https://github.com/nvm-sh/nvm) can help to manage node.js version.
 Switching to the target version cans be autolatised by adding this snippet in the .bashrc file.
 
@@ -79,7 +79,7 @@ This allow to automate the SemVer management :
 ### Commitlint & husky
 In order to facilitate the commit with command line, [commitlint](https://github.com/conventional-changelog/commitlint){:target="_blank"} can be used in conjunction to [husky](https://typicode.github.io/husky/){:target="_blank"} (client side git hooks).    
 
-## [CI with GitHub Action]()
+## [CI with GitHub Action](../ci-gh-actions/)
 
 ## API 
 
