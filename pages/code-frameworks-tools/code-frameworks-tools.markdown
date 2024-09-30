@@ -34,6 +34,7 @@ sdkman_auto_env=true
 ```
 
 **Node version managment with nvm**
+
 [Nvm](https://github.com/nvm-sh/nvm) can help to manage node.js version.
 Switching to the target version cans be autolatised by adding this snippet in the .bashrc file.
 
