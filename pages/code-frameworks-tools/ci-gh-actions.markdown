@@ -4,7 +4,7 @@ title: CI - GitHub Actions
 permalink: /ci-gh-actions/
 ---
 
-## Exemple with the project Avenirs-portfolio-security
+## Example with the project Avenirs-portfolio-security
 
 ### Key points
 - Use standalone composite actions: reusable for other projects (via git submodule).
@@ -24,7 +24,7 @@ permalink: /ci-gh-actions/
 
 {% include img.html
         src="assets/images/ci-gh-actions.svg"
-        alt="Front Office - Exemple Workflow"
+        alt="Front Office - Example Workflow"
         caption="Avenirs-portfolio-security - workflow"
 %}
 
