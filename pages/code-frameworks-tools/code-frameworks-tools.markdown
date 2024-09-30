@@ -27,7 +27,7 @@ java=21.0.4-oracle
 maven=3.9.8  # Ajoute apres
 ```
 
-Switching to the required version can be automated :
+Switching to the required version can be automated:
 ```
 cat $HOME/.sdkman/etc/config
 sdkman_auto_env=true
@@ -71,7 +71,7 @@ The versioning strategy is [Semantic Versioning.](https://semver.org/#semantic-v
 ## Conventional commits
 The commit messages should respect the [Conventional Commits specification.](https://www.conventionalcommits.org/en/v1.0.0/){:target="_blank"}\
 This specification defines at least 2 types of messages, feat, fix and the notion of Breaking change. \
-This allow to automate the SemVer management :
+This allow to automate the SemVer management:
      
     fix             -> patch
     feat            -> minor
