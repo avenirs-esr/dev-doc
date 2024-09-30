@@ -27,7 +27,7 @@ java=21.0.4-oracle
 maven=3.9.8  # Ajoute apres
 ```
 
-Switching to the required version can be automatised :
+Switching to the required version can be automated :
 ```
 cat $HOME/.sdkman/etc/config
 sdkman_auto_env=true
@@ -36,7 +36,7 @@ sdkman_auto_env=true
 **Node version managment with nvm**
 
 [Nvm](https://github.com/nvm-sh/nvm) can help to manage node.js version.<br/>
-Switching to the target version can be automatised by adding this snippet in .bashrc file.
+Switching to the target version can be automated by adding this snippet in .bashrc file.
 
 
 ```
