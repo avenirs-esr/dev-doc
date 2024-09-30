@@ -79,7 +79,8 @@ This allow to automate the SemVer management :
 ### Commitlint & husky
 In order to facilitate the commit with command line, [commitlint](https://github.com/conventional-changelog/commitlint){:target="_blank"} can be used in conjunction to [husky](https://typicode.github.io/husky/){:target="_blank"} (client side git hooks).    
 
-## [CI with GitHub Action](../ci-gh-actions/)
+## Continuous Integration with GitHub Actions
+- [Avenirs-portfolio-security example](../ci-gh-actions/)
 
 ## API 
 
