@@ -6,7 +6,7 @@ is_menu_entry: true
 position: left
 order: 30
 ---
-
+[Services to open for newcomers](../new-comers){:target="_blank"}
 ### Versions
 #### Backend
 
@@ -81,7 +81,7 @@ This allow to automate the SemVer management :
 In order to facilitate the commit with command line, [commitlint](https://github.com/conventional-changelog/commitlint){:target="_blank"} can be used in conjunction to [husky](https://typicode.github.io/husky/){:target="_blank"} (client side git hooks).    
 
 ## Continuous Integration with GitHub Actions
-- [Avenirs-portfolio-security example](../ci-gh-actions/)
+- [Avenirs-portfolio-security example](../ci-gh-actions/){:target="_blank"}
 
 ## API 
 
