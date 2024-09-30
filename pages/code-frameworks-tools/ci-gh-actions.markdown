@@ -11,11 +11,11 @@ permalink: /ci-gh-actions/
 - Handles cache, and a digest if needed (use of latest key word for versions).
 - Debug steps leaved in files but disabled.
 - For CAS the docker image could not be used with OIDC. It is rebuilt from CAS repository.
-- [Main GihtHub actions directory](https://github.com/avenirs-esr/avenirs-portfolio-security/tree/main/.github){:target="_blank"}
-- [Entrypoint: workflow file](https://github.com/avenirs-esr/avenirs-portfolio-security/blob/main/.github/workflows/main.yaml){:target="_blank"}
+- [Main GihtHub actions directory.](https://github.com/avenirs-esr/avenirs-portfolio-security/tree/main/.github){:target="_blank"}
+- [Entrypoint: workflow file.](https://github.com/avenirs-esr/avenirs-portfolio-security/blob/main/.github/workflows/main.yaml){:target="_blank"}
 
 ### TODO
-- Move cas and ldap directories (contains settings / fixtures) to the folder of the action.
+- Move cas and ldap directories (contains settings / fixtures) to the folder of the corresponding action.
 - Try to use cache for maven dependencies.
 - Uses repository secrets, somme of secrets should be moved in environment secrets.
 
