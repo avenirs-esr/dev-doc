@@ -1,7 +1,7 @@
 ---
 layout: page
-title: NEw Comers - Services to open
-permalink: /ci-gh-actions/
+title: New Comers - Services to open
+permalink: /new-comers/
 ---
 
 - RocketChat
