@@ -33,6 +33,24 @@ cat $HOME/.sdkman/etc/config
 sdkman_auto_env=true
 ```
 
+To install skdman :
+
+```
+curl -s "https://get.sdkman.io" | bash
+```
+
+To run skdman (you need to restart your terminal after the installation) :
+
+```
+sdk env install
+```
+
+To run a Spring Boot project :
+
+```
+./mvnw spring-boot:run
+```
+
 **Node version managment with nvm**
 
 [Nvm](https://github.com/nvm-sh/nvm) can help to manage node.js version.<br/>
