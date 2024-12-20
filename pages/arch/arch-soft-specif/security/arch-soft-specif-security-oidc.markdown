@@ -34,7 +34,7 @@ Actuellement deux types de flows d'authentification sont utilisés :
 L'idée initiale était de continuer à utiliser le format JWT, avec un minimum de claims en limitant le scope à **openid** afin de pouvoir continuer à effectuer des vérifications de validité: signature, expiration, etc.<br/>Cependant cette approche ne fonctionne pas car le scope utilisé pour obtenir l'access token conditionne également le détail des informations retournées par le endpoint profile.
 
 ## Access token opaque
-Le choix qui est fait est de ne pas utiliser le format JWT pour l'access token - propriété "jwtAccessToken": false dans la définition du service cas.<br/>Avec ce paramétrage, l'access token est opaque, c'est une chaine sans signification particulière et indépendante du scope utilisé (e.g.: openid profile email). Les informations utilisateur peuvent ensuite être récupérées correctement via le end point profile.<br/> 
+Le choix qui est fait est de ne pas utiliser le format JWT pour l'access token - propriété "jwtAccessToken": false dans la définition du service cas.<br/>Avec ce paramétrage, l'access token est opaque, c'est une chaine sans signification particulière et indépendante du scope utilisé (e.g.: openid profile email).<br/> Les informations utilisateur peuvent ensuite être récupérées correctement via le end point profile.<br/> 
 Les vérifications de sécurité propre au JWT sont conservées mais désactivées via une propriété dans application.properties.<br/><br/>
 
 **La validation de l'access token lors des utilisations ultérieures est réalisée par un appel au endpoint introspect de l'OIDC provider.**
