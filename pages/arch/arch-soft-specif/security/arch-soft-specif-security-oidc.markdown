@@ -17,7 +17,7 @@ page_content_classes: table-container
 <br/>
 
 ## Flows d'authentification
-Actuellement deux types de flows sont utilisés :
+Actuellement deux types de flows d'authentification sont utilisés :
 - [Authorization Code Flow](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1) : redirection du client vers la mire CAS puis redirect vers callback du backend, récupération d'un code, redirection vers le client avec génération de l'access token.<br/>Plus sécurisé, les login/mots de passe ne transitent pas par le backend.
 - [Resource Owner Password Credentials (ROPOC) Flow](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.3). Moins sécurisé, utilisé uniqument dans cadre des tests unitaires pour récupérer un access token sans interraction. <br/>
  Les login/mot de passe transitent par le backend, sans être stockés.
