@@ -66,7 +66,7 @@ Le contrôle d'accès est un élément central pour la gestion de la sécurité 
 
 ## Premières expérimentations 
 
-- [Scénario de test](./arch-soft-specif-security-rbac-integration-experimentations)
+- [Scénario de test](../arch-soft-specif-security-rbac-integration-experimentations)
 - [Modèle de données](arch-soft-specif-security-rbac-mcd.markdown)
 
 ## Données de test
