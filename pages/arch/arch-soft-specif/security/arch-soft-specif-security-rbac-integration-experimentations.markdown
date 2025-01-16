@@ -22,14 +22,15 @@ page_content_classes: table-container
 - Valider les modalités d'intégration du contrôle d'accès au niveau des différents composants.
 - Avoir une vision précise des coûts, principalement en terme de performances des différentes solutions.
 - Faire un focus particulier sur le coût lié à l'utilisation d'un API Manager.
+- Commencer avoir une idée plus précise des métriques attendues. Elles pourront être utlisées ensuite pour détecter des problèmes éventuels, positionner des alertes, etc.
+- Déterminer et réaliser et mesurer les optimisations nécessaires (cache, base de donnée, etc.).
 
 ### Solutions possibles, avantages et inconvénients
 
 - Intégration sous forme de librairie pour utiliser le contrôle d'accès directement dans les différents modules sans passer par l'API.
 - Utiliser diretement l'API du contrôle d'acces directement sans passer par l'APIManager.
 - Réaliser le contrôle au niveau de l'API MAnager via une requête intermédiaire via une configuration de plugin.
-- Commencer avoir une idée plus précise des métriques attendues. Elles pourront être utlisées ensuite pour détecter des problèmes éventuels, positionner des alertes, etc.
-- Déterminer et réaliser et mesurer les optimisations nécessaires (cache, base de donnée, etc.).
+
 
 
 | **Méthode**                                  | **Avantages**                                                                                 | **Inconvénients**                                                                                   |
