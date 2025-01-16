@@ -41,7 +41,7 @@ page_content_classes: table-container
 
 **Notes:**
 - En première approche la solution de librairie est laissée de côté en raison des difficultés induites en terme de maintenance - gestion des versions notament - et des accès nécessaires à la base de données.
-- I s'agit donc d'effectuer une comparaison entre l'acces direct à l'API du contrôle d'accès et l'intégration au niveau de l'API Manager. La comparaison porte principalement sur le coût en terme de temps de réponse.
+- Il s'agit donc d'effectuer une comparaison entre l'acces direct à l'API du contrôle d'accès et l'intégration au niveau de l'API Manager. La comparaison porte principalement sur le coût en terme de temps de réponse.
 
 
 ## Scénario utilisé
@@ -59,7 +59,7 @@ Les test sont réalisé sur l'environement de développement dockerisé :
 1. Définir deux end-points de test un qui s'interface avec le contrôle d'access et l'autre non.
 1. Définir un test de charge avec locust.
 1. Générer des jeux de test via Faker pour simuler une charge croissante.
-1. Pour chaque jeu de test, le cahrger ne base de donnée puis:
+1. Pour chaque jeu de test, le charger en base de données puis:
    1. Jouer le scénario locust sur le end point qui utilise le contrôle d'accès et recupérer les métriques.
    1. Jouer le scenario locust sur APISIX dont la route redirige vers le endpoint sans controle d'accès.
    1. Interpréter les résultats : latence induites, timeout, etc en fonction des différents niveaux de charge.
