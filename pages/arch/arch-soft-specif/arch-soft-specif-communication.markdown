@@ -76,7 +76,14 @@ Remarques : les fonctionnalités d'APISIX liées à Kafka sont trop limitées po
   - nécessité de mettre en place des triggers assez complexes pour constituer le paylod,
   - pas de possiblité native de connaitre la valeur précédente pour les modifications/suppression (à gérer dans les triggers si c'est possible).<br/>
 - Utiliser [Debezium](https://debezium.io/) afin de s'appuyer sur le mécanisme de [réplication logique](https://docs.postgresql.fr/10/logical-replication.html) de Postgres qui utilise un système de publication/abonnement. Debezium est connecté à postgres et à Kafka pour emettre les changements de données dans les topics spécifiques associés aux tables impliquées. Les topics créés et alimentés pas Debezium sont ensuite consommé soit directement par l'APS de notification soit par Redis ou un équivalent qui va s'interfacer avec l'API de notification. L'intérêt de cette deuxième approche apporte plus de robutesse et de résilience : mise à l'échelle horizontale, possiblité de rejouer les notifications, etc, mais au coût d'une plus grande complexité.
+<br/>
+**Remarque :** s'il est nécessaire d'avoir les informations concernant les données avant modifications, pour les update et delete, il faut paramétrer postges : 
+```
+ALTER TABLE nom_de_la_table REPLICA IDENTITY DEFAULT;
+```
+En pratique, une ligne en plus est écrite dans le WAL avant d'effectuer la modification, ce qui peut avoir un impacte sur les performances.
 
+<br/>
 ### Shéma d'architecture
 **Remarque :** L'API Manager n'est pas représenté. Son rôle, dans cette architecture, est à déterminer, notament par rapport au flux SSE.
 
@@ -98,7 +105,7 @@ Cette architecture pourrait constituer un point de départ et évoluer enuite ve
         width="50%"
 %}
 
-
+<br/>
 ### Communication vers le client
 
 L'envoi des notifications vers le client peut se faire par web sockets ou en utilisant les [Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events.)
@@ -116,11 +123,11 @@ L'envoi des notifications vers le client peut se faire par web sockets ou en uti
 <br/>
 Dans les deux cas, il possible de transmettre un token d'authentification qui pourra être utiliser pour le contôle d'accès et le routage des notifications.
 
-**Considérations par rapport à la consomation de ressources:**
+**Considérations par rapport à la consomation de ressources :**
 - Il pourrait être intéressant de mettre en place des mécanismes qui permettent de limiter les consommations. Exemples :
    - déconnexion si client inactif pendant n minutes puis reconnexion automatique à la reprise d'activité.
    - Regrouper les notifications.
-   - Strategie de communication en deux temps : notifier le besoin de mise à jour mais sans données et le client effectue ensuite une requête traditionnelle pour récupérer les données. 
+   - Stratégie de communication en deux temps : notifier le besoin de mise à jour mais sans données et le client effectue ensuite une requête traditionnelle pour récupérer les données. 
 - Prévoir une stratégie de repli, par exemple long / short polling.
 - Avoir la possiblité de désactiver complètement le système de notifications sans compromettre le fonctionnement global de l'application.
 
