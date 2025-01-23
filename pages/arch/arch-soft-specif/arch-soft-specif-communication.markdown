@@ -53,7 +53,8 @@ Remarques : les fonctionnalités d'APISIX liées à Kafka sont trop limitées po
         caption="Communication - Notifications"
 %}
 
-## Modification des données et temps réel
+## Modification des données et temps réel
+
 **Cas d'usage :** 
 - prendre en compte au niveau UI des modifications de données, ciblées pour les utilisateurs. 
 - au niveau systeme prendre en compte les modifications de privileges par exemple.
@@ -81,10 +82,12 @@ Remarques : les fonctionnalités d'APISIX liées à Kafka sont trop limitées po
         alt="Notification et temps réel - Architecture sans Redis"
         caption="Notification et temps réel - Architecture sans Redis"
 %}
+*Remarque :* cette architecture pourrait être un point de départ et évoluer vers une architecture plus complète dans un deuxième temps.
 
+<br/><br/>
 
 {% include img.html
-        src="assets/images/architecture-realtime-debezium.sans-redis.svg"
+        src="assets/images/architecture-realtime-debezium.avec-redis.svg"
         alt="Notification et temps réel - Architecture avec Redis"
         caption="Notification et temps réel - Architecture avec Redis"
 %}
