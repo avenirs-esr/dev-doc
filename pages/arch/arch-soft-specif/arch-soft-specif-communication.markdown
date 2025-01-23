@@ -78,15 +78,16 @@ Remarques : les fonctionnalités d'APISIX liées à Kafka sont trop limitées po
 - Utiliser [Debezium](https://debezium.io/) afin de s'appuyer sur le mécanisme de [réplication logique](https://docs.postgresql.fr/10/logical-replication.html) de Postgres qui utilise un système de publication/abonnement. Debezium est connecté à postgres et à Kafka pour emettre les changement de données de table dans des topics spécifiques. Les topics créés et alimentés pas Debezium sont ensuite consommé soit directement par l'APS de notification soit par Redis ou un équivalent qui va s'interfacer avec l'API de notification. L'intérêt de cette deuxième approche apporte plus de robutesse et de résilience : mise à l'échelle horizontale, possiblité de rejouer les notifications, par exemple, mais au coût d'une plus grande complexité.
 
 ### Shéma d'architecture
-**Remarque :** L'API Manager n'est pas représenté. Son rôle, dans cette architecture est à déterminer, notament par rapport au flux SSE.
+**Remarque :** L'API Manager n'est pas représenté. Son rôle, dans cette architecture, est à déterminer, notament par rapport au flux SSE.
 
 {% include img.html
         src="assets/images/architecture-realtime-debezium.sans-redis.svg"
         alt="Notification et temps réel - Architecture sans Redis"
         caption="Notification et temps réel - Architecture sans Redis"
-        width="80%"
+        width="50%"
 %}
-*Remarque :* cette architecture pourrait être un point de départ et évoluer vers une architecture plus complète dans un deuxième temps.
+<br/>
+Cette architecture pourrait constituer un point de départ et évoluer enuite vers une architecture plus complète telle que celle représentée ci-dessous.
 
 <br/><br/>
 
@@ -94,7 +95,7 @@ Remarques : les fonctionnalités d'APISIX liées à Kafka sont trop limitées po
         src="assets/images/architecture-realtime-debezium.avec-redis.svg"
         alt="Notification et temps réel - Architecture avec Redis"
         caption="Notification et temps réel - Architecture avec Redis"
-        width="80%"
+        width="50%"
 %}
 
 
