@@ -108,7 +108,7 @@ In order to facilitate the commit with command line, [commitlint](https://github
 
 ## Storage 
 
-- [PostegreSQL](../storage-posgresql/)
+- [PostgreSQL](../storage-posgresql/)
 
 #### Tests & POC
 
