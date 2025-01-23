@@ -112,20 +112,20 @@ L'envoi des notifications vers le client peut se faire par web sockets ou en uti
 <br/>
 
 **Limitations du SEE par  rapport aux web sockets :**
-- unidirectionnel : pas de réponse du client donc mécanisme d'acquitement à prévoir si nécessaire.
-- transporte uniquement du text (pas de binaire ou de sous protocole).
-- moins de fonctionnalités (e.g.:négotiation), mais à priori, celles présentes devraient suffire. 
+- Unidirectionnel : pas de réponse du client donc mécanisme d'acquitement à prévoir si nécessaire.
+- Transporte uniquement du text (pas de binaire ou de sous protocole).
+- Moins de fonctionnalités (e.g.:négotiation), mais à priori, celles présentes devraient suffire. 
 - Un peu plus de latence.
 
 **Avantages du SSE par rapport aux web sockets :**
-- protocole http : moins de risque de blockage sur des routeurs, load balancers, etc.
-- plus légér que les web sockets, en terme de bande passante et de ressources serveur (sur le papier, à confirmer).
+- Protocole http : moins de risque de blockage sur des routeurs, load balancers, etc.
+- Plus légér que les web sockets, en terme de bande passante et de ressources serveur (sur le papier, à confirmer).
 <br/>
 Dans les deux cas, il possible de transmettre un token d'authentification qui pourra être utiliser pour le contôle d'accès et le routage des notifications.
 
 **Considérations par rapport à la consomation de ressources :**
 - Il pourrait être intéressant de mettre en place des mécanismes qui permettent de limiter les consommations. Exemples :
-   - déconnexion si client inactif pendant n minutes puis reconnexion automatique à la reprise d'activité.
+   - Déconnexion si client inactif pendant n minutes puis reconnexion automatique à la reprise d'activité.
    - Regrouper les notifications.
    - Stratégie de communication en deux temps : notifier le besoin de mise à jour mais sans données et le client effectue ensuite une requête traditionnelle pour récupérer les données. 
 - Prévoir une stratégie de repli, par exemple long / short polling.
