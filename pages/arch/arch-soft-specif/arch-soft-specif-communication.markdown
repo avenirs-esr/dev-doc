@@ -98,6 +98,24 @@ Cette architecture pourrait constituer un point de départ et évoluer enuite ve
         width="50%"
 %}
 
+### Communication vers le client
+L'envoi des notifications vers le client peut se faire par web sockets ou en utilisant les [Server-SEnt Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events.)
+<br/>
 
+**Limitations du SEE par  rapport aux web sockets :**
+- unidirectionnel : pas de réponse du client donc mécanisme d'acquitement à prévoir si nécessaire.
+- transporte uniquement du text (pas de binaire ou de sous protocole)
+- moins de fonctionnalités (e.g.:négotiation), mais à priori, celles présentes devraient suffire. 
+- Un peu plus de latence.
 
+**Avantages du SSE par rapport aux web sockets :**
+- protocole http : moins de risque de blockage sur des routeurs, load balancers, etc.
+- plus légér que les web sockets, en terme de bande passante et de ressources serveur (sur le papier, à confirmer)
+
+**Considérations par rapport à la consomation de ressources:**
+Il pourrait être intéressant de mettre en place des mécanismes qui permettent de limiter les consommations. Exemples :
+- déconnexion si client inactif pendant n minutes puis reconnexion automatique à la reprise d'activité.
+- Regrouper les notifications.
+- Strategie de communication en deux temps : notifier le besoin de mise à jour mais sans données et le client effectue ensuite une requête traditionnelle pour récupérer les données. 
+- Avoir une stratégie de repli, par exemple long / short polling.
 
