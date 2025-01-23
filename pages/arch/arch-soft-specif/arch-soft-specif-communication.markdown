@@ -118,4 +118,5 @@ Il pourrait être intéressant de mettre en place des mécanismes qui permettent
 - Regrouper les notifications.
 - Strategie de communication en deux temps : notifier le besoin de mise à jour mais sans données et le client effectue ensuite une requête traditionnelle pour récupérer les données. 
 - Avoir une stratégie de repli, par exemple long / short polling.
+- Avoir la possiblité de désactiver complètement le système de notifications sans compromettre le fonctionnement global de l'application.
 
