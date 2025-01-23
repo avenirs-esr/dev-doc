@@ -113,7 +113,7 @@ L'envoi des notifications vers le client peut se faire par web sockets ou en uti
 
 **Limitations du SEE par  rapport aux web sockets :**
 - unidirectionnel : pas de réponse du client donc mécanisme d'acquitement à prévoir si nécessaire.
-- transporte uniquement du text (pas de binaire ou de sous protocole)
+- transporte uniquement du text (pas de binaire ou de sous protocole).
 - moins de fonctionnalités (e.g.:négotiation), mais à priori, celles présentes devraient suffire. 
 - Un peu plus de latence.
 
