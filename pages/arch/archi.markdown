@@ -11,3 +11,4 @@ order: 20
 - [Architecture - Components](../arch-components/)
 - [Development Environment](../srv-dev/)
 - [Software Architecture Specification](../arch-soft-specif-index/)
+- [Load tests](../load-tests/)
