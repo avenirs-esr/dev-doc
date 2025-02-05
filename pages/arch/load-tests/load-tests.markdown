@@ -149,7 +149,74 @@ page_content_classes: table-container
     </tr>
   </tbody>
 </table>
-
+<br/>
+- 150 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m1.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th># Requests</th>
+      <th># Fails</th>
+      <th>Average (ms)</th>
+      <th>Min (ms)</th>
+      <th>Max (ms)</th>
+      <th>Average size (bytes)</th>
+      <th>RPS</th>
+      <th>Failures/s</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GET</td>
+      <td>/access-control/authorize</td>
+      <td>107871</td>
+      <td>0</td>
+      <td>147.95</td>
+      <td>12</td>
+      <td>606</td>
+      <td>148.27</td>
+      <td>449.67</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/avenirs-portfolio-security/oidc/login</td>
+      <td>8677</td>
+      <td>1</td>
+      <td>72.92</td>
+      <td>22</td>
+      <td>491</td>
+      <td>41.03</td>
+      <td>36.17</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/avenirs-portfolio-security/roles</td>
+      <td>8671</td>
+      <td>0</td>
+      <td>180.65</td>
+      <td>23</td>
+      <td>569</td>
+      <td>64895.38</td>
+      <td>36.15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Aggregated</td>
+      <td>125219</td>
+      <td>1</td>
+      <td>145.02</td>
+      <td>12</td>
+      <td>606</td>
+      <td>4624.36</td>
+      <td>521.99</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
 
 <br/><br/>
 
