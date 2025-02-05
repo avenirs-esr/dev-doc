@@ -13,7 +13,7 @@ page_content_classes: table-container
 
 ### Jeu de test: 500 utilisateurs et 4836 assignations de rôles
 
-### 50 utilisateurs concurents [**rapport  complet locust**](/dev-doc/static-pages/load-tests/reports/m1.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
+- 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m1.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 <table border="1">
   <thead>
     <tr>
