@@ -80,7 +80,7 @@ page_content_classes: table-container
     </tr>
   </tbody>
 </table>
-
+<br/>
 - 100 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m1.0/srv-dev-avenir/report-100-10-4.html){:target="_blank"}
 
 <table border="1">
