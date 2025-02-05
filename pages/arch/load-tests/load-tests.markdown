@@ -12,10 +12,8 @@ page_content_classes: table-container
 ## Resultats
 
 ### 50 utilisateurs concurents
-**Base de données :**
-* 50 utilisateurs
-* 4836 assignations de rôles
-
+- **Base de données :**  500 utilisateurs et 4836 assignations de rôles.
+- [**Rapport locust**](.reports/m1.0/srv-dev-avenir/report-50-5-4.html)
 <table border="1">
   <thead>
     <tr>

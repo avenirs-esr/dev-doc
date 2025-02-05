@@ -1,0 +1,2 @@
+Method,Name,Error,Occurrences
+POST,/avenirs-portfolio-security/oidc/login,HTTPError('502 Server Error: Proxy Error for url: /avenirs-portfolio-security/oidc/login'),1
