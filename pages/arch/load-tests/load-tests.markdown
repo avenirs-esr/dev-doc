@@ -47,12 +47,13 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 ### Caractéristiques
 - Serveur : avenir-srv-dev, machine virtuelle (QEMU/KVM).
 - Processeur 4 coeurs, QEMU Virtual CPU version 2.5+.
+- lien  réseau : 1 Gb/s (non partagé pour l'instant, une seule VM sur l'hyperviseur).
 - Mémoire : 8 GiB.
-- Disque dur : QEMU HARDDISK, Capacité : 139 GB.
+- Disque dur : QEMU HARDDISK, Capacité : 130 GB. Intel SSD D3-S4510 Series 2.5" SATA 6.0Gb/s montés en RAID 10.
 
 ### Limites et remarques
 - L'ensemble des services dockerisés sont exécutés sur un seul serveur.
-- Les test sont exécutés sur un seul portable.
+- Les test sont exécutés depuis un portable.
 - Le lien avec le serveur passe par un VPN.
 - Les logs des différents services impliqués sont réduits au maximum.
 - Pas d'utilisation de cache.
