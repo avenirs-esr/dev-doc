@@ -6,12 +6,22 @@ up: ../arch/
 page_content_classes: table-container
 ---
 
+<br/>
+**Projet :** Avenirs-ESR / ePortfolio. <br/>
+**Objet :** Méthodologie de tests de charge.<br/>
+<br/>
+**Révision :** 1.0.0<br/>
+**Date :** 03/02/2025<br/>
+**Auteur :** A. Deman<br/>
+**Commentaire :** Version initiale<br/>
+<br/>
+
 
 ## Objectifs
 - Mettre ne place une méthodologie pour commencer à obtenir des métriques et avoir des repères concernant les temps de réponse cibles pour les différentes API du projet.<br/>
 Ces premiers tests concernent un module spécifique,*avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès de type [RBAC.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#concepts){:target="_blank"} Cependant, l'objectif est de mettre en place une stratégie transposable pour les autres modules.
 - Fournir une base pour quantifier les optimisations ultérieures.
-- Pour ce module spécifique, [déterminer la bonne stratégie d’intégration](../../arch-soft-specif-security-rbac-integration-experimentations){:target="_blank"} : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
+- Pour ce module spécifique, [déterminer la bonne stratégie d’intégration](../arch-soft-specif-security-rbac-integration-experimentations#rbac---intégration-du-contrôle-daccès){:target="_blank"} : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
 
 
 ## Méthode utilisée
@@ -51,18 +61,19 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 
 ### Améliorations pour obtenir des valeurs plus significatives
 - Déployer les services sur une infra.
-- Pas d'utlisation de VPN.
-- Augment le volume des données,par exemple en le découpant pour le charger.
+- Connexion directe, sans VPN.
+- Augmenter le volume des données, par exemple en découpant je jeu de test pour le charger.
 - Exécuter le test sur plusieurs clients et plus d'accès concurrents avec le mode distribué de locust.
+- Eventuellement, s'affranchir du reverse proxy.
 
 
 ## Resultats
 
 Les limites de l'environnement utilisé rendent les résulats peu significatifs, c'est plus la méthode qui est importante à ce stade. 
 
-Cependant, on peut voir que pour les tests avec 50 accès concurents et une base peu chargée, les temps de réponse sont plutôts bons en regard des conditions de test. L'objectif serait de rester proche de ces temps avec une base plus chargée. 
+Cependant, on peut voir que pour les tests avec 50 accès concurents et une base peu chargée, les temps de réponse sont plutôts bons en regard des conditions de test. L'objectif serait de rester proche de ces temps avec une base plus chargée et plus d'accès concurrents. 
 
-Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateurs et le chargement de la base, mais de façon relativement linéaire, ce qui est rassurant.
+Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateurs et le chargement de la base, mais de façon relativement linéaire, ce qui est plutôt rassurant.
 
 ### Jeu de test : 100 utilisateurs et 4836 assignations de rôles
 
