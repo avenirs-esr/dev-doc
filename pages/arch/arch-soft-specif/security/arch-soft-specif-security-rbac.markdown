@@ -30,7 +30,7 @@ Il doit permettre de  :
 => Risque de complexifier le système : peut-être dans une première approche passer par la notion de revue de droits.~~
 - Arbitrage : pas de notion d'historique. Possiblité de réaliser des revue de droits + log de sécurité spécifique.
 
-### Conceptes
+### Concepts
 {% include img.html
         src="assets/images/RBAC-concepts.png"
         alt="Security - RBAC - Concepts"
