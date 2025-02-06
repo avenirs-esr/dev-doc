@@ -35,47 +35,40 @@ page_content_classes: table-container
 
 | **Méthode**                                  | **Avantages**                                                                                 | **Inconvénients**                                                                                   |
 |----------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| **1. Générer une librairie**                 | - Performance optimale (pas de latence réseau).<br>- Logique intégrée directement dans les modules.<br>- Autonomie des modules sans dépendance réseau. | - Maintenance complexe (mise à jour dans tous les modules).<br>- Risque d’incohérence entre versions.<br>- Nécessite de donner un accès direct à la base de données du contrôleur d'accès, ce qui pose des problèmes de sécurité et de gestion des connexions. |
-| **2. Appel direct à l'API REST**             | - Logique centralisée.<br>- Maintenance et mise à jour simplifiées.<br>- Modules moins volumineux. | - Dépendance réseau.<br>- Latence accrue pour chaque requête.<br>- Gestion des défaillances réseau. |
-| **3. Contrôle via l'API Manager (plugin)**   | - Centralisation totale des règles d'accès.<br>- Aucun impact direct sur les modules.<br>- Possibilité de cache dans le plugin.<br>- Intégration native avec l'API Manager.<br>- Meilleure observabilité grâce au monitoring centralisé et aux outils d'analyse. | - Dépendance réseau.<br>- Latence accrue pour chaque requête.<br>- Gestion des défaillances réseau.<br>- Ajoute une complexité au niveau de l’API Manager. |
+| **1. Générer une librairie**                 | - Performance optimale (pas de latence réseau).<br>- Logique intégrée directement dans les modules.<br>- Autonomie des modules. | - Maintenance plus complexe (mise à jour dans tous les modules).<br>- Risque d’incohérence entre versions.<br>- Nécessite de donner un accès direct à la base de données du contrôleur d'accès, ce qui pose des problèmes de sécurité et de gestion des connexions. moins propre en termes d'architecture et de découpage par grands modules. |
+| **2. Appel direct à l'API REST**             | - Logique centralisée.<br>- Maintenance et mise à jour simplifiées.<br>- Modules moins volumineux. | - Latence accrue pour chaque requête. |
+| **3. Contrôle via l'API Manager (plugin)**   | - Centralisation totale des règles d'accès.<br>- Aucun impact direct sur les modules.<br>- Possibilité de cache dans le plugin.<br>- Intégration native avec l'API Manager.<br>- Meilleure observabilité grâce au monitoring centralisé et aux outils d'analyse. | - Latence accrue pour chaque requête.- Ajoute une complexité au niveau de l’API Manager (mais gérable via les conf de plugins réutilisables). |
 
-
+<br/>
 **Notes:**
-- En première approche la solution de librairie est laissée de côté en raison des difficultés induites en terme de maintenance - gestion des versions notament - et des accès nécessaires à la base de données.
+- En première approche, la solution de librairie est laissée de côté en raison des difficultés induites en terme de maintenance - gestion des versions notament - et des accès nécessaires à la base de données.
 - Il s'agit donc d'effectuer une comparaison entre l'acces direct à l'API du contrôle d'accès et l'intégration au niveau de l'API Manager. La comparaison porte principalement sur le coût en terme de temps de réponse.
 
 
 ## Scénario utilisé
+Les tests suivent la [méthodologie de tests de charge](../../load-tests/){:target="_blank"} mise en place.
 Les test sont réalisé sur l'environement de développement dockerisé :
-- Cluster postgres
-- CAS & OpenLDAP
-- APISIX
-- Module avenirs-portfolio-security 
-- Une api minimalise de test (2 end points)
+Les tests s'appuient également sur  une api minimalise de test :
+- Un end point qui s'interface directement avec le contrôle d'accès.
+- Un end point pour lequel le contrôle d'accès est remonté au niveau de l'API manager.
 
-**Remarque :** le frontal Apache est écarté.
+A noter : le premier end point peut être testé également suivant 2 modalités : avec ou sans passage par l'API manager (mais sans que l'API mananger ne réalise le contrôle d'accès).
+
+
 
 
 1. Réaliser l'intégration sous forme de plugin avec APISIX
 1. Définir deux end-points de test un qui s'interface avec le contrôle d'access et l'autre non.
-1. Définir un test de charge avec locust.
+1. Appliquer la [méthodologie](../../load-tests/){:target="_blank"} retenue pour les test de charge
 1. Générer des jeux de test via Faker pour simuler une charge croissante.
-1. Pour chaque jeu de test, le charger en base de données puis:
-   1. Jouer le scénario locust sur le end point qui utilise le contrôle d'accès et recupérer les métriques.
-   1. Jouer le scenario locust sur APISIX dont la route redirige vers le endpoint sans controle d'accès.
-   1. Interpréter les résultats : latence induites, timeout, etc en fonction des différents niveaux de charge.
-   1. Réaliser des optimisations :
+1. appliquer les tests pour les deux modalités d'intégration du contrôle d'accès.
+1. Réaliser des optimisations :
       - cache au niveau de l'APISIX
       - Eventuellement :
       - optimiser le code (revue de code ?).
       - Base de données (index ou autre).
-   1. Rejouer les tests de charge dans les deux cas
+   1. Rejouer les tests.
    1. Mesurer les gains éventuels.
-
-
-
-
-
 
 
 
