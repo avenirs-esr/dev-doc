@@ -27,14 +27,14 @@ page_content_classes: table-container
 ### Solutions possibles, avantages et inconvénients
 
 - Intégration sous forme de librairie pour utiliser le contrôle d'accès directement dans les différents modules sans passer par l'API.
-- Utiliser diretement l'API du contrôle d'acces directement sans passer par l'API Manager.
+- Utiliser diretement l'API du contrôle d'acces directement sans passer par l'API Manager (APISIX).
 - Réaliser le contrôle au niveau de l'API Manager via une requête intermédiaire via une configuration de plugin.
 
 
 
 | **Méthode**                                  | **Avantages**                                                                                 | **Inconvénients**                                                                                   |
 |----------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| **1. Générer une librairie**                 | - Performance optimale (pas de latence réseau).<br>- Logique intégrée directement dans les modules.<br>- Autonomie des modules. | - Moins propre en termes d'architecture et de découpage par grands modules.<br/>- Maintenance plus complexe (mise à jour dans tous les modules).<br>- Risque d’incohérence entre versions.<br>- Nécessite de donner un accès direct à la base de données du contrôleur d'accès, ce qui pose des problèmes de sécurité et de gestion des connexions.  |
+| **1. Générer une librairie**                 | - Performance optimale (beaucoup moins de latence réseau).<br>- Logique intégrée directement dans les modules.<br>- Autonomie des modules. | - Moins propre en termes d'architecture et de découpage par grands modules.<br/>- Maintenance plus complexe (mise à jour dans tous les modules).<br>- Risque d’incohérence entre versions.<br>- Nécessite de donner un accès direct à la base de données du contrôleur d'accès, ce qui pose des problèmes de sécurité et de gestion des connexions.  |
 | **2. Appel direct à l'API REST**             | - Logique centralisée.<br>- Maintenance et mise à jour simplifiées.<br>- Modules moins volumineux. | - Latence accrue pour chaque requête. |
 | **3. Contrôle via l'API Manager (plugin)**   | - Centralisation totale des règles d'accès.<br>- Aucun impact direct sur les modules.<br>- Possibilité de cache dans le plugin.<br>- Intégration native avec l'API Manager.<br>- Meilleure observabilité grâce au monitoring centralisé et aux outils d'analyse. | - Latence accrue pour chaque requête.<br/>- Ajoute une complexité au niveau de l’API Manager (mais gérable via les conf de plugins réutilisables). |
 
@@ -45,23 +45,21 @@ page_content_classes: table-container
 
 
 ## Scénario utilisé
-Les tests suivent la [méthodologie de tests de charge](../load-tests/#Objectifs){:target="_blank"} mise en place.
-Les test sont réalisé sur l'environement de développement dockerisé :
-Les tests s'appuient également sur  une api minimalise de test :
+Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs){:target="_blank"} mise en place. Ils s'appuient également sur  une api minimalise de test :
 - Un end point qui s'interface directement avec le contrôle d'accès.
-- Un end point pour lequel le contrôle d'accès est remonté au niveau de l'API Manager.
+- Un end point pour lequel le contrôle d'accès est remonté au niveau de l'API Manager .
 
-A noter : le premier end point peut être testé également suivant 2 modalités : avec ou sans passage par l'API Manager (mais sans que l'API mananger ne réalise le contrôle d'accès).
+**A noter :** le premier end point peut être testé également suivant 2 modalités, avec ou sans passage par l'API Manager (mais sans que l'API mananger ne réalise le contrôle d'accès).
 
 
-
+**Etapes**
 
 1. Réaliser l'intégration sous forme de plugin avec APISIX
 1. Définir deux end-points de test un qui s'interface avec le contrôle d'access et l'autre non.
-1. Appliquer la [méthodologie](../load-tests/#Objectifs){:target="_blank"} retenue pour les tests de charge.
+1. Appliquer la [méthodologie](../load-tests/#objectifs){:target="_blank"} retenue pour les tests de charge.
 1. appliquer les tests pour les deux modalités d'intégration du contrôle d'accès.
 1. Réaliser des optimisations :
-      - cache au niveau de l'APISIX
+      - Ajouter du cache, notamment au niveau d'APISIX.
       - Eventuellement :
       - optimiser le code (revue de code ?).
       - Base de données (index ou autre).

@@ -65,6 +65,7 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 - Augmenter le volume des données, par exemple en découpant je jeu de test pour le charger.
 - Exécuter le test sur plusieurs clients et plus d'accès concurrents avec le mode distribué de locust.
 - Eventuellement, s'affranchir du reverse proxy.
+- Peut-être retravailler les tests pour supprimer la dimension aléatoire, de façon à pouvoir les rejouer à l'identique.
 
 
 ## Resultats
