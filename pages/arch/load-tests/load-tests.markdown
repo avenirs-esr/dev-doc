@@ -19,7 +19,8 @@ page_content_classes: table-container
 
 ## Objectifs
 - Mettre ne place une méthodologie pour commencer à obtenir des métriques et avoir des repères concernant les temps de réponse cibles pour les différentes API du projet.<br/>
-Ces premiers tests concernent un module spécifique,*avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès de type [RBAC.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#concepts){:target="_blank"} Cependant, l'objectif est de mettre en place une stratégie transposable pour les autres modules.
+Ces premiers tests concernent un module spécifique,*avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès de type [RBAC.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#concepts){:target="_blank"}<br/>
+Cependant, l'objectif est de mettre en place une stratégie transposable pour les autres modules.
 - Fournir une base pour quantifier les optimisations ultérieures.
 - Pour ce module spécifique, [déterminer la bonne stratégie d’intégration](../arch-soft-specif-security-rbac-integration-experimentations#rbac---intégration-du-contrôle-daccès){:target="_blank"} : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
 
@@ -37,7 +38,7 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 
    1. Sélectionner aléatoirement un utilisateur.
    2. Obtenir un access token pour cet utlisateur, via une requête POST sur le end point /oidc/login.
-   3. Effectuer une requête GET sur le end point pour lister les rôles de l'utilisateur.
+   3. Effectuer une requête GET sur le end point /roles pour lister les rôles de l'utilisateur.
    4. Selection aléatoire entre 5 et 20 ressources.
    5. Selection aléatoire d'une action.
    6. Four chaque ressource, l'autorisation de réaliser l'action sur la ressource pour l'utlisateur est effectuée via une requête GET sur le end point /access-control/authorize.
@@ -73,7 +74,8 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 
 Les limites de l'environnement utilisé rendent les résulats peu significatifs, c'est plus la méthode qui est importante à ce stade. 
 
-Cependant, on peut voir que pour les tests avec 50 accès concurents et une base peu chargée, les temps de réponse sont plutôts bons en regard des conditions de test. L'objectif serait de rester proche de ces temps avec une base plus chargée et plus d'accès concurrents. 
+Cependant, on peut voir que pour les tests avec 50 accès concurents et une base peu chargée, les temps de réponse sont plutôts bons en regard des conditions de test. <br/>
+L'objectif serait de rester proche de ces temps avec une base plus chargée et plus d'accès concurrents. 
 
 Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateurs et le chargement de la base, mais de façon relativement linéaire, ce qui est plutôt rassurant.
 
