@@ -491,15 +491,217 @@ Les limites de l'environnement utilisé rend les résulats peu significatifs, c'
 
 - 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m20.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 
+<table border="1">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th># Requests</th>
+            <th># Fails</th>
+            <th>Average (ms)</th>
+            <th>Min (ms)</th>
+            <th>Max (ms)</th>
+            <th>Average size (bytes)</th>
+            <th>RPS</th>
+            <th>Failures/s</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td>/access-control/authorize</td>
+            <td>21119</td>
+            <td>0</td>
+            <td>356.66</td>
+            <td>101</td>
+            <td>857</td>
+            <td>149.99</td>
+            <td>88.2</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/avenirs-portfolio-security/oidc/login</td>
+            <td>1718</td>
+            <td>0</td>
+            <td>77.69</td>
+            <td>52</td>
+            <td>523</td>
+            <td>42</td>
+            <td>7.17</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/avenirs-portfolio-security/roles</td>
+            <td>1717</td>
+            <td>0</td>
+            <td>416.74</td>
+            <td>83</td>
+            <td>1768</td>
+            <td>64749.38</td>
+            <td>7.17</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Aggregated</td>
+            <td>24554</td>
+            <td>0</td>
+            <td>341.34</td>
+            <td>52</td>
+            <td>1768</td>
+            <td>4659.71</td>
+            <td>102.55</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+</table>
+
+
 
 
 <br/>
 - 100 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m20.0/srv-dev-avenir/report-100-10-4.html){:target="_blank"}
 
+<table border="1">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th># Requests</th>
+            <th># Fails</th>
+            <th>Average (ms)</th>
+            <th>Min (ms)</th>
+            <th>Max (ms)</th>
+            <th>Average size (bytes)</th>
+            <th>RPS</th>
+            <th>Failures/s</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td>/access-control/authorize</td>
+            <td>22183</td>
+            <td>0</td>
+            <td>825.97</td>
+            <td>76</td>
+            <td>2334</td>
+            <td>149.92</td>
+            <td>92.52</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/avenirs-portfolio-security/oidc/login</td>
+            <td>1822</td>
+            <td>0</td>
+            <td>76.71</td>
+            <td>52</td>
+            <td>604</td>
+            <td>42</td>
+            <td>7.6</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/avenirs-portfolio-security/roles</td>
+            <td>1815</td>
+            <td>0</td>
+            <td>864.12</td>
+            <td>74</td>
+            <td>1734</td>
+            <td>64428.29</td>
+            <td>7.57</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Aggregated</td>
+            <td>25820</td>
+            <td>0</td>
+            <td>775.78</td>
+            <td>52</td>
+            <td>2334</td>
+            <td>4660.71</td>
+            <td>107.69</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+</table>
 
 
 <br/>
 - 150 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m20.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th># Requests</th>
+            <th># Fails</th>
+            <th>Average (ms)</th>
+            <th>Min (ms)</th>
+            <th>Max (ms)</th>
+            <th>Average size (bytes)</th>
+            <th>RPS</th>
+            <th>Failures/s</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td>/access-control/authorize</td>
+            <td>21981</td>
+            <td>0</td>
+            <td>1323.97</td>
+            <td>67</td>
+            <td>3777</td>
+            <td>149.9</td>
+            <td>91.73</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/avenirs-portfolio-security/oidc/login</td>
+            <td>1859</td>
+            <td>0</td>
+            <td>82.31</td>
+            <td>50</td>
+            <td>616</td>
+            <td>42</td>
+            <td>7.76</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/avenirs-portfolio-security/roles</td>
+            <td>1849</td>
+            <td>1</td>
+            <td>1337.2</td>
+            <td>75</td>
+            <td>2803</td>
+            <td>63392.61</td>
+            <td>7.72</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Aggregated</td>
+            <td>25689</td>
+            <td>1</td>
+            <td>1235.07</td>
+            <td>50</td>
+            <td>3777</td>
+            <td>4694.07</td>
+            <td>107.2</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+</table>
+
 
 <br/><br/>
 
