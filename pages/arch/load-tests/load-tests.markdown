@@ -10,7 +10,7 @@ page_content_classes: table-container
 # Tests de charge
 
 ## Objectifs
-- Mettre ne place une méthodologie pour commencer à obtenir des métriques et avoir des repères concernant les temps de réponse cibles pour les différentes API du projet. Ces premiers tests concernent un module spécifique,*avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès, mais l’idée est de mettre en place une stratégie transposable pour les autres modules.
+- Mettre ne place une méthodologie pour commencer à obtenir des métriques et avoir des repères concernant les temps de réponse cibles pour les différentes API du projet. Ces premiers tests concernent un module spécifique,*avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès de type [RBAC.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#concepts){:target="_blank"} Cependant, l’idée est de mettre en place une stratégie transposable pour les autres modules.
 - Fournir une base pour quantifier les optimisations ultérieures.
 - Pour ce module spécifique, déterminer la bonne stratégie d’intégration : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
 
@@ -21,7 +21,7 @@ page_content_classes: table-container
 Génération de fixtures de tailles croissantes à l'aide de [Faker.](https://faker.readthedocs.io/en/master/index.html)<br/>Le script utilise des valeurs de base et un coefficent multiplicateur pour faire varier la taille des jeux de test : 100 utilisateurs/1000 ressources.<br/>
 Chaque utilisateur a entre 1 et 100 rôles assignés.
 
-- Chargement des fixtures dans Postgresql et OpenLDAP
+- Chargement des fixtures dans Postgresql et OpenLDAP (cf [ERD](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac-mcd/#rbac---mod%C3%A8le-de-donn%C3%A9es))
 
 - Pour chaque jeu de test, exécution de 3 tests de charge en faisant varier les nombre d'accès concurents de 50, 100 et 150 pendant 4 minutes chacun.<br/><br/>
 **Séquence de test :**
