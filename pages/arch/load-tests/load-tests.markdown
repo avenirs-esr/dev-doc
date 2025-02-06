@@ -17,21 +17,21 @@ page_content_classes: table-container
 
 ## Méthode utilisée
 
-1. Génération de fixtures :<br/>
+- Génération de fixtures :<br/>
 Génération de fixtures de tailles croissantes à l'aide de [Faker.](https://faker.readthedocs.io/en/master/index.html)<br/>Le script utilise des valeurs de base et un coefficent multiplicateur pour faire varier la taille des jeux de test : 100 utilisateurs/1000 ressources.<br/>
 Chaque utilisateur a entre 1 et 100 rôles assignés.
 
-2. Chargement des fixtures dans Postgresql et OpenLDAP
+- Chargement des fixtures dans Postgresql et OpenLDAP
 
-3. Exécution de 3 test de charge en faisant varier les nombre d'accès concurents de 50, 100 et 150 pendant 4 minutes chacun.<br/>
+- Pour chaque jeu de test, exécution de 3 tests de charge en faisant varier les nombre d'accès concurents de 50, 100 et 150 pendant 4 minutes chacun.<br/><br/>
 **Séquence de test :**
 
- 1. Sélectionner aléatoirement un utilisateur.
- 2. Obtenir un access token pour cet utlisateur, via une requête POST sur le end point /oidc/login.
- 3. Effectuer une requête GET sur le end point pour lister les rôles de l'utilisateur.
- 4. Selection aléatoire entre 5 et 20 ressources.
- 5. Selection aléatoire d'une action.
- 6. Four chaque ressource, l'autorisation de réaliser l'action sur la ressource pour l'utlisateur est effectuée via une requête GET sur le end point /access-control/authorize.
+   1. Sélectionner aléatoirement un utilisateur.
+   2. Obtenir un access token pour cet utlisateur, via une requête POST sur le end point /oidc/login.
+   3. Effectuer une requête GET sur le end point pour lister les rôles de l'utilisateur.
+   4. Selection aléatoire entre 5 et 20 ressources.
+   5. Selection aléatoire d'une action.
+   6. Four chaque ressource, l'autorisation de réaliser l'action sur la ressource pour l'utlisateur est effectuée via une requête GET sur le end point /access-control/authorize.
 
 
 ## Environnement de test
@@ -57,6 +57,8 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 
 
 ## Resultats
+
+Les limites de l'environnement utilisé rend les résulats peu significatifs, c'est plus la méthode qui est importante à cette étape. 
 
 ### Jeu de test : 100 utilisateurs et 4836 assignations de rôles
 
@@ -485,7 +487,24 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 
 <br/><br/>
 
-# Jeu de test : 1000 utilisateurs 622799 assignations de rôles
+# Jeu de test :  2000 utilisateurs 98650 assignations de rôles
+
+- 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m20.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
+
+
+
+<br/>
+- 100 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m20.0/srv-dev-avenir/report-100-10-4.html){:target="_blank"}
+
+
+
+<br/>
+- 150 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m20.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
+
+<br/><br/>
+
+
+# Jeu de test :  utilisateurs  assignations de rôles
 
 - 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m10.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 
