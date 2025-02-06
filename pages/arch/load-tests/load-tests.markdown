@@ -1,27 +1,26 @@
 ---
 layout: page
-title: Tests de charge
+title: Mise en place de tests de charge
 permalink: /load-tests/
 up: ../arch/
 page_content_classes: table-container
 ---
 
 
-# Tests de charge
-
 ## Objectifs
-- Mettre ne place une méthodologie pour commencer à obtenir des métriques et avoir des repères concernant les temps de réponse cibles pour les différentes API du projet. Ces premiers tests concernent un module spécifique,*avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès de type [RBAC.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#concepts){:target="_blank"} Cependant, l’idée est de mettre en place une stratégie transposable pour les autres modules.
+- Mettre ne place une méthodologie pour commencer à obtenir des métriques et avoir des repères concernant les temps de réponse cibles pour les différentes API du projet.<br/>
+Ces premiers tests concernent un module spécifique,*avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès de type [RBAC.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#concepts){:target="_blank"} Cependant, l'objectif est de mettre en place une stratégie transposable pour les autres modules.
 - Fournir une base pour quantifier les optimisations ultérieures.
-- Pour ce module spécifique, déterminer la bonne stratégie d’intégration : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
+- Pour ce module spécifique, [déterminer la bonne stratégie d’intégration](../../arch-soft-specif-security-rbac-integration-experimentations){:target="_blank"} : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
 
 
 ## Méthode utilisée
 
 - Génération de fixtures :<br/>
-Génération de fixtures de tailles croissantes à l'aide de [Faker.](https://faker.readthedocs.io/en/master/index.html)<br/>Le script utilise des valeurs de base et un coefficent multiplicateur pour faire varier la taille des jeux de test : 100 utilisateurs/1000 ressources.<br/>
+Génération de fixtures de tailles croissantes à l'aide de [Faker.](https://faker.readthedocs.io/en/master/index.html){:target="_blank"}<br/>Le script utilise des valeurs de base et un coefficent multiplicateur pour faire varier la taille des jeux de test : 100 utilisateurs/1000 ressources.<br/>
 Chaque utilisateur a entre 1 et 100 rôles assignés.
 
-- Chargement des fixtures dans Postgresql et OpenLDAP (cf [ERD](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac-mcd/#rbac---mod%C3%A8le-de-donn%C3%A9es))
+- Chargement des fixtures dans Postgresql et OpenLDAP (cf [ERD](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac-mcd/#rbac---mod%C3%A8le-de-donn%C3%A9es){:target="_blank"})
 
 - Pour chaque jeu de test, exécution de 3 tests de charge en faisant varier les nombre d'accès concurents de 50, 100 et 150 pendant 4 minutes chacun.<br/><br/>
 **Séquence de test :**
@@ -43,22 +42,27 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 
 ### Limites et remarques
 - L'ensemble des services dockerisés sont exécutés sur un seul serveur.
-- Les test sont exécuté sur un seul portable.
+- Les test sont exécutés sur un seul portable.
 - Le lien avec le serveur passe par un VPN.
 - Les logs des différents services impliqués sont réduits au maximum.
 - Pas d'utilisation de cache.
 - Pas d'annalyse et d'optimisation réalisée au niveau du requêtage et de la base de données.
-- Les limites max pour la taille des jeux de données et le nombre d'accès concurent à été déterminé par les limites matériel de l'environnement de test et pourront être augmentées dans un autre environnement.
+- Les limites max pour la taille des jeux de données et le nombre d'accès concurents ont été déterminées par les limites matérielles de l'environnement de test et pourront être augmentées dans un autre environnement.
 
-### Améliorations pour que les valeurs soient plus significatives
+### Améliorations pour obtenir des valeurs plus significatives
 - Déployer les services sur une infra.
-- Pas d'utlisation de vpn.
-- Exécuter le test sur plusieurs clients avec le mode distribué de locust.
+- Pas d'utlisation de VPN.
+- Augment le volume des données,par exemple en le découpant pour le charger.
+- Exécuter le test sur plusieurs clients et plus d'accès concurrents avec le mode distribué de locust.
 
 
 ## Resultats
 
-Les limites de l'environnement utilisé rend les résulats peu significatifs, c'est plus la méthode qui est importante à cette étape. Cependat on peut voir que pour les tests avec 50 accès concurents les temps de réponse sont élevés mais finalement assez encourageant en regard des conditions de test. L'objectif pour le end point /access-control/authorize serait de se situer en tre 50 et 100 ms (avis sur cet objectif ?). Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateur mais de façon relativement linéaire, ce qui est rassurant.
+Les limites de l'environnement utilisé rendent les résulats peu significatifs, c'est plus la méthode qui est importante à ce stade. 
+
+Cependant, on peut voir que pour les tests avec 50 accès concurents et une base peu chargée, les temps de réponse sont plutôts bons en regard des conditions de test. L'objectif serait de rester proche de ces temps avec une base plus chargée. 
+
+Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateurs et le chargement de la base, mais de façon relativement linéaire, ce qui est rassurant.
 
 ### Jeu de test : 100 utilisateurs et 4836 assignations de rôles
 
