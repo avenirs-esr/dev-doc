@@ -26,10 +26,11 @@ Il doit permettre de  :
 - Lister les rôles/permissions d'un utilisateur.
 - Lister les utilisateurs disposant d'un rôle donné, éventuellement pour un scope et un contexte d'application. 
 - Lister les utilisateurs disposant d'une permission donnée. 
-- [TODO] La notion d'historique est-elle importante ? Est-ce que l'on veut être capable de réaliser les 3 listing pour une date donnée ?
-=> Risque de complexifier le système : peut-être dans une première approche passer par la notion de revue de droits.
+- ~~[TODO] La notion d'historique est-elle importante ? Est-ce que l'on veut être capable de réaliser les 3 listing pour une date donnée ?
+=> Risque de complexifier le système : peut-être dans une première approche passer par la notion de revue de droits.~~
+- Arbitrage : pas de notion d'historique. Possiblité de réaliser des revue de droits + log de sécurité spécifique.
 
-### Concepts
+### Conceptes
 {% include img.html
         src="assets/images/RBAC-concepts.png"
         alt="Security - RBAC - Concepts"

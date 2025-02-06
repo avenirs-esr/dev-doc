@@ -58,7 +58,7 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 
 ## Resultats
 
-Les limites de l'environnement utilisé rend les résulats peu significatifs, c'est plus la méthode qui est importante à cette étape. 
+Les limites de l'environnement utilisé rend les résulats peu significatifs, c'est plus la méthode qui est importante à cette étape. Cependat on peut voir que pour les tests avec 50 accès concurents les temps de réponse sont élevés mais finalement assez encourageant en regard des conditions de test. L'objectif pour le end point /access-control/authorize serait de se situer en tre 50 et 100 ms (avis sur cet objectif ?). Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateur mais de façon relativement linéaire, ce qui est rassurant.
 
 ### Jeu de test : 100 utilisateurs et 4836 assignations de rôles
 
