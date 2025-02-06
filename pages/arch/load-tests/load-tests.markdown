@@ -723,8 +723,8 @@ Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateurs et
 <br/><br/>
 
 
+<!--
 # Jeu de test :  utilisateurs  assignations de rôles
-
 - 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m10.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 
 
@@ -739,3 +739,4 @@ Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateurs et
 
 <br/><br/>
 
+-->
