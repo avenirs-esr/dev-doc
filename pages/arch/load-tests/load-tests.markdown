@@ -13,6 +13,8 @@ page_content_classes: table-container
 - Mettre ne place une méthodologie pour commencer à obtenir des métriques et avoir des repères concernant les temps de réponse cibles pour les différentes API du projet. Ces premiers tests concernent un module spécifique,*avenirs-portfolio-security,* mais l’idée est de mettre en place une stratégie transposable pour les autres modules.
 - Fournir une base pour quantifier les optimisations ultérieures.
 - Pour ce module spécifique, déterminer la bonne stratégie d’intégration : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
+
+
 ## Méthode utilisée
 
 1. Génération de fixtures 
