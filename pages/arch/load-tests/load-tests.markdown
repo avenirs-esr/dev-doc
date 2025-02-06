@@ -17,30 +17,29 @@ page_content_classes: table-container
 
 ## Méthode utilisée
 
-1. Génération de fixtures 
-Génération de fixtures de taille croissantes à l'aide de [Faker.](https://faker.readthedocs.io/en/master/index.html)<br/>Le script utilise des valeurs de base et un coefficent multiplicateur pour faire varier la taille des jeux de test: 100 utilisateurs/1000 ressources
-Chaque utlisateur à entre 1 et 100 rôles assignés.
+1. Génération de fixtures :<br/>
+Génération de fixtures de tailles croissantes à l'aide de [Faker.](https://faker.readthedocs.io/en/master/index.html)<br/>Le script utilise des valeurs de base et un coefficent multiplicateur pour faire varier la taille des jeux de test : 100 utilisateurs/1000 ressources.<br/>
+Chaque utilisateur a entre 1 et 100 rôles assignés.
 
 2. Chargement des fixtures dans Postgresql et OpenLDAP
 
-3. Exécution du test de charge en faisant varier les nombre d'accès concurents de 50, 100 et 150 pendant 4 minutes.
-    Séquence de test :
+3. Exécution de 3 test de charge en faisant varier les nombre d'accès concurents de 50, 100 et 150 pendant 4 minutes chacun.<br/>
+**Séquence de test :**
 
  1. Sélectionner aléatoirement un utilisateur.
  2. Obtenir un access token pour cet utlisateur, via une requête POST sur le end point /oidc/login.
  3. Effectuer une requête GET sur le end point pour lister les rôles de l'utilisateur.
- 4. Selection aléatoire entre 5 et 20 ressources
+ 4. Selection aléatoire entre 5 et 20 ressources.
  5. Selection aléatoire d'une action.
- 6. Four chaque ressource, l'autorisation de réaliser l'action sur la ressource pour l'utlisateur est effectuée via une requête GET sur le end point /access-control/authorize
-
+ 6. Four chaque ressource, l'autorisation de réaliser l'action sur la ressource pour l'utlisateur est effectuée via une requête GET sur le end point /access-control/authorize.
 
 
 ## Environnement de test
 ### Caractéristiques
-- Serveur : avenir-srv-dev, machine virtuelle (QEMU/KVM)
-- Processeur 4 coeurs, QEMU Virtual CPU version 2.5+
-- Mémoire : 8 GiB
-- Disque dur : QEMU HARDDISK, Capacité : 139 GB
+- Serveur : avenir-srv-dev, machine virtuelle (QEMU/KVM).
+- Processeur 4 coeurs, QEMU Virtual CPU version 2.5+.
+- Mémoire : 8 GiB.
+- Disque dur : QEMU HARDDISK, Capacité : 139 GB.
 
 ### Limites et remarques
 - L'ensemble des services dockerisés sont exécutés sur un seul serveur.
