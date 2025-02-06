@@ -1,0 +1,4 @@
+Method,Name,Error,Occurrences
+POST,/avenirs-portfolio-security/oidc/login,RemoteDisconnected('Remote end closed connection without response'),4
+GET,/avenirs-portfolio-security/roles,RemoteDisconnected('Remote end closed connection without response'),2
+GET,/avenirs-portfolio-security/roles,HTTPError('403 Client Error:  for url: /avenirs-portfolio-security/roles'),1
