@@ -1,0 +1,3 @@
+Method,Name,Error,Occurrences
+POST,/avenirs-portfolio-security/oidc/login,HTTPError('403 Client Error:  for url: /avenirs-portfolio-security/oidc/login'),3
+GET,/avenirs-portfolio-security/roles,HTTPError('403 Client Error:  for url: /avenirs-portfolio-security/roles'),1
