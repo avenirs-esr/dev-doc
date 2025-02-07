@@ -18,8 +18,8 @@ page_content_classes: table-container
 
 
 ## Objectifs
-- Mettre ne place une méthodologie pour commencer à obtenir des métriques et avoir des repères concernant les temps de réponse cibles pour les différentes API du projet.<br/>
-Ces premiers tests concernent un module spécifique,*avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès de type [RBAC.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#concepts){:target="_blank"}<br/>
+- Mettre en place une méthodologie pour commencer à obtenir des métriques et avoir des repères concernant les temps de réponse cibles pour les différentes API du projet.<br/>
+Ces premiers tests concernent un module spécifique, *avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès, de type [RBAC.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#concepts){:target="_blank"}<br/>
 Cependant, l'objectif est de mettre en place une stratégie transposable pour les autres modules.
 - Fournir une base pour quantifier les optimisations ultérieures.
 - Pour ce module spécifique, [déterminer la bonne stratégie d’intégration](../arch-soft-specif-security-rbac-integration-experimentations#rbac---intégration-du-contrôle-daccès){:target="_blank"} : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
@@ -33,7 +33,7 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
 
 - Chargement des fixtures dans Postgresql et OpenLDAP (cf [ERD](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac-mcd/#rbac---mod%C3%A8le-de-donn%C3%A9es){:target="_blank"})
 
-- Pour chaque jeu de test, exécution de 3 tests de charge en faisant varier les nombre d'accès concurents de 50, 100 et 150 pendant 4 minutes chacun.<br/><br/>
+- Pour chaque jeu de test, exécution de 3 tests de charge en faisant varier le nombre d'accès concurents de 50, 100 et 150 pendant 4 minutes chacun.<br/><br/>
 **Séquence de test :**
 
    1. Sélectionner aléatoirement un utilisateur.
@@ -41,31 +41,31 @@ Chaque utilisateur a entre 1 et 100 rôles assignés.
    3. Effectuer une requête GET sur le end point /roles pour lister les rôles de l'utilisateur.
    4. Selection aléatoire entre 5 et 20 ressources.
    5. Selection aléatoire d'une action.
-   6. Four chaque ressource, l'autorisation de réaliser l'action sur la ressource pour l'utlisateur est effectuée via une requête GET sur le end point /access-control/authorize.
+   6. Pour chaque ressource, l'autorisation de réaliser l'action sur la ressource par l'utlisateur est effectuée via une requête GET sur le end point /access-control/authorize.
 
 
 ## Environnement de test
 ### Caractéristiques
 - Serveur : avenir-srv-dev, machine virtuelle (QEMU/KVM).
 - Processeur 4 coeurs, QEMU Virtual CPU version 2.5+.
-- lien  réseau : 1 Gb/s (non partagé pour l'instant, une seule VM sur l'hyperviseur).
+- Lien  réseau : 1 Gb/s (non partagé pour l'instant, une seule VM sur l'hyperviseur).
 - Mémoire : 8 GiB.
 - Disque dur : QEMU HARDDISK, Capacité : 130 GB. Intel SSD D3-S4510 Series 2.5" SATA 6.0Gb/s montés en RAID 10.
 
 ### Limites et remarques
 - L'ensemble des services dockerisés sont exécutés sur un seul serveur.
-- Les test sont exécutés depuis un portable.
+- Les tests sont exécutés depuis un portable.
 - Le lien avec le serveur passe par un VPN.
 - Les logs des différents services impliqués sont réduits au maximum.
 - Pas d'utilisation de cache.
-- Pas d'annalyse et d'optimisation réalisée au niveau du requêtage et de la base de données.
+- Pas d'annalyse ni d'optimisation réalisée au niveau du requêtage et de la base de données.
 - Les limites max pour la taille des jeux de données et le nombre d'accès concurents ont été déterminées par les limites matérielles de l'environnement de test et pourront être augmentées dans un autre environnement.
 
 ### Améliorations pour obtenir des valeurs plus significatives
 - Déployer les services sur une infra.
 - Connexion directe, sans VPN.
 - Augmenter le volume des données, par exemple en découpant je jeu de test pour le charger.
-- Exécuter le test sur plusieurs clients et plus d'accès concurrents avec le mode distribué de locust.
+- Exécuter le test sur plusieurs clients et avec plus d'accès concurrents en utilisant le mode distribué de locust.
 - Eventuellement, s'affranchir du reverse proxy.
 - Peut-être retravailler les tests pour supprimer la dimension aléatoire, de façon à pouvoir les rejouer à l'identique.
 
@@ -292,7 +292,7 @@ Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateurs et
 <br/><br/>
 
 
-# Jeu de test : 100 utilisateurs 23568 assignations de rôles
+### Jeu de test : 100 utilisateurs 23568 assignations de rôles
 
 - 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m5.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 <table border="1">
@@ -506,7 +506,7 @@ Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateurs et
 
 <br/><br/>
 
-# Jeu de test :  2000 utilisateurs 98650 assignations de rôles
+### Jeu de test :  2000 utilisateurs 98650 assignations de rôles
 
 - 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m20.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 
@@ -724,7 +724,7 @@ Sans surprise, les temps de réponse augmentent avec le nombre d'utilisateurs et
 
 <br/><br/>
 
-Jeu de test :  3000 utilisateurs 152315 assignations de rôles
+### Jeu de test :  3000 utilisateurs 152315 assignations de rôles
 - 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m30.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 
 <table border="1">
@@ -941,7 +941,7 @@ Jeu de test :  3000 utilisateurs 152315 assignations de rôles
 
 
 <!--
-# Jeu de test :  utilisateurs  assignations de rôles
+### Jeu de test :  utilisateurs  assignations de rôles
 - 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/m10.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 
 
