@@ -72,7 +72,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
    - 50 utilisateurs concurents 
 
-   #### Contrôle d'accès au niveau de la méthode
+   **Contrôle d'accès au niveau de la méthode**
 
 | Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
@@ -81,9 +81,9 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
 [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-inlined/m1.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 
-   #### Contrôle d'accès au niveau de la méthode
 
-   #### Contrôle d'accès au niveau de l'API Manager
+
+  **Contrôle d'accès au niveau de l'API Manager**
 
    | Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
@@ -91,8 +91,131 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 |      | Aggregated           | 5428       | 0       | 57.99        | 41       | 285      | 196                  | 22.65 | 0          |
 
 [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-in-apim/m1.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
+
+
 <br/><br/>
 - 100 Utilisateurs concurents
 
+ **Contrôle d'accès au niveau de la méthode**
+| Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /node-api/ac-inlined | 10797      | 0       | 59.47        | 38       | 468      | 196                  | 45.01 | 0          |
+|      | Aggregated           | 10797      | 0       | 59.47        | 38       | 468      | 196                  | 45.01 | 0          |
+
+
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-inlined/m1.0/srv-dev-avenir/report-100-10-4.html){:target="_blank"}
+
+
+
+  **Contrôle d'accès au niveau de l'API Manager**
+
+  | Type | Name                  | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|-----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /apisix-gw/ac-in-apim | 10873      | 0       | 59.59        | 40       | 331      | 196                  | 45.33 | 0          |
+|      | Aggregated            | 10873      | 0       | 59.59        | 40       | 331      | 196                  | 45.33 | 0          |
+
+
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-in-apim/m1.0/srv-dev-avenir/report-100-10-4.html){:target="_blank"}
+
+
+<br/><br/>
+
+- 150 Utilisateurs concurents
+
+ **Contrôle d'accès au niveau de la méthode**
+| Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /node-api/ac-inlined | 16151      | 0       | 63.4         | 37       | 518      | 196                  | 67.34 | 0          |
+|      | Aggregated           | 16151      | 0       | 63.4         | 37       | 518      | 196                  | 67.34 | 0          |
+
+
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-inlined/m1.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
+
+
+
+  **Contrôle d'accès au niveau de l'API Manager**
+| Type | Name                  | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|-----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /apisix-gw/ac-in-apim | 16218      | 0       | 62.63        | 39       | 639      | 196                  | 67.61 | 0          |
+|      | Aggregated            | 16218      | 0       | 62.63        | 39       | 639      | 196                  | 67.61 | 0          |
+
+ 
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-in-apim/m1.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
 
 <br/>[Retour](arch-soft-specif-security.markdown)
+
+
+<br/><br/>
+### 500 utilisteurs
+- 50 utilisateurs concurents 
+
+ **Contrôle d'accès au niveau de la méthode**
+
+| Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /node-api/ac-inlined | 5226       | 0       | 78.68        | 40       | 852      | 196                  | 21.83 | 0          |
+|      | Aggregated           | 5226       | 0       | 78.68        | 40       | 852      | 196                  | 21.83 | 0          |
+
+
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-inlined/m5.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
+
+
+
+  **Contrôle d'accès au niveau de l'API Manager**
+| Type | Name                  | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|-----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /apisix-gw/ac-in-apim | 5417       | 0       | 58.02        | 40       | 352      | 196                  | 22.6  | 0          |
+|      | Aggregated            | 5417       | 0       | 58.02        | 40       | 352      | 196                  | 22.6  | 0          |
+
+
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-in-apim/m5.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
+
+
+<br/><br/>
+
+- 100 utilisateurs concurents 
+
+ **Contrôle d'accès au niveau de la méthode**
+| Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /node-api/ac-inlined | 10334      | 0       | 89.55        | 39       | 1234     | 196                  | 43.09 | 0          |
+|      | Aggregated           | 10334      | 0       | 89.55        | 39       | 1234     | 196                  | 43.09 | 0          |
+
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-inlined/m5.0/srv-dev-avenir/report-100-10-4.html){:target="_blank"}
+
+
+
+  **Contrôle d'accès au niveau de l'API Manager**
+
+| Type | Name                  | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|-----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /apisix-gw/ac-in-apim | 10830      | 0       | 59.99        | 38       | 426      | 196                  | 45.17 | 0          |
+|      | Aggregated            | 10830      | 0       | 59.99        | 38       | 426      | 196                  | 45.17 | 0          |
+
+
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-in-apim/m5.0/srv-dev-avenir/report-100-10-4.html){:target="_blank"}
+
+
+<br/><br/>
+
+- 150 Utilisateurs concurents
+
+ **Contrôle d'accès au niveau de la méthode**
+| Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /node-api/ac-inlined | 15919      | 0       | 75.46        | 37       | 767      | 196                  | 66.36 | 0          |
+|      | Aggregated           | 15919      | 0       | 75.46        | 37       | 767      | 196                  | 66.36 | 0          |
+
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-inlined/m5.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
+
+
+
+  **Contrôle d'accès au niveau de l'API Manager**
+| Type | Name                  | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|-----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /apisix-gw/ac-in-apim | 16235      | 0       | 60.87        | 37       | 379      | 196                  | 67.69 | 0          |
+|      | Aggregated            | 16235      | 0       | 60.87        | 37       | 379      | 196                  | 67.69 | 0          |
+
+ 
+[(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-in-apim/m5.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
+
