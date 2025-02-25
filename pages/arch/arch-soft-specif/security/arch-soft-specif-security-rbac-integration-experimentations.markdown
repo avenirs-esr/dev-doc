@@ -235,5 +235,9 @@ Son utilisation pour la définition de route au niveau de l'API Manager est, qua
 
 
 #### Notes pour la faciliter la reprise des tests
+- Réqlisation d'un test set: ~/.local/share/pipx/venvs/faker/bin/python [faker-ac-integration-test.py ](https://github.com/avenirs-esr/avenirs-portfolio-security/blob/b7ac9fd863d2c7cfdd28a090f94099848ec9f858/faker-ac-integration-test.py#L1){:target="_blank"} --multiplicator=5 
+-  av-load-fixtures.sh  -d  target/fixtures/ac-integration/m5.0/
+- le script locust utilisé est [locustfile-ac-integration.py](https://github.com/avenirs-esr/avenirs-portfolio-security/blob/b7ac9fd863d2c7cfdd28a090f94099848ec9f858/locustfile-ac-integration.py#L1){:target="_blank"}
 
+( Penser à modifier le end point [ici](https://github.com/avenirs-esr/avenirs-portfolio-security/blob/b7ac9fd863d2c7cfdd28a090f94099848ec9f858/locustfile-ac-integration.py#L118){:target="_blank"})
 <br/>[Retour](arch-soft-specif-security.markdown)
