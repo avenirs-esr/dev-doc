@@ -41,7 +41,8 @@ page_content_classes: table-container
 <br/>
 **Notes:**
 - En première approche, la solution de librairie est laissée de côté en raison des inconvénients citésdans le tableau.
-- Il s'agit donc d'effectuer une comparaison entre l'acces direct à l'API du contrôle d'accès et l'intégration au niveau de l'API Manager. La comparaison porte principalement sur le coût en terme de temps de réponse.
+- Il s'agit donc d'effectuer une comparaison entre l'acces direct à l'API du contrôle d'accès et l'intégration au niveau de l'API Manager. La comparaison porte principalement sur le coût en terme de temps de réponse. La mise au point du plugin peut être difficile car il s'agit d'un script lua utilisé sous forme de fonction serverless. Cette version de plugin pourra être utilisée pouor la mise au point de cas spécifiques si nécessaire.<br/>
+L'utlisation de ce plugin pour la définition de routes est tres simple : [voir l'exemple utilisé pour ce test](https://github.com/avenirs-esr/srv-dev/blob/82e7b0d9f769505300bf3e496e79f645aa761a86/services/apisix/scripts/routes/experiments/set-access_control-integration-route.curl.sh#L9){:target="_blank"}.
 
 
 ## Scénario utilisé
@@ -68,7 +69,15 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
 
    ## Premiers résultats
-   ### 100 utilisteurs
+
+Ces premieres resultats sont effectués sur le serveur de dev. Si possible, ils seront à confirmer sur une infrastructure plus proche de celle de production.<br/>
+Le coût d'intégration au niveau de l'API MAnager est négiligeable sur une infrastructure peu chargée et semble même légèrement plus performant sur une infrastrcture chargé.
+
+Le côut est lié à l'évaluation du plugin permettant de réaliser l'intégration. La [version utilisée](https://github.com/avenirs-esr/srv-dev/blob/82e7b0d9f769505300bf3e496e79f645aa761a86/services/apisix/scripts/routes/experiments/set-access-control-plugin.curl.sh#L11){:target="_blank"} pour ces tests est sous optimale : écriture de log et analyse de la réponse json plutot que de se baser sur le status http.
+
+
+
+   ### 100 utilisateurs
 
    - 50 utilisateurs concurents 
 
@@ -145,11 +154,9 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
  
 [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-in-apim/m1.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
 
-<br/>[Retour](arch-soft-specif-security.markdown)
-
 
 <br/><br/>
-### 500 utilisteurs
+### 500 utilisateurs
 - 50 utilisateurs concurents 
 
  **Contrôle d'accès au niveau de la méthode**
@@ -226,3 +233,6 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
  
 [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-in-apim/m5.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
 
+
+
+<br/>[Retour](arch-soft-specif-security.markdown)
