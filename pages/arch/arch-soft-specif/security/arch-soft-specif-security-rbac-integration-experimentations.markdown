@@ -70,8 +70,8 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
    ## Premiers résultats
 
-Ces premieres resultats sont effectués sur le serveur de dev. Si possible, ils seront à confirmer sur une infrastructure plus proche de celle de production.<br/>
-Le coût d'intégration au niveau de l'API MAnager est négiligeable sur une infrastructure peu chargée et semble même légèrement plus performant sur une infrastrcture chargé.
+Ces premiers resultats sont effectués sur le serveur de dev (ressources limités, vpn etc).Si possible, ils seront à confirmer sur une infrastructure plus proche de celle de production. Cependant on peut tout de même comparer les deux approches puisque les tests sont réalisés dans les même conditions.<br/>
+Le coût d'intégration au niveau de l'API MAnager est négiligeable sur une infrastructure peu chargée et semble même légèrement plus performant sur une infrastrcture chargé.<br/>
 
 Le côut est lié à l'évaluation du plugin permettant de réaliser l'intégration. La [version utilisée](https://github.com/avenirs-esr/srv-dev/blob/82e7b0d9f769505300bf3e496e79f645aa761a86/services/apisix/scripts/routes/experiments/set-access-control-plugin.curl.sh#L11){:target="_blank"} pour ces tests est sous optimale : écriture de log et analyse de la réponse json plutot que de se baser sur le status http.
 
@@ -234,5 +234,6 @@ Le côut est lié à l'évaluation du plugin permettant de réaliser l'intégrat
 [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-in-apim/m5.0/srv-dev-avenir/report-150-15-4.html){:target="_blank"}
 
 
+#### Notes pour la faciliter la reprise des tests
 
 <br/>[Retour](arch-soft-specif-security.markdown)
