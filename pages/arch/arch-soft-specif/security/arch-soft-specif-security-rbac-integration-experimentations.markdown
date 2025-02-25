@@ -67,5 +67,25 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
    1. Mesurer les gains éventuels.
 
 
+   ## Premiers résultats
+   ### 100 utilisteurs
+
+   - 50 utilisateurs concurents [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-inlined/m1.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
+
+   #### Contrôle d'accès au niveau de la méthode
+
+| Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /node-api/ac-inlined | 5405       | 0       | 56.5         | 39       | 195      | 196                  | 22.53 | 0          |
+|      | Aggregated           | 5405       | 0       | 56.5         | 39       | 195      | 196                  | 22.53 | 0          |
+
+
+   #### Contrôle d'accès au niveau de l'API Manager
+
+   | Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+|------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
+| GET  | /apisix-gw/ac-in-apim | 5428       | 0       | 57.99        | 41       | 285      | 196                  | 22.65 | 0          |
+|      | Aggregated           | 5428       | 0       | 57.99        | 41       | 285      | 196                  | 22.65 | 0          |
+
 
 <br/>[Retour](arch-soft-specif-security.markdown)
