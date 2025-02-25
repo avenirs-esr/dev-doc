@@ -81,6 +81,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
 [(voir le rapport  complet locust)](/dev-doc/static-pages/load-tests/reports/ac-integration/ac-inlined/m1.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 
+   #### Contrôle d'accès au niveau de la méthode
 
    #### Contrôle d'accès au niveau de l'API Manager
 
