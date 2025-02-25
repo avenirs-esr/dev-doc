@@ -85,7 +85,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
   **Contrôle d'accès au niveau de l'API Manager**
 
-   | Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
+| Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
 | GET  | /apisix-gw/ac-in-apim | 5428       | 0       | 57.99        | 41       | 285      | 196                  | 22.65 | 0          |
 |      | Aggregated           | 5428       | 0       | 57.99        | 41       | 285      | 196                  | 22.65 | 0          |
@@ -97,6 +97,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 - 100 Utilisateurs concurents
 
  **Contrôle d'accès au niveau de la méthode**
+
 | Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
 | GET  | /node-api/ac-inlined | 10797      | 0       | 59.47        | 38       | 468      | 196                  | 45.01 | 0          |
@@ -123,6 +124,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 - 150 Utilisateurs concurents
 
  **Contrôle d'accès au niveau de la méthode**
+
 | Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
 | GET  | /node-api/ac-inlined | 16151      | 0       | 63.4         | 37       | 518      | 196                  | 67.34 | 0          |
@@ -134,6 +136,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
 
   **Contrôle d'accès au niveau de l'API Manager**
+
 | Type | Name                  | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|-----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
 | GET  | /apisix-gw/ac-in-apim | 16218      | 0       | 62.63        | 39       | 639      | 196                  | 67.61 | 0          |
@@ -162,6 +165,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
 
   **Contrôle d'accès au niveau de l'API Manager**
+
 | Type | Name                  | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|-----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
 | GET  | /apisix-gw/ac-in-apim | 5417       | 0       | 58.02        | 40       | 352      | 196                  | 22.6  | 0          |
@@ -176,6 +180,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 - 100 utilisateurs concurents 
 
  **Contrôle d'accès au niveau de la méthode**
+
 | Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
 | GET  | /node-api/ac-inlined | 10334      | 0       | 89.55        | 39       | 1234     | 196                  | 43.09 | 0          |
@@ -201,6 +206,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 - 150 Utilisateurs concurents
 
  **Contrôle d'accès au niveau de la méthode**
+
 | Type | Name                 | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
 | GET  | /node-api/ac-inlined | 15919      | 0       | 75.46        | 37       | 767      | 196                  | 66.36 | 0          |
@@ -211,6 +217,7 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
 
   **Contrôle d'accès au niveau de l'API Manager**
+
 | Type | Name                  | # Requests | # Fails | Average (ms) | Min (ms) | Max (ms) | Average size (bytes) | RPS   | Failures/s |
 |------|-----------------------|------------|---------|--------------|----------|----------|----------------------|-------|------------|
 | GET  | /apisix-gw/ac-in-apim | 16235      | 0       | 60.87        | 37       | 379      | 196                  | 67.69 | 0          |
