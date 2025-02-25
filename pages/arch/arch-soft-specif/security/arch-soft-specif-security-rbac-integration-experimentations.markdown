@@ -70,11 +70,11 @@ Les tests suivent la [méthodologie de tests de charge](../load-tests/#objectifs
 
    ## Premiers résultats
 
-Ces premiers resultats sont effectués sur le serveur de dev : ressources limités, connexion par vpn, etc.Si possible, ils seront à confirmer sur une infrastructure plus proche de celle de production. Cependant on peut tout de même comparer les deux approches puisque les tests sont réalisés dans les même conditions.<br/>
-Le coût d'intégration au niveau de l'API MAnager est négiligeable sur une infrastructure peu chargée et semble même légèrement plus performant sur une infrastrcture chargé.<br/>
+Ces premiers resultats sont effectués sur le serveur de dev : ressources limités, connexion par vpn, etc. Si possible, ils seront à confirmer sur une infrastructure plus proche de celle de production. Cependant, on peut tout de même comparer les deux approches puisque les tests sont réalisés dans les même conditions.<br/>
+Le coût d'intégration au niveau de l'API MAnager est négiligeable sur une infrastructure peu chargée et semble même légèrement plus performant sur une infrastrcture chargée, comme le montrent les résultats avec le test set de 500 utilisateurs.<br/>
 
-Le côut est lié à l'évaluation du plugin permettant de réaliser l'intégration. La [version du plugin utilisée](https://github.com/avenirs-esr/srv-dev/blob/82e7b0d9f769505300bf3e496e79f645aa761a86/services/apisix/scripts/routes/experiments/set-access-control-plugin.curl.sh#L29){:target="_blank"} pour ces tests est sous optimale : écriture de log et analyse de la réponse json plutot que de se baser sur le status http.<br/>
-Son utilisation pour la définition de route au niveau de l'API Manager est quand à elle très simple, [voir la route utilisée pour ces tests.](https://github.com/avenirs-esr/srv-dev/blob/82e7b0d9f769505300bf3e496e79f645aa761a86/services/apisix/scripts/routes/experiments/set-access_control-integration-route.curl.sh#L14){:target="_blank"}<br/><br/>
+Le côut est probablement lié à l'évaluation du plugin permettant de réaliser l'intégration. La [version du plugin utilisée](https://github.com/avenirs-esr/srv-dev/blob/82e7b0d9f769505300bf3e496e79f645aa761a86/services/apisix/scripts/routes/experiments/set-access-control-plugin.curl.sh#L29){:target="_blank"} pour ces tests est sous optimale : écriture de log et analyse de la réponse json plutot que de se baser sur le status http.<br/>
+Son utilisation pour la définition de route au niveau de l'API Manager est, quand à elle, très simple : [voir la route utilisée pour ces tests.](https://github.com/avenirs-esr/srv-dev/blob/82e7b0d9f769505300bf3e496e79f645aa761a86/services/apisix/scripts/routes/experiments/set-access_control-integration-route.curl.sh#L14){:target="_blank"}<br/><br/>
 
 
 ### 100 utilisateurs
