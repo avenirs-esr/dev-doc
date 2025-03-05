@@ -80,6 +80,7 @@ Mettre en place une première version d'architecture scalable qui serve de socle
             "targets": ["uuid", "uuid", ...]
         },
         "retry": {
+              "ack_required": true, // Flag pour l'acquittements
               "enabled": true,
               "attempts": 3,
               "limit": 5,
@@ -88,3 +89,19 @@ Mettre en place une première version d'architecture scalable qui serve de socle
     }
 }
 ``` 
+
+## Gestion des acquittements
+- Tous les messages ne sont pas à acquitter.
+- 2 niveau d'acquittement: le message dans son ensemble pour indiquer qu'il ne doit plus être consommé.
+
+- Pour les messages devant être acquités, on utilise un enregistrement de type hash dans keydb initialisé par le backend. Lorsque le message est acquitté pour tous les membres de l'audience, alors le message est acquitté.
+- Les messages non acquités dans un délai sont rejoués pour les utilisateurs qui n'ont pas l'acquittement.
+- Si le nombre de tentatives de retry est atteint, alors le message est placé dans un log d'erreur.
+
+### Mécanisme pour rejouer les messages
+Les messages dans keydb streams sont immutables, donc il n'est pas possible de modifier uniquement le champ attempts. Deux opérations sont nécessaires:
+- Acquitter le message.
+- Si le nombre d'attempts est égal à limit alors le messgae est placé dans un log d'erreur.
+- Sinon une copie de ce message avec un attempt incrémenté est ajouté à KeyDB par le backend.
+
+**Remarque :** id sont générés par Kafka et propagé dans KeyDB. Les messages rejoués concervent le meme id pour une question de tracabilité. 
