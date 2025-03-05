@@ -13,12 +13,12 @@ page_content_classes: table-container
 **Révision :** 1.0.0<br/>
 **Date :** 05/03/2025<br/>
 **Auteur :** A. Deman<br/>
-**Commentaire :** Plan de mise en oeuvre à partir des [études préliminaire.](arch-soft-specif-communication-communication-preliminary-study.markdown){:target="_blank"}<br/>
+**Commentaire :** Plan de mise en oeuvre à partir des [études préliminaire.](../arch-soft-specif-communication-communication-preliminary-study.markdown){:target="_blank"}<br/>
 <br/>
 
 ## Contexte
 Dans un premier temps on laisse de côté le partie notification push mobile et la partie mail.<br/>
-Les [expérimentations réalisées](arch-soft-specif-communication-communication-preliminary-study.markdown){:target="_blank"} autour du temps et des notifications servent de base à l'élaboration de l'architecture technique.
+Les [expérimentations réalisées](../arch-soft-specif-communication-communication-preliminary-study.markdown){:target="_blank"} autour du temps et des notifications servent de base à l'élaboration de l'architecture technique.
 
 ## Objectifs 
 Mettre en place une première version d'architecture scalable qui serve de socle technique pour :
