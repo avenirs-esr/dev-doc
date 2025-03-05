@@ -2,7 +2,7 @@
 layout: page
 title: Dossier d'Architecture logicielle - module Communication - Etude préliminaire
 permalink: /arch-soft-specif-communication-preliminary-study/
-up: ../../arch-soft-specif-index/
+up: ../arch-soft-specif-index/
 page_content_classes: table-container
 ---
 [Retour](arch-soft-specif-communication.markdown)<br/>

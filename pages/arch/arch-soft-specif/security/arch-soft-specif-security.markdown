@@ -2,7 +2,7 @@
 layout: page
 title: Dossier d'Architecture logicielle - module Security
 permalink: /arch-soft-specif-security/
-up: ../../arch-soft-specif-index/
+up: ../arch-soft-specif-index/
 page_content_classes: table-container
 ---
 

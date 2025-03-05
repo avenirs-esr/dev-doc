@@ -2,7 +2,7 @@
 layout: page
 title: Dossier d'Architecture logicielle - module Security - Classification des actins
 permalink: /arch-soft-specif-security-rbac-levels/
-up: ../../arch-soft-specif-index/
+up: ../arch-soft-specif-index/
 page_content_classes: table-container
 ---
 [Retour](arch-soft-specif-security.markdown)<br/>

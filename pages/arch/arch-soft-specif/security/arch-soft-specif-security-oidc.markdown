@@ -2,7 +2,7 @@
 layout: page
 title: Dossier d'Architecture logicielle - module Security - Intégration OIDC
 permalink: /arch-soft-specif-security-oidc/
-up: ../../arch-soft-specif-index/
+up: ../arch-soft-specif-index/
 page_content_classes: table-container
 ---
 [Retour](arch-soft-specif-security.markdown)<br/>

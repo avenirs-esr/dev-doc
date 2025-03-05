@@ -2,7 +2,7 @@
 layout: page
 title: Dossier d'Architecture logicielle - Module Communication - Plan de mise en oeuvre
 permalink: /arch-soft-specif-communication-system-integration-plan/
-up: ../../arch-soft-specif-index/
+up: ../arch-soft-specif-index/
 page_content_classes: table-container
 ---
 [Retour](arch-soft-specif-communication.markdown)<br/>

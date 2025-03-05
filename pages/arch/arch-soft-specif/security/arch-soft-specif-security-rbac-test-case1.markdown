@@ -2,7 +2,7 @@
 layout: page
 title: Dossier d'Architecture logicielle - module Security - RBAC - Cas de test 1
 permalink: /arch-soft-specif-security-rbac-test-case1/
-up: ../../arch-soft-specif-index/
+up: ../arch-soft-specif-index/
 page_content_classes: table-container
 ---
 [Retour](arch-soft-specif-security.markdown)<br/>
