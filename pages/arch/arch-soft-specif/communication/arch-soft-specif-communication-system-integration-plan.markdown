@@ -13,7 +13,7 @@ page_content_classes: table-container
 **Révision :** 1.0.0<br/>
 **Date :** 05/03/2025<br/>
 **Auteur :** A. Deman<br/>
-**Commentaire :** Plan de mise en oeuvre à partir de l'études préliminaire.**<br/>
+**Commentaire :** Plan de mise en oeuvre à partir des [études préliminaire.](arch-soft-specif-communication-communication-preliminary-study.markdown){:target="_blank"}<br/>
 <br/>
 
 ## Contexte
