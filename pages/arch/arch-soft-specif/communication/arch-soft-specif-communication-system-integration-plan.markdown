@@ -18,7 +18,7 @@ page_content_classes: table-container
 
 ## Contexte
 Dans un premier temps on laisse de côté le partie notification push mobile et la partie mail.<br/>
-Les [expérimentations réalisées](../arch-soft-specif-communication-preliminary-study/){:target="_blank"} autour du temps et des notifications servent de base à l'élaboration de l'architecture technique.
+Les [expérimentations réalisées](../arch-soft-specif-communication-preliminary-study/){:target="_blank"} autour du temp réel et des notifications servent de base à l'élaboration de l'architecture technique.
 
 ## Objectifs 
 Mettre en place une première version d'architecture scalable qui serve de socle technique pour :
