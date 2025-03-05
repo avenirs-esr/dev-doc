@@ -13,7 +13,7 @@ page_content_classes: table-container
 **Révision :** 1.0.0<br/>
 **Date :** 25/04/2024<br/>
 **Auteur :** A. Deman<br/>
-**Commentaire :**Séparation de l'étude préliminaire et de la mise en peuvre pour la partie notification/temps réel<br/>
+**Commentaire :** séparation en 2 parties, étude préliminaire et mise en oeuvre<br/>
 <br/>
 
 ## Contexte
@@ -35,3 +35,4 @@ Module de communication du portfolio industriel, qui permet de gérer les notifi
 - Maintenir une cohérence, notamment en terme de format de messages sur l'ensemble de la plateforme.
 
 # [Etudes préliminaires](arch-soft-specif-communication-preliminary-study.markdown)
+# [Mise en oeuvre](arch-soft-specif-communication-system-integration-plan.markdown)
