@@ -29,7 +29,7 @@ Mettre en place une première version d'architecture scalable qui serve de socle
     - Envoyer les messages à la bonne audience . Les différentes granularités d'audiences sont à déterminer : utilisateur, groupe d'utilisateurs, types d'utlisateurs (par exemple administrateurs d'établissement), établisssement, formation, etc.
     - Gérer les aquittemnents.
     - Déterminer les stratégies de retry.
-- Les stratégies de fallback : anticiper les solutions de repli s'il s'avère par exemple, que le temps réeel est tropc couteux en termes de ressources.
+- Les stratégies de fallback : anticiper les solutions de repli s'il s'avère par exemple, que le temps réeel est trop couteux en termes de ressources.
 - L'observabilité, dans un deuxième temps, car cela dépend des possibilités d'intégration avec Apisix.
 
 
