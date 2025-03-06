@@ -101,8 +101,8 @@ Mettre en place une première version d'architecture scalable qui serve de socle
 ### Mécanisme pour rejouer les messages
 Les messages dans KeyDB streams sont immutables, il n'est donc pas possible de modifier uniquement le champ attempts. Deux opérations sont nécessaires :
 - Acquitter le message.
-- Si le nombre d'attempts est égal à limit alors le messgae est placé dans un log d'erreur.
-- Sinon une copie de ce message avec un attempt incrémenté est ajouté à KeyDB par le backend.
+- Si le nombre d'attempts est égal à limit alors le message est placé dans un log d'erreur.
+- Sinon, une copie de ce message avec un attempt incrémenté est ajouté à KeyDB par le backend.
 
 **Remarques :** 
 - Les id sont générés par Kafka et propagés dans KeyDB. Les messages rejoués conservent le même id pour une question de tracabilité. 
