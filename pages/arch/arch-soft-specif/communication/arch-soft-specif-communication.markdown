@@ -35,4 +35,5 @@ Module de communication du portfolio industriel, qui permet de gérer les notifi
 - Maintenir une cohérence, notamment en terme de format de messages sur l'ensemble de la plateforme.
 
 # [Etudes préliminaires](arch-soft-specif-communication-preliminary-study.markdown)
-# [Mise en oeuvre](arch-soft-specif-communication-system-integration-plan.markdown)
+# [Plan de mise en oeuvre](arch-soft-specif-communication-system-integration-plan.markdown)
+# [Notes d'installation](arch-soft-specif-communication-system-installation-notes.markdown)
