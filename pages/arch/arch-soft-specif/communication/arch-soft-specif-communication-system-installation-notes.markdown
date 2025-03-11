@@ -13,7 +13,7 @@ page_content_classes: table-container
 **Révision :** 1.0.0<br/>
 **Date :** 05/03/2025<br/>
 **Auteur :** A. Deman<br/>
-**Commentaire :** Notes d'installation correspondant au [plan de mise en oeuvre](../arch-soft-specif-communication-system-integration-plan/){:target="_blank"} dans [l'environnement de développement](../../../srv-dev/srv-dev){:target="_blank"}.<br/>
+**Commentaire :** Notes d'installation correspondant au [plan de mise en oeuvre](../arch-soft-specif-communication-system-integration-plan/){:target="_blank"} dans [l'environnement de développement](../../srv-dev/){:target="_blank"}.<br/>
 <br/>
 
 ## Debezium
