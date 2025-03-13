@@ -34,7 +34,7 @@ Après essais, les secondaries 1 et 2 ne peuvent pas être utilisés car c'est l
 
 Un troisième noeud qui utilisant la réplication logique est mis en place : avenirs-pgslq-secondary-cdc.
 
-Le fait introduire un troisième noeud et de mettre en place un connecteur Debezium sur ce noeud plutot que sur le primary permet d'éviter de charger le primary. La charge induite par Debezium est plus importante que la charge de replication vers le noeud dédié au cdc.
+Le fait d'introduire un troisième noeud et de mettre en place un connecteur Debezium sur ce noeud plutot que sur le primary permet d'éviter de charger le primary. La charge induite par Debezium est plus importante que la charge de replication vers le noeud dédié au cdc.
 
 **Base de données :** realtime_db<br/>
 **Tables :** public.sample
@@ -42,7 +42,7 @@ Le fait introduire un troisième noeud et de mettre en place un connecteur Debez
 #### Réplication logique
 Mettre en place de la réplication logique au niveau de postgres sur les secondaries.
 
-Fichier de configuration **postgresql.conf** (/avenirs-postgresql-overlay/secondaries_postgresql.conf)
+Fichier de configuration **postgresql.conf** (/avenirs-postgresql-overlay/secondaries_cdc_postgresql.conf)
 
 ```
 wal_level = logical            
@@ -56,7 +56,7 @@ hot_standby = on
 - wal_level = logical : niveau de réplication logique qui inclut les métadonnées nécessaires pour le CDC (Change Data Capture).
 - max_wal_senders: processus de réplication qui envoient les données au slots. 
 - [max_replication_slots](https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION-SLOTS){:target="_blank"} : réservation de conservation des journaux de réplication jusqu'à leur consommation. L'idée est d'avoir un connecteur Debezium par base qui utilse un slot. 
-- hot_standby = on : les requêtes en lecture seule sont autorisées pendant l'application des WAL (Write-Ahead Logs) reçus du serveur primaire. 
+- hot_standby = on : les requêtes en lecture seule sont autorisées en lecture si le serveur en mode recovery (pas vraiment d'impact dans notre cas). 
 
 #### Accès à la base de données
 
