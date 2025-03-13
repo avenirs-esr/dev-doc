@@ -17,6 +17,7 @@ page_content_classes: table-container
 <br/>
 
 ## Debezium
+Debezium est une plateform de Capture Data Change (CDC) que l'on utilise dans ce contexte pour capturer les modifications dans la base de données et les transmettre à Kafka.
 
 ### Configuration de Postgres
 
@@ -30,11 +31,11 @@ page_content_classes: table-container
 %}
 <br/>
 
-Après essais, les secondaries 1 et 2 ne peuvent pas être utilisés car c'est le mécanisme de réplication physique qui est utilisé et ils sont en mode recovery ce qui est incompatible avec la connexion d'un cdc. (Erreur de type : WAL control functions cannot be executed during recovery.)
+Après essais, les secondaries 1 et 2 ne peuvent pas être utilisés car c'est le mécanisme de réplication physique qui est utilisé et ils sont en mode recovery ce qui est incompatible avec la connexion d'un CDC. (Erreur de type : WAL control functions cannot be executed during recovery.)
 
-Un troisième noeud qui utilisant la réplication logique est mis en place : avenirs-pgslq-secondary-cdc.
+Un troisième noeud qui utilise la réplication logique est mis en place : avenirs-pgslq-secondary-cdc.
 
-Le fait d'introduire un troisième noeud et de mettre en place un connecteur Debezium sur ce noeud plutot que sur le primary permet d'éviter de charger le primary. La charge induite par Debezium est plus importante que la charge de replication vers le noeud dédié au cdc.
+Le fait d'introduire un troisième noeud et de mettre en place un connecteur Debezium sur ce noeud plutôt que sur le primary permet d'éviter de charger le primary. La charge induite par Debezium est plus importante que la charge de réplication vers le noeud dédié au CDC.
 
 **Base de données :** realtime_db<br/>
 **Tables :** public.sample
