@@ -70,65 +70,96 @@ host    all             debezium        172.16.0.0/12           md`
 
 **Primary :**
 
-```
-CREATE USER debezium WITH PASSWORD '******' LOGIN REPLICATION;
-
 CREATE DATABASE realtime_db;
 
 \c realtime_db
 
 CREATE TABLE public.sample (
-    sdb_id               SERIAL PRIMARY KEY,
-    sdb_short_txt        VARCHAR(40) NOT NULL,
-    sdb_long_txt         TEXT,
-    sdb_creation         TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    sdb_id SERIAL PRIMARY KEY,
+    sdb_short_txt VARCHAR(40) NOT NULL,
+    sdb_long_txt TEXT,
+    sdb_creation TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+GRANT SELECT ON TABLE public.sample TO pgrepl;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO pgrepl;
+
+CREATE PUBLICATION cdc_pub FOR ALL TABLES;
+```
+
+**Explicitations :**
+- Création de la base de la table du rôle et positionnement des droits pour l'utilisateur de réplication.
+- Création de la publication utilisée par le secondaire pour se synchroniser.
+
+**Secondaire (avenirs-pgsql-secondary-cdc) :**
+
+```
+
+CREATE USER debezium WITH PASSWORD 'p@@ss4DBZCDC' LOGIN REPLICATION;
+
+CREATE DATABASE realtime_db;
+
+ALTER DATABASE realtime_db OWNER TO debezium;
+\c realtime_db
+
+GRANT ALL PRIVILEGES ON DATABASE realtime_db TO debezium;
+GRANT USAGE ON SCHEMA public TO debezium;
+GRANT ALL PRIVILEGES ON SCHEMA public TO debezium;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO debezium;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO debezium;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO debezium;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO debezium;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON SEQUENCES TO debezium;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON FUNCTIONS TO debezium;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TYPES TO debezium;
+
+
+CREATE TABLE public.sample (
+    sdb_id SERIAL PRIMARY KEY,
+    sdb_short_txt VARCHAR(40) NOT NULL,
+    sdb_long_txt TEXT,
+    sdb_creation TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-GRANT CONNECT ON DATABASE realtime_db TO debezium;
-GRANT USAGE ON SCHEMA public TO debezium;
-GRANT SELECT ON public.sample TO debezium;
-GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO debezium;
+CREATE SUBSCRIPTION cdc_sub
+CONNECTION 'host=avenirs-pgsql-primary dbname=realtime_db user=pgrepl password=pgreplpassword'
+PUBLICATION cdc_pub
+WITH (copy_data = true);
 
-CREATE PUBLICATION realtime_pub FOR TABLE public.sample;
+CREATE PUBLICATION realtime_pub FOR ALL TABLES;
+
+GRANT PUBLICATION realtime_pub TO debezium;
+
 ```
 
 **Explicitations :**
-- Création de la base de la table du rôle et positionnement des droits.
-- Création de la publication. La création doit être faite sur le primary car les secondaries sont en lecture seules.
-
-**Secondaries :**
-
-```
-
-SELECT pg_create_logical_replication_slot('debezium_slot', 'pgoutput');
-
-SELECT * FROM pg_publication;
-```
-
-**Explicitations :**
-- Création du slot logique de réplication sur lequel le connecteur Debezium va se connecter.
+- Création de la table, la replication logique ne conserrne que les données (pas de synchronisation DDL).
+- Positionnement des droits pour l'utilisateur debezium et positionnement des droits par défaut, en cas d'ajout de tables éventuel.
+- Création de la souscription à la publication du primaire.
+- Création de la publication utilisée par Debezium.
 
 ## Création du connecteur postgres
 
 ```
-curl -X PUT -H "Content-Type: application/json"   --data '{
+curl -X PUT -H "Content-Type: application/json" \
+  --data '{
     "name": "postgres-connector",
     "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
-    "database.user": "ebezium",
-    "database.password": "********",
-    "database.hostname": "postgres",
+    "database.user": "debezium",
+    "database.password": "p@@ss4DBZCDC",
+    "database.hostname": "avenirs-pgsql-secondary-cdc",
     "database.port": "5432",
     "database.dbname": "realtime_db",
-    "database.server.name": "realtime_db_server",
-    "topic.prefix": "realtime_db_rt",
+    "database.server.name": "avenirs_realtime",
+    "topic.prefix": "avenirs_rt",
     "slot.name": "debezium_slot",
-    "publication.name": "realtime_db_publications",
+    "publication.name": "realtime_pub",
     "plugin.name": "pgoutput",
     "key.converter": "org.apache.kafka.connect.json.JsonConverter",
     "value.converter": "org.apache.kafka.connect.json.JsonConverter",
     "key.converter.schemas.enable": "false",
     "value.converter.schemas.enable": "false"
-  }'   http://localhost:8083/connectors/postgres-connector/config
+  }' \
+  http://localhost:8083/connectors/postgres-connector/config
 ```
 
 ### Vérifications
@@ -170,6 +201,8 @@ curl -X PUT -H "Content-Type: application/json"   --data '{
 ```
 
 **Vérification des données dans Kafka :**
+
+le topic utilisé par Debezium est "topic.prefix".schema.table (avenirs_rt.public.sample).
 
 {% include img.html
         src="assets/images/rt-check-kafka.png"
