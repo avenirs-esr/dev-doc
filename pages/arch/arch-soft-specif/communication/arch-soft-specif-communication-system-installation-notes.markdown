@@ -18,19 +18,23 @@ page_content_classes: table-container
 
 ## Debezium
 
-### Configuration de Postgres
-Après essais les secondaries 1 et 2 ne peuvent pas être utilsés car c'est le mécanisme de réplication physique qui est utilisé et ils sont en mode recovery ce qui est incompatible avec la connexion d'un cdc. (Erreur de type : WAL control functions cannot be executed during recovery.)
+### Configuration de Postgres
 
-Un troisième noeud qui utilisant la réplication logique est mis en place : avenirs-pgslq-secondary-cdc.
-
-Le fait introduire un troisième noeud et de mettre en place un connecteur Debezium sur ce noeud plutot que sur le primary permet d'éviter de charger le primary. La charge induite par Debezium est plus importante que la charge de replication vers le noeud dédié au cdc.
+#### Détail du cluster Postgres
 
 
 {% include img.html
         src="assets/images/rt-cluster-prostgres.svg"
-        alt="Vérification des données dans Kafka"
-        caption="Vérification des données dans Kafka"
+        alt="Détail du cluster Postgres"
+        caption="Détail du cluster Postgres"
 %}
+<br/>
+
+Après essais, les secondaries 1 et 2 ne peuvent pas être utilisés car c'est le mécanisme de réplication physique qui est utilisé et ils sont en mode recovery ce qui est incompatible avec la connexion d'un cdc. (Erreur de type : WAL control functions cannot be executed during recovery.)
+
+Un troisième noeud qui utilisant la réplication logique est mis en place : avenirs-pgslq-secondary-cdc.
+
+Le fait introduire un troisième noeud et de mettre en place un connecteur Debezium sur ce noeud plutot que sur le primary permet d'éviter de charger le primary. La charge induite par Debezium est plus importante que la charge de replication vers le noeud dédié au cdc.
 
 **Base de données :** realtime_db<br/>
 **Tables :** public.sample
