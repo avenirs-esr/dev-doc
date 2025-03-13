@@ -18,13 +18,24 @@ page_content_classes: table-container
 
 ## Debezium
 
-### Configuratio de Postgres
-Le serveur postgres utilisé est postgresql-secondary1, mais les deux secondaries sont configurés pour autoriser le CDC.
+### Configuration de Postgres
+Après essais les secondaries 1 et 2 ne peuvent pas être utilsés car c'est le mécanisme de réplication physique qui est utilisé et ils sont en mode recovery ce qui est incompatible avec la connexion d'un cdc. (Erreur de type : WAL control functions cannot be executed during recovery.)
+
+Un troisième noeud qui utilisant la réplication logique est mis en place : avenirs-pgslq-secondary-cdc.
+
+Le fait introduire un troisième noeud et de mettre en place un connecteur Debezium sur ce noeud plutot que sur le primary permet d'éviter de charger le primary. La charge induite par Debezium est plus importante que la charge de replication vers le noeud dédié au cdc.
+
+
+{% include img.html
+        src="assets/images/rt-cluster-prostgres.svg"
+        alt="Vérification des données dans Kafka"
+        caption="Vérification des données dans Kafka"
+%}
 
 **Base de données :** realtime_db<br/>
 **Tables :** public.sample
 
-#### Réplication logique
+#### Réplication logique
 Mettre en place de la réplication logique au niveau de postgres sur les secondaries.
 
 Fichier de configuration **postgresql.conf** (/avenirs-postgresql-overlay/secondaries_postgresql.conf)
@@ -32,7 +43,8 @@ Fichier de configuration **postgresql.conf** (/avenirs-postgresql-overlay/second
 ```
 wal_level = logical            
 max_wal_senders = 10           
-max_replication_slots = 10     
+max_replication_slots = 10    
+hot_standby = on 
 ```
 
 **Explications :**
@@ -40,6 +52,7 @@ max_replication_slots = 10
 - wal_level = logical : niveau de réplication logique qui inclut les métadonnées nécessaires pour le CDC (Change Data Capture).
 - max_wal_senders: processus de réplication qui envoient les données au slots. 
 - [max_replication_slots](https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION-SLOTS){:target="_blank"} : réservation de conservation des journaux de réplication jusqu'à leur consommation. L'idée est d'avoir un connecteur Debezium par base qui utilse un slot. 
+- hot_standby = on : les requêtes en lecture seule sont autorisées pendant l'application des WAL (Write-Ahead Logs) reçus du serveur primaire. 
 
 #### Accès à la base de données
 
@@ -114,29 +127,48 @@ curl -X PUT -H "Content-Type: application/json"   --data '{
   }'   http://localhost:8083/connectors/postgres-connector/config
 ```
 
-### Vérification
+### Vérifications
 
 - http://localhost:8083/connectors
 ```
-["postgres-connector"]
+    ["postgres-connector"]
 ``` 
 
 - http://localhost:8083/connectors/postgres-connector/status
 
 ```json
-{
-  "name": "postgres-connector",
-  "connector": {
-    "state": "RUNNING",
-    "worker_id": "172.18.0.23:8083"
-  },
-  "tasks": [
-    {
-      "id": 0,
-      "state": "RUNNING",
-      "worker_id": "172.18.0.23:8083"
-    }
-  ],
-  "type": "source"
-}
+        {
+          "name": "postgres-connector",
+          "connector": {
+            "state": "RUNNING",
+            "worker_id": "172.18.0.23:8083"
+            },
+                  "tasks": [
+                    {
+                      "id": 0,
+                      "state": "RUNNING",
+                      "worker_id": "172.18.0.23:8083"
+                    }
+                  ],
+            "type": "source"
+        }
 ```
+
+## Insertion d'une ligne dans la table de test
+
+``` sql
+ docker exec -it avenirs-pgsql-primary psql -p 5432 -U pguser -d realtime_db -c "INSERT INTO public.sample (sdb_short_txt, sdb_long_txt) VALUES ('Test entry', 'This is a test entry for Debezium CDC testing');"
+```
+
+**Logs du conteneur debezium :**
+```
+2025-03-13 09:08:52,665 INFO   ||  1 records sent during previous 00:02:19.558, last recorded offset of {server=avenirs_rt} partition is {transaction_id=null, lsn_proc=30642856, messageType=INSERT, lsn_commit=30642536, lsn=30642856, txId=760, ts_usec=1741856932053323}   [io.debezium.connector.common.BaseSourceTask]
+```
+
+**Vérification des données dans Kafka :**
+
+{% include img.html
+        src="assets/images/rt-check-kafka.png"
+        alt="Vérification des données dans Kafka"
+        caption="Vérification des données dans Kafka"
+%}
