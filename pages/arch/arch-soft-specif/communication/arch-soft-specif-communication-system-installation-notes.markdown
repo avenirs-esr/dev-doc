@@ -41,7 +41,10 @@ Le fait d'introduire un troisième noeud et de mettre en place un connecteur Deb
 **Tables :** public.sample
 
 #### Réplication logique
-Mettre en place de la réplication logique au niveau de postgres sur les secondaries.
+La réplication logique est utilisée au niveau de primary conjointement avec la réplication physique.
+
+
+Sur le secondaire dédié au CDC, la réplication logique est également activée. Elle sera utilisée par Debezium.
 
 Fichier de configuration **postgresql.conf** (/avenirs-postgresql-overlay/secondaries_cdc_postgresql.conf)
 
