@@ -12,3 +12,4 @@ order: 20
 - [Development Environment](../srv-dev/)
 - [Software Architecture Specification](../arch-soft-specif-index/)
 - [Load tests](../load-tests/)
+- [Architecture - Frontend](../arch-front/)
