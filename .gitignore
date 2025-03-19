@@ -12,3 +12,5 @@ vendor/
 # drawio
 .$*.bkp
 .$*.dtmp
+
+.qodo

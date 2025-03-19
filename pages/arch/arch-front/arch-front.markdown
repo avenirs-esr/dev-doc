@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Architecture - Frontend
-permalink: /arch-frontend/
+permalink: /arch-front/
 ---
 
 # Définition de la stack technique :
