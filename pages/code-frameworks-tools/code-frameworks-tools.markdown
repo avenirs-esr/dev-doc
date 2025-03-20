@@ -7,8 +7,8 @@ position: left
 order: 30
 ---
 [Services to open for newcomers](../new-comers){:target="_blank"}
-### Versions
-#### Backend
+## Versions
+### Backend
 
 - [Java 21](https://endoflife.date/eclipse-temurin)
 - [Maven 3.9](https://endoflife.date/maven)
@@ -73,6 +73,10 @@ autoload_nvmrc() {
 PROMPT_COMMAND="autoload_nvmrc; $PROMPT_COMMAND"
 
 ```
+
+### Frontend
+- [Node.js 22](https://endoflife.date/nodejs)
+- [npm 11](https://www.npmjs.com/package/npm/v/11.0.0)
 
 ## Git webfflow
 The selected git flow is [GitHub Flow.](https://docs.github.com/en/get-started/quickstart/github-flow){:target="_blank"}

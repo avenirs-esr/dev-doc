@@ -6,7 +6,8 @@ permalink: /arch-front/
 
 # Définition de la stack technique :
 * **~~Utilisation d'un store : Vuex.~~**
-* **Data fetching : ex Vue Query : pour la mise en cache, l'interaction avec la partie back en SSE et les stratégies de fallback (shortpooling), les optimisations (détection d'inactivité), etc.**
+* **Mise en place de la configuration (.env, NODE_ENV, intégration dans srv-dev avec Docker ?...) _DEADLINE DE DÉCISION 01/04/2025_**
+* **Data fetching : ex Vue Query : pour la mise en cache, l'interaction avec la partie back en SSE et les stratégies de fallback (shortpooling), les optimisations (détection d'inactivité), etc. _DEADLINE DE DÉCISION 15/04/2025_**
 * **Logs**
 
 # Architecture:
