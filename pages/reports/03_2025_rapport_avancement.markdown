@@ -285,7 +285,7 @@ Un diagramme de synthèse présente l’état d’avancement actuel par grands m
         src="assets/images/avancement_modules_03_2024.svg"
         alt="Estimation de l'avancement par grand module"
         width="50%"
-        caption="Diagramme d'estimation de l'avancement par grand module fonctionnel – mise à jour mars 2024."    
+        caption="Estimation de l'avancement par grand module fonctionnel – mise à jour mars 2024."    
 %}
 <br/>
 
