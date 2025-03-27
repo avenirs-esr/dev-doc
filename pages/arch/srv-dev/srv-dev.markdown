@@ -11,7 +11,7 @@ Repository: [srv-dev](https://github.com/avenirs-esr/srv-dev){:target="_blank"}.
 
 ## Architecture
  {% include img.html
-        src="assets/images/docker-containers.png"
+        src="assets/images/docker-containers.svg"
         alt="Dockers containers"
         width="100%"
         caption="Architecture: containers and services"
