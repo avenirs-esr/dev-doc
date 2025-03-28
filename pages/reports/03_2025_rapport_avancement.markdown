@@ -98,7 +98,7 @@ L'objectif est de mettre en place une plateforme SaaS capable d'accueillir jusqu
         caption="Réprésentation simplifiée de l'architecture"
 %}
 <br/>
-[Le schéma complet de l'architecture peut être consulté sur le site technique](../../arch-soft-specif-all/#vue-densemble-des-principaux-modules-et-de-leurs-interactions){:target="_blank"}
+[Le schéma complet de l'architecture peut être consulté sur le site technique.](../../arch-soft-specif-all/#vue-densemble-des-principaux-modules-et-de-leurs-interactions){:target="_blank"}
 <br/>
 
 **Focus sur l'API Manager :** dans cette architecture, une brique particulière, l'API Manager, constitue le centre névralgique de toutes les interactions avec le système. Ce type de solution commence à être adopté par certains établissements en pointe. Une étude préliminaire a conforté la pertinence de son intégration au cœur du système. Ses fonctionnalités et avantages seront développés plus en détail dans la suite de ce document.
