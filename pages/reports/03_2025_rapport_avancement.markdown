@@ -32,7 +32,7 @@ Ce document se concentre sur la partie **technique et réalisation,** suivant qu
 
 - **La sécurité et la confidentialité :** garantir la sécurité et la confidentialité des données utilisateurs ; détecter et résoudre les problèmes ou anomalies.
 
-- **Le frontend :** interfaces utilisateurs, scénarios d'usage et expérience utilisateur. Une spécification complète est un prérequis avant tout développement, car cette partie est très dépendante du domaine métier. L'équipe technique, n'étant pas détentrice de cette expertise, n'est pas autonome sur cette phase. L'accessibilité et l'internationalisation sont des composantes essentielles.
+- **Le frontend :** interfaces utilisateurs, scénarios d'usage et expérience utilisateur. Une spécification complète est un prérequis avant tout développement, car cette partie est très dépendante du domaine métier. L'équipe technique, n'étant pas détentrice de cette expertise, n'est pas autonome sur cette partie. L'accessibilité et l'internationalisation en sont des composantes essentielles.
 
 - **Le backend :** les services sur lesquels reposent les interfaces utilisateurs (authentification, contrôle d'accès, stockage, etc.). Cette partie est plus technique et dépend davantage du mode de distribution et de l'envergure du projet. L'équipe est plus autonome pour concevoir l'architecture, réaliser des tests, établir des priorités et commencer à intégrer les services.
 
@@ -73,7 +73,7 @@ Malgré l'aide efficace de MC2I, ce processus prend du temps afin d'aboutir à u
 
 Le développement frontend dépend directement des spécifications, qui ont mis du temps à être lancées. Cette partie reste donc logiquement en retrait par rapport au backend.
 
-D'un point de vue technique, le framework retenu pour les développements est Vue.js. Il fait partie des frameworks les plus utilisés, et il est largement répandu dans la communauté universitaire. Sa courbe d'apprentissage est plus douce que celle de React ou Angular, ses concurrents, ce qui devrait faciliter les collaborations.
+D'un point de vue technique, le framework retenu pour les développements est Vue.js. Il fait partie des frameworks les plus utilisés et il est largement répandu dans la communauté universitaire. Sa courbe d'apprentissage est plus douce que celle de React ou Angular, ses concurrents, ce qui devrait faciliter les collaborations.
 L'utilisation de Web Components, permettant de réutiliser des éléments d'interface quel que soit le framework utilisé, est également envisagée. Une petite expérimentation a été menée avec la librairie Lit pour valider cette approche.
 
 Un travail de réflexion plus général a été engagé sur l'organisation des développements frontend. Plusieurs thématiques ont déjà été identifiées et pourront être traitées prochainement pour poser un cadre de travail et une architecture cohérente.
@@ -84,9 +84,9 @@ D'autres orientations sont déjà posées, comme :
 
 Enfin, certaines fonctionnalités comme la possibilité d'un chat contextualisé, par exemple pour les travaux de groupe ou les activités de mise en situation (AMS), devront faire l'objet d'une analyse technique et fonctionnelle spécifique. Il faudra notamment anticiper les problématiques de charge éventuelle, en prévoyant une adaptation progressive du mode de fonctionnement, par exemple en basculant progressivement d'un mode synchrone à un mode asynchrone. D'un point de vue fonctionnel, la possibilité de désactivation partielle ou complète devra également être envisagée pour prévenir les usages détournés.
 
-Les travaux engagés jusqu'à présent ont été menés à effectif très réduit. Les bases sont posées et permettront d'accélérer dès que les livrables de spécification seront livrés et l'équipe renforcée.
+Les travaux engagés jusqu'à présent ont été menés à effectif très réduit. Les bases sont posées et permettront d'accélérer dès que les spécifications seront livrées et l'équipe renforcée.
 
-**[TODO]** Montrer des captures d'écran
+**[TODO]** Montrer des captures d'écran ?
 
 # État d'avancement du backend
 
@@ -112,7 +112,7 @@ Afin de permettre le développement, les tests et les validations techniques, un
 {% include img.html
         src="assets/images/docker-containers.svg"
         alt="Dockers containers"
-        width="80%"
+        width="90%"
         caption="Schéma d'intégration des services et des développements dans l'environnement de développement"
     %}
 
