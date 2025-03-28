@@ -196,7 +196,7 @@ Le diagramme et les liens ci-dessous présentent l'architecture et les travaux r
         src="assets/images/arch-soft-specif-communication-system-integration-plan.svg"
         alt="Schéma d'architecture du système temps réel"
         width="50%"
-        caption="Architecture d'intégration du système de communication temps réel."    
+        caption="Architecture d'intégration du système de communication temps réel"    
 %}
     
 <br/>
@@ -225,7 +225,7 @@ De même, une base en mémoire de type KeyDB, déjà utilisée dans l'architectu
         src="assets/images/rt-cluster-prostgres.svg"
         alt="Cluster PostgreSQL mis en œuvre pour la réplication physique et logique"
         width="50%"
-        caption="Cluster PostgreSQL mis en œuvre pour la réplication et le Capture Data Change (CDC)."    
+        caption="Cluster PostgreSQL mis en œuvre pour la réplication et le Capture Data Change (CDC)"    
 %}
 <br/>
 
@@ -289,7 +289,7 @@ Un diagramme de synthèse présente l’état d’avancement actuel par grands m
         src="assets/images/avancement_modules_03_2024.svg"
         alt="Estimation de l'avancement par grand module"
         width="50%"
-        caption="Estimation de l'avancement par grand module fonctionnel – mise à jour mars 2024."    
+        caption="Estimation de l'avancement par grand module fonctionnel – mise à jour mars 2024"    
 %}
 <br/>
 
