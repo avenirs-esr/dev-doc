@@ -101,7 +101,6 @@ L'utilisation d'un API Manager s'inscrit parfaitement dans une démarche de type
         src="assets/images/security-by-design-big-picture.svg"
         alt="Security by design - Big Picture"
         width="50%"
-        caption="Security by design - Big Picture"
 %}
 
 ## Références
