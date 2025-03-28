@@ -96,9 +96,13 @@ L'utilisation d'un API Manager s'inscrit parfaitement dans une démarche de type
 - etc.
 
 ## Big picture
-<img src="https://github.com/avenirs-esr/private-doc/blob/main/assets/images/security-by-design-big-picture.png" alt="Security by design - Big Picture">
 
-
+{% include img.html
+        src="assets/images/security-by-design-big-picture.png"
+        alt="Security by design - Big Picture"
+        width="50%"
+        caption="Security by design - Big Picture"
+%}
 
 ## Références
 
