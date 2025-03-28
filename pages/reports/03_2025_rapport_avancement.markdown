@@ -18,7 +18,7 @@ is_menu_entry: false
     - [Communication](#communication)
     - [Stockage](#stockage)
     - [Monitoring](#monitoring)
-    - [Back office](#back-office)
+    - [Back-office](#back-office)
     - [Interopérabilité et intégration dans l'écosystème](#interopérabilité-et-intégration-dans-lécosystème)
 - [Conclusion](#conclusion)
 
@@ -56,13 +56,13 @@ La démarche est initiée au niveau du projet, mais doit maintenant être repris
 
 # État d'avancement du frontend
 
-Les interfaces utilisateurs sont la partie émergée de la plateforme. Il est essentiel de produire des écrans qui répondent à un certain nombre de caractérisqiques :
- - accessibles, pour que les utilisateurs en situation de handicape ne soient pas pénalisés,  
- - ergonomiques, une expérience utilsateur réussie est l'un des enjeux centraux de ce projet,
- - traduites (internationnalisation), la communauté universitaire est cosmopolite,
- - responsive, pour que les écrans s'adaptent au dispositifs d'affichage. 
+Les interfaces utilisateurs sont la partie émergée de la plateforme. Il est essentiel de produire des écrans qui répondent à un certain nombre de caractéristiques :
+ - accessibles, pour que les utilisateurs en situation de handicap ne soient pas pénalisés,  
+ - ergonomiques, une expérience utilisateur réussie est l'un des enjeux centraux de ce projet,
+ - traduites (internationalisation), la communauté universitaire est cosmopolite,
+ - responsive, pour que les écrans s'adaptent aux dispositifs d'affichage. 
  
- Les parcours utilisateurs doivent être bien pensés, et l'ensemble de ces caractéristiques doit favoriser l'adoption de l'approche par par compétences et l'engagement utilisateur.
+ Les parcours utilisateurs doivent être bien pensés, et l'ensemble de ces caractéristiques doit favoriser l'adoption de l'approche par compétences et l'engagement utilisateur.
 
 Les spécifications frontend ayant pris du retard, nous avons fait appel à une prestation de service sous forme de maîtrise d'œuvre. C'est la société MC2I qui a été retenue pour nous accompagner dans cette phase.
 Elle produit les livrables sous forme de récits utilisateurs (User Stories), de parcours utilisateur (User Flows) et de maquettes.
@@ -80,7 +80,7 @@ Un travail de réflexion plus général a été engagé sur l'organisation des d
 D'autres orientations sont déjà posées, comme :
 - l'utilisation d'un store d'état ;
 - l'adoption d'une bibliothèque spécialisée pour la gestion des requêtes (data fetching), en lien avec les problématiques du module Communication.
-- la nécessité d'avoir un mécanisme de paramétrage centralisé en lien avec le module backoffice.
+- la nécessité d'avoir un mécanisme de paramétrage centralisé en lien avec le module back-office.
 
 Les travaux engagés jusqu'à présent ont été menés à effectif très réduit. Les bases sont posées et permettront d'accélérer dès que les livrables de spécification seront livrés et l'équipe renforcée.
 
@@ -221,7 +221,7 @@ De même, une base en mémoire de type KeyDB, déjà utilisée dans l'architectu
         src="assets/images/rt-cluster-prostgres.svg"
         alt="Cluster PostgreSQL mis en œuvre pour la réplication physique et logique"
         width="50%"
-        caption="Cluster PostgreSQL mis en œuvre pour la réplication le Capture Data Change (CDC)."    
+        caption="Cluster PostgreSQL mis en œuvre pour la réplication et le Capture Data Change (CDC)."    
 %}
 <br/>
 
@@ -237,8 +237,8 @@ La mise en place du monitoring consistera à collecter des données et des métr
 Le premier travail à réaliser sur ce sujet portera sur la gestion des logs, pour pouvoir l'intégrer au plus tôt dans les développements et les services déployés.
 
 
-### Back office
-La partie back office n'a pas encore été initiée, mais des orientations ont déjà été établies :
+### Back-office
+La partie back-office n'a pas encore été initiée, mais des orientations ont déjà été établies :
 
 - Séparation complète de l'interface d'administration par rapport au frontend utilisateur, pour des raisons évidentes de sécurité.
 L'objectif est de limiter au maximum la surface d'exposition, en renforçant les mécanismes de contrôle d'accès, par exemple via un accès restreint au réseau interne ou la mise en place d'une authentification multifacteur.
