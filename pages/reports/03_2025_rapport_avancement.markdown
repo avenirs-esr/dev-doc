@@ -14,12 +14,12 @@ is_menu_entry: false
   - [Tests de charge et validation technique](#tests-de-charge-et-validation-technique)
   - [Avancement par grand module](#avancement-par-grand-module)
     - [API Manager](#api-manager)
-    - [Authentification et contrôle daccès](#authentification-et-contrôle-daccès)
+    - [Authentification et contrôle d'accès](#authentification-et-contrôle-daccès)
     - [Communication](#communication)
     - [Stockage](#stockage)
     - [Monitoring](#monitoring)
     - [Back-office](#back-office)
-    - [Interopérabilité et intégration dans l'écosystème](#interopérabilité-et-intégration-dans-lécosystème)
+    - [Interopérabilité et intégration dans l'écosystème des établissements](#interopérabilité-et-intégration-dans-lécosystème-des-établissements)
 - [Conclusion](#conclusion)
 
 
@@ -122,6 +122,7 @@ Ces tests sont réalisés sur l'environnement de développement, avec pour objec
 
 - [Documentation sur la méthodologie de tests de charge](../../load-tests/){:target="_blank"}
 - [Exemple de rapport de tests de charge](../../static-pages/load-tests/reports/m1.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
+
 ## Avancement par grand module
 
 Cette section présente l'état des principaux modules du backend. Certains sont déjà bien avancés, d'autres sont encore en phase de réflexion ou à initier.
@@ -245,7 +246,7 @@ L'objectif est de limiter au maximum la surface d'exposition, en renforçant les
 
 - Centralisation du paramétrage de la plateforme, afin de garantir une gestion unifiée et cohérente des paramètres applicatifs. Cette centralisation offrira également des possibilités intéressantes, comme la modification dynamique du paramétrage ou la désactivation ciblée de fonctionnalités, sans interruption de service.
 
-## Interopérabilité et intégration dans l'écosystème
+## Interopérabilité et intégration dans l'écosystème des établissements
 Ce module vise à assurer la bonne intégration de la plateforme dans l'écosystème des établissements. Deux grands axes sont concernés :
 
  - La constitution de la base d'utilisateurs, en lien avec le module d'authentification et de contrôle d'accès.
