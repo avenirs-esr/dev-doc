@@ -69,7 +69,7 @@ Elle produit les livrables sous forme de récits utilisateurs (User Stories), de
 De nombreuses personnes, aux profils variés, sont impliquées via :
 - des ateliers de raffinement hebdomadaires en distanciel ;
 - des ateliers en présentiel, plus ciblés, une fois par mois.
-Malgré l'aide efficace de MC2I, ce processus prend du temps afin aboutir à une solution avec le niveau de maturité attendu pour un projet de cette envergure.
+Malgré l'aide efficace de MC2I, ce processus prend du temps afin d'aboutir à une solution avec le niveau de maturité attendu pour un projet de cette envergure.
 
 Le développement frontend dépend directement des spécifications, qui ont mis du temps à être lancées. Cette partie reste donc logiquement en retrait par rapport au backend.
 
@@ -82,9 +82,11 @@ D'autres orientations sont déjà posées, comme :
 - l'adoption d'une bibliothèque spécialisée pour la gestion des requêtes (data fetching), en lien avec les problématiques du module Communication.
 - la nécessité d'avoir un mécanisme de paramétrage centralisé en lien avec le module back-office.
 
+Enfin, certaines fonctionnalités comme la possibilité d'un chat contextualisé, par exemple pour les travaux de groupe ou les activités de mise en situation (AMS), devront faire l'objet d'une analyse technique et fonctionnelle spécifique. Il faudra notamment anticiper les problématiques de charge éventuelle, en prévoyant une adaptation progressive du mode de fonctionnement, par exemple en basculant progressivement d'un mode synchrone à un mode asynchrone. D'un point de vue fonctionnel, la possibilité de désactivation partielle ou complète devra également être envisagée pour prévenir les usages détournés.
+
 Les travaux engagés jusqu'à présent ont été menés à effectif très réduit. Les bases sont posées et permettront d'accélérer dès que les livrables de spécification seront livrés et l'équipe renforcée.
 
-[TODO] Montrer des captures d'écran
+**[TODO]** Montrer des captures d'écran
 
 # État d'avancement du backend
 
@@ -115,7 +117,7 @@ Afin de permettre le développement, les tests et les validations techniques, un
     %}
 
 <br/><br>
-[Dépôt GitHub (branche d'intégration temps réel)](https://github.com/avenirs-esr/srv-dev/tree/feature/realtime-integration){:target="_blank"}
+- [Dépôt GitHub (branche d'intégration temps réel).](https://github.com/avenirs-esr/srv-dev/tree/feature/realtime-integration){:target="_blank"}
 
 ## Tests de charge et validation technique
 
@@ -123,8 +125,8 @@ Une stratégie de tests de charge a été initiée afin d'obtenir des premières
 Ces tests sont réalisés sur l'environnement de développement, avec pour objectif d'être reproduits ensuite sur l'environnement de production. Ils ont été présentés et validés par l'équipe en charge de l'hébergement. Cette démarche permettra d'obtenir une vision claire des performances et des limites du système, ainsi que de réaliser les éventuels ajustements ou dimensionnements nécessaires.
 
 
-- [Documentation sur la méthodologie de tests de charge](../../load-tests/){:target="_blank"}
-- [Exemple de rapport de tests de charge](../../static-pages/load-tests/reports/m1.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
+- [Documentation sur la méthodologie de tests de charge.](../../load-tests/){:target="_blank"}
+- [Exemple de rapport de tests de charge.](../../static-pages/load-tests/reports/m1.0/srv-dev-avenir/report-50-5-4.html){:target="_blank"}
 
 ## Avancement par grand module
 
@@ -165,13 +167,13 @@ Ce travail a permis de définir un mode opératoire reproductible, qui servira d
         src="assets/images/architecture-security-rbac.svg"
         alt="RBAC Security model"
         width="70%"
-        caption="Schéma du mécanisme d’évaluation des droits basé sur le modèle RBAC"
+        caption="Schéma du mécanisme d'évaluation des droits basé sur le modèle RBAC"
     %}
     
 <br/>
 
 
-[Documentation du module de contrôle d'accès](../../arch-soft-specif-security-rbac/){:target="_blank"}
+- [Documentation du module de contrôle d'accès.](../../arch-soft-specif-security-rbac/){:target="_blank"}
 
 ### Communication
 Ce module couvre les différents canaux de communication mis à disposition des utilisateurs de la plateforme. Il englobe à la fois la communication entre utilisateurs et celle entre le backend et le frontend.
@@ -217,7 +219,7 @@ L'évaluation de son impact en termes de volume de stockage et de performances e
 
 Certains travaux ont déjà été engagés, notamment la mise en place d'un cluster PostgreSQL pour les besoins de stockage relationnel. Des études ont été menées sur différents modes de réplication, et une première implémentation a été réalisée dans l'environnement de développement. Ces éléments devront être approfondis en lien avec l'équipe hébergement, notamment pour ce qui est des questions de performance et de haute disponibilité.
 
-Le choix qui a été fait est de déployer un seul cluster PostgreSQL au sein duquel chaque microservice dispose de sa propre base de données. Ce choix permet de garantir l’isolation logique entre les services tout en mutualisant l’administration et les ressources du cluster.
+Le choix qui a été fait est de déployer un seul cluster PostgreSQL au sein duquel chaque microservice dispose de sa propre base de données. Ce choix permet de garantir l'isolation logique entre les services tout en mutualisant l'administration et les ressources du cluster.
 
 De même, une base en mémoire de type KeyDB, déjà utilisée dans l'architecture du module de communication, pourra jouer un rôle dans la gestion des caches à différents niveaux. Là encore, il s'agit d'une phase d'optimisation qui pourra intervenir dans un second temps.
 
@@ -277,13 +279,13 @@ Enfin certaines pistes sont également envisagées pour la suite, comme l'intég
 %}
 
 
-[TODO] Détailler les autres aspects de l'interopérabilité, avec les services du ministère, etc.
+**[TODO]** Détailler les autres aspects de l'interopérabilité, avec les services du ministère, etc.
 
 ## Conclusion
 
 Le développement de la plateforme de ePortfolio avance de manière structurée, malgré un retard initial sur la partie frontend. Ce temps a été mis à profit pour engager des travaux structurants, tant sur le plan architectural qu'organisationnel. La trajectoire reste bonne : les spécifications frontend vont être finalisées progressivement, et les premiers livrables fonctionnels pourront commencer à être livrés.
 
-Un diagramme de synthèse présente l’état d’avancement actuel par grands modules fonctionnels :
+Un diagramme de synthèse présente l'état d'avancement actuel par grands modules fonctionnels :
 
 {% include img.html
         src="assets/images/avancement_modules_03_2024.svg"
@@ -295,6 +297,6 @@ Un diagramme de synthèse présente l’état d’avancement actuel par grands m
 
 Par ailleurs, une feuille de route à moyen terme est proposée, sous forme de macro-jalons, pour donner de la visibilité sur les prochaines étapes clés :
 
-[TODO] Diagramme de type Gantt à maille large – *ex : S1 2025 → Finalisation des spécifications frontend / S2 → Développement / S2–S3 → Intégration / etc.*
+**[TODO]** Diagramme de type Gantt à grandes mailles : partir du diagramme d'Eric et ajouter quelques jalons pour commencer à dégrossir la planification.
 
-L’enjeu des prochains mois sera d’accélérer progressivement le développement tout en maintenant les exigences de qualité, de sécurité et de cohérence, afin de faciliter l’adoption de l’approche par compétences et d’offrir une expérience utilisateur optimale.
+L'enjeu des prochains mois sera d'accélérer progressivement le développement tout en maintenant les exigences de qualité, de sécurité et de cohérence, afin de faciliter l'adoption de l'approche par compétences et d'offrir une expérience utilisateur optimale.
