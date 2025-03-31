@@ -13,3 +13,4 @@ order: 200
 - [Software Architecture Specification](../arch-soft-specif-index/)
 - [Load tests](../load-tests/)
 - [Architecture - Frontend](../arch-front/)
+- [Architecture - Référentiel de formation](../arch-ref-formation/)
