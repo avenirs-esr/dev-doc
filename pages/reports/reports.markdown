@@ -4,7 +4,7 @@ title: Reports
 permalink: /reports/
 is_menu_entry: true
 position: left
-order: 10
+order: 1000
 rss: true
 ---
 

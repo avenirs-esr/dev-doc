@@ -278,7 +278,7 @@ Enfin certaines pistes sont également envisagées pour la suite, comme l'intég
         caption="Exemple de collaboration avec des projets nationaux - Travail sur les objets métier"
 %}
 
-
+<br/>
 **[TODO]** Détailler les autres aspects de l'interopérabilité, avec les services du ministère, etc.
 
 ## Conclusion
