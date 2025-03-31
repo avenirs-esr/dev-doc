@@ -9,11 +9,11 @@ layout: page
 title: Home
 ---
 The aim of this site is to bring together and share all the information relating to the construction of the new ePortFolio system:
+- Legal & Regulatory Resources.
 - Organisational choices.
 - Technical notes.
 - Meeting reports.
 - Frameworks, libraries, tools and good practices.
-- Third party integration: sytems, norms and communication protocols.
 - Technical information relating to the construction of this site can be found in the [help section.]({{'help' | relative_url}})
 
 <br/>
