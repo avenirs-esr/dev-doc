@@ -32,7 +32,11 @@ Note: these services need to be opened by our team (manual labor required!).
 - Srv-dev
 
 ## APC[⇧](#table-of-contents) 
+In French, APC: Approche Par Compétences.
+In English, CBA: Competency-Based Approach.
+
 - [Avenirs-ESR Official site](https://avenirs-esr.fr/){:target="_blank"}
+- [ESUP-ORA (APC Modeling Tool for Teachers)](https://esup-ora.fr/){:target="_blank"}
 - [Competency-Based Approach Glossary](https://avenirs-esr.fr/reperes-apc/glossaire/){:target="_blank"}
 - [FAQ](https://avenirs-esr.fr/reperes-apc/faq/){:target="_blank"}
 
@@ -44,13 +48,13 @@ Note: these services need to be opened by our team (manual labor required!).
 **[TODO]:** *This section needs to be finalized, and some details need to be clarified.*
 
 
-- Sprint duration: X weeks.
-- Backlog management: [project board on Github](https://github.com/orgs/avenirs-esr/projects/3){:target="_blank"}
+- Sprint duration: 3 weeks.
+- Backlog management: [project board on GitHub](https://github.com/orgs/avenirs-esr/projects/3){:target="_blank"}
 - Weekly Meetings: [ESUP BBB](https://greenlight.esup-portail.org/rooms/tic-lgh-n9r-wkf/join){:target="_blank"}
 - Daily: [ESUP BBB](https://greenlight.esup-portail.org/rooms/tic-lgh-n9r-wkf/join){:target="_blank"}
 - Chat: [Development Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_developpement){:target="_blank"}
 
 ## Developer resources[⇧](#table-of-contents) 
 - [Dev Handbook](../dev-handbook/){:target="_blank"}: versions, github workflow, tools, etc.
-- [Architecture](../architecture/){:target="_blank"}: see the simplified architecture overview diagram.
+- [Architecture](../arch/#simplified-architecture-overview){:target="_blank"}: see the simplified architecture overview diagram.
 - [Progress report](../progress-report/){:target="_blank"}: an opinionated overview of the current status as of April 2025.
