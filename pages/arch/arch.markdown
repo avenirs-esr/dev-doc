@@ -10,6 +10,7 @@ order: 5000
 - [Architecture Decision Log (ADL)](../adl/)
 - [Request For Comments (RFC)](../rfc/)
 - [Draft - Frontend architecture](../arch-front/)
+- [Training Reference Service](../arch-ref-formation/)
 - [Development Environment](../srv-dev/)
 - [Load tests](../load-tests/)
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Architecture - Frontend
+title: Architecture - Référentiel de formation
 permalink: /arch-ref-formation/
 ---
 
