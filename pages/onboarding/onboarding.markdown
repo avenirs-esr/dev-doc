@@ -32,12 +32,12 @@ Note: these services need to be opened by our team (manual labor required!).
 - Srv-dev
 
 ## APC[⇧](#table-of-contents) 
-In French, APC: Approche Par Compétences.
-In English, CBA: Competency-Based Approach.
+- In French, APC: Approche Par Compétences.
+- In English, CBA: Competency-Based Approach.
 
 - [Avenirs-ESR Official site](https://avenirs-esr.fr/){:target="_blank"}
-- [ESUP-ORA (APC Modeling Tool for Teachers)](https://esup-ora.fr/){:target="_blank"}
-- [Competency-Based Approach Glossary](https://avenirs-esr.fr/reperes-apc/glossaire/){:target="_blank"}
+- [ESUP-ORA (CBA Modeling Tool for Teachers)](https://avenirs-esr.fr/ora/){:target="_blank"}
+- [CBA Glossary](https://avenirs-esr.fr/reperes-apc/glossaire/){:target="_blank"}
 - [FAQ](https://avenirs-esr.fr/reperes-apc/faq/){:target="_blank"}
 
 
