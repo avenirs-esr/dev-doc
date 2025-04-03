@@ -80,6 +80,9 @@ Switching to the target version can be automated by adding this snippet in .bash
 cat .nvmrc 
 v22.14.0
 ```
+
+**Bash sample to automate the version switch:**
+``` 
 autoload_nvmrc() {
   local nvmrc_path=$(nvm_find_nvmrc)
   

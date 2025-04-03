@@ -52,7 +52,9 @@ Note: these services need to be opened by our team (manual labor required!).
 - Backlog management: [project board on GitHub](https://github.com/orgs/avenirs-esr/projects/3){:target="_blank"}
 - Weekly Meetings: [ESUP BBB](https://greenlight.esup-portail.org/rooms/tic-lgh-n9r-wkf/join){:target="_blank"}
 - Daily: [ESUP BBB](https://greenlight.esup-portail.org/rooms/tic-lgh-n9r-wkf/join){:target="_blank"}
-- Chat: [Development Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_developpement){:target="_blank"}
+- Chat: 
+   - [Development Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_developpement){:target="_blank"}
+   - [Functional Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_fonctionnel){:target="_blank"}
 
 ## Developer resources[⇧](#table-of-contents) 
 - [Dev Handbook](../dev-handbook/){:target="_blank"}: versions, github workflow, tools, etc.
