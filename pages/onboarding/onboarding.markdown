@@ -57,4 +57,4 @@ Note: these services need to be opened by our team (manual labor required!).
 ## Developer resources[⇧](#table-of-contents) 
 - [Dev Handbook](../dev-handbook/){:target="_blank"}: versions, github workflow, tools, etc.
 - [Architecture](../arch/#simplified-architecture-overview){:target="_blank"}: see the simplified architecture overview diagram.
-- [Progress report](../progress-report/){:target="_blank"}: an opinionated overview of the current status as of April 2025.
+- [Progress report](../pages/03_2025_rapport_avancement){:target="_blank"}: an opinionated overview of the current status as of April 2025.
