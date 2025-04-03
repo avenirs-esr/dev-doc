@@ -4,7 +4,7 @@ title: Security & Privacy
 permalink: /security-by-design/
 is_menu_entry: true
 position: left
-order: 400
+order: 6000
 ---
 <div style="border: 2px dashed #e67e22; background: #fcf3e6; padding: 1em; margin: 1em 0; font-weight: bold; color: #e67e22;">
   ⚠️ Cette section est en cours de construction.

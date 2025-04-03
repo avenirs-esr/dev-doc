@@ -4,7 +4,7 @@ title: Legal & Regulatory Resources
 permalink: /legal_and_regulatory_resources/
 is_menu_entry: true
 position: left
-order: 25
+order: 2000
 ---
 
 ## RGPD

@@ -22,7 +22,7 @@ page_content_classes: table-container
 Ces premiers tests concernent un module spécifique, *avenirs-portfolio-security,* chargé de l'intégration OIDC et du contrôle d'accès, de type [RBAC.](https://avenirs-esr.github.io/dev-doc/arch-soft-specif-security-rbac/#concepts){:target="_blank"}<br/>
 Cependant, l'objectif est de mettre en place une stratégie transposable pour les autres modules.
 - Fournir une base pour quantifier les optimisations ultérieures.
-- Pour ce module spécifique, [déterminer la bonne stratégie d’intégration](../arch-soft-specif-security-rbac-integration-experimentations#rbac---intégration-du-contrôle-daccès){:target="_blank"} : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
+- Pour ce module spécifique, [déterminer la bonne stratégie d’intégration](../arch-soft-specif-security-rbac-integration-experiments#rbac---intégration-du-contrôle-daccès){:target="_blank"} : directement au niveau de l’API Manager ou au niveau des contrôleurs des différents modules.
 
 
 ## Méthode utilisée

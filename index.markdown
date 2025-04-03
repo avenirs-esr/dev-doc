@@ -4,24 +4,30 @@
 permalink: /
 is_menu_entry: true
 position: left
-order: 1
+order: 1000
 layout: page
 title: Home
 ---
-The aim of this site is to bring together and share all the information relating to the construction of the new ePortFolio system:
+The aim of this site is to bring together and share all the information related to the construction of the new ePortFolio system:
+
 - Legal & Regulatory Resources.
-- Organisational choices.
-- Technical notes.
-- Meeting reports.
-- Frameworks, libraries, tools and good practices.
-- Technical information relating to the construction of this site can be found in the [help section.]({{'help' | relative_url}})
+- Onboarding: information for new developers.
+- Development Handbook: workflow, frameworks, libraries, tools and best practices.
+- Architecture: backend architecture, frontend architecture (draft), Architecture Decision Log (ADL), RFCs.
+- Security & Privacy: security and privacy by design policy (draft). 
+- Technical studies and POCs.
+- Reports: meeting minutes (needs updating) and progress reports.
 
 <br/>
-<br/>
-<br/>
-<br/>
+The [help section]({{'help' | relative_url}}) contains technical information about this site.
 
-
+## Roadmap
+{% include img.html
+        src="assets/images/roadmap_julien_04_2025.png"
+        alt="Modules and their interactions"
+        width="80%"
+%}
+<br/>
 
 
 

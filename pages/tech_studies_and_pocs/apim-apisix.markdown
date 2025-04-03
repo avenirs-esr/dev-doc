@@ -21,7 +21,7 @@ permalink: /apim-apisix/
      docker-compose -p docker-apisix up -d   
 </pre>
 
-The configuration file is **apisix-docker/example/apisix_conf/config.yaml.** It contains an admin key which will be used to interract with APISIX's API.
+The configuration file is **apisix-docker/example/apisix_conf/config.yaml.** It contains an admin key which will be used to interact with APISIX's API.
 
 
 

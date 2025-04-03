@@ -97,7 +97,7 @@ L'objectif est de mettre en place une plateforme SaaS capable d'accueillir jusqu
         src="assets/images/architecture-simple-view.svg"
         alt="Modules and their interactions"
         width="50%"
-        caption="Réprésentation simplifiée de l'architecture"
+        caption="Représentation simplifiée de l'architecture"
 %}
 <br/>
 [Le schéma complet de l'architecture peut être consulté sur le site technique.](../../arch-soft-specif-all/#vue-densemble-des-principaux-modules-et-de-leurs-interactions){:target="_blank"}
@@ -256,12 +256,12 @@ Ce module vise à assurer la bonne intégration de la plateforme dans l'écosyst
 
  - La constitution de la base d'utilisateurs, en lien avec le module d'authentification et de contrôle d'accès.
  - La dimension pédagogique, au travers :
- - de l'offre de formation (Apogée, Pégase, Esup-ORA) ;
- - de la gestion des stages (Esup-Stage) ;
+ - de l'offre de formation (Apogée, Pégase, ESUP-ORA) ;
+ - de la gestion des stages (ESUP-Stage) ;
  - de l'interconnexion avec les plateformes d'apprentissage (LMS) telles que Moodle.
 
-Des échanges, réunions de travail et ateliers ont été menés avec les différents acteurs, en particulier avec l'équipe de PCScol en charge de Pégase.
-Une collaboration étroite est également engagée avec l'Université de Caen, qui développe Esup-ORA, pour la formalisation des formations en approche par compétences (APC). Ce projet est désormais intégré au programme Avenirs sur son volet ESR.
+Des échanges, réunions de travail et ateliers ont été menés avec les différents acteurs, en particulier avec l'équipe de PC SCOL en charge de Pégase.
+Une collaboration étroite est également engagée avec l'Université de Caen, qui développe ESUP-ORA, pour la formalisation des formations en approche par compétences (APC). Ce projet est désormais intégré au programme Avenirs sur son volet ESR.
 
 Une autre fonctionnalité clé de ce module concerne l'import/export des portfolios. L'objectif est de permettre :
  - la migration de portfolios existants, notamment issus de l'expérimentation Karuta ;

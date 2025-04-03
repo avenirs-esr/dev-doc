@@ -14,3 +14,8 @@ vendor/
 .$*.dtmp
 
 .qodo
+
+# Ignored tokens
+*nogit*
+*no-git*
+
