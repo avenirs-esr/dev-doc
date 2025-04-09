@@ -86,7 +86,16 @@ Enfin, certaines fonctionnalités comme la possibilité d'un chat contextualisé
 
 Les travaux engagés jusqu'à présent ont été menés à effectif très réduit. Les bases sont posées et permettront d'accélérer dès que les spécifications seront livrées et l'équipe renforcée.
 
-**[TODO]** Montrer des captures d'écran ?
+{% include img.html
+        src="assets/images/premiers_ecrans_esup-days-39.jpeg"
+        alt="Premiers écrans"
+        width="40%"
+        caption="Exemple d'écran présenté lors des ESUP Days - Avril 2025"
+    %}
+
+
+<br/>
+    
 
 # État d'avancement du backend
 
@@ -297,6 +306,11 @@ Un diagramme de synthèse présente l'état d'avancement actuel par grands modul
 
 Par ailleurs, une feuille de route à moyen terme est proposée, sous forme de macro-jalons, pour donner de la visibilité sur les prochaines étapes clés :
 
-**[TODO]** Diagramme de type Gantt à grandes mailles : partir du diagramme d'Eric et ajouter quelques jalons pour commencer à dégrossir la planification.
-
+{% include img.html
+        src="assets/images/roadmap_julien_04_2025.png"
+        alt="Roadmap - ESUP Days"
+        width="80%"
+        caption="Roadmap présentée aux ESUP Days - Avril 2025"
+%}
+<br/>
 L'enjeu des prochains mois sera d'accélérer progressivement le développement tout en maintenant les exigences de qualité, de sécurité et de cohérence, afin de faciliter l'adoption de l'approche par compétences et d'offrir une expérience utilisateur optimale.

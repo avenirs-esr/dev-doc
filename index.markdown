@@ -24,7 +24,7 @@ The [help section]({{'help' | relative_url}}) contains technical information abo
 ## Roadmap
 {% include img.html
         src="assets/images/roadmap_julien_04_2025.png"
-        alt="Modules and their interactions"
+        alt="Roadmap - ESUP Days 38"
         width="80%"
 %}
 <br/>
