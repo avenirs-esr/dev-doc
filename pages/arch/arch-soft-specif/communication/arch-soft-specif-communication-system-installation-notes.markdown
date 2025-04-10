@@ -194,18 +194,18 @@ curl -X PUT -H "Content-Type: application/json" \
         }
 ```
 
-## Insertion d'une ligne dans la table de test
+#### Insertion d'une ligne dans la table de test
 
 ``` sql
  docker exec -it avenirs-pgsql-primary psql -p 5432 -U pguser -d realtime_db -c "INSERT INTO public.sample (sdb_short_txt, sdb_long_txt) VALUES ('Test entry', 'This is a test entry for Debezium CDC testing');"
 ```
 
-**Logs du conteneur debezium :**
+#### Logs du conteneur debezium
 ```
 2025-03-13 09:08:52,665 INFO   ||  1 records sent during previous 00:02:19.558, last recorded offset of {server=avenirs_rt} partition is {transaction_id=null, lsn_proc=30642856, messageType=INSERT, lsn_commit=30642536, lsn=30642856, txId=760, ts_usec=1741856932053323}   [io.debezium.connector.common.BaseSourceTask]
 ```
 
-**Vérification des données dans Kafka :**
+#### Vérification des données dans Kafka
 
 le topic utilisé par Debezium est "topic.prefix".schema.table (avenirs_rt.public.sample).
 
@@ -214,3 +214,18 @@ le topic utilisé par Debezium est "topic.prefix".schema.table (avenirs_rt.publi
         alt="Vérification des données dans Kafka"
         caption="Vérification des données dans Kafka"
 %}
+
+#### Vérification des données dans KeyDB
+
+```bash
+docker exec -it avenirs-keydb redis-cli -h avenirs-keydb -p 6379
+
+# Pour lister tous les message:
+avenirs-keydb:6379> XRANGE notification-stream - + 
+
+# Pour lister les 10 derniers messages:
+avenirs-keydb:6379> XREVRANGE notification-stream + - COUNT 10
+
+# pour purger la stream
+avenirs-keydb:6379> XTRIM notification-stream MAXLEN 0
+```
