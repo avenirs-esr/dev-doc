@@ -74,6 +74,7 @@ host    all             debezium        172.16.0.0/12           md`
 
 **Primary :**
 
+```sql
 CREATE DATABASE realtime_db;
 
 \c realtime_db
@@ -136,12 +137,12 @@ GRANT PUBLICATION realtime_pub TO debezium;
 ```
 
 **Explicitations :**
-- Création de la table, la replication logique ne conserrne que les données (pas de synchronisation DDL).
+- Création de la table, la replication logique ne concerne que les données (pas de synchronisation DDL).
 - Positionnement des droits pour l'utilisateur debezium et positionnement des droits par défaut, en cas d'ajout de tables éventuel.
 - Création de la souscription à la publication du primaire.
 - Création de la publication utilisée par Debezium.
 
-## Création du connecteur postgres
+## Création du connecteur Postgres
 
 ```
 curl -X PUT -H "Content-Type: application/json" \
