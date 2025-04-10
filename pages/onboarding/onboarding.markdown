@@ -24,12 +24,13 @@ Feel free to let us know if anything is missing or unclear.
 
 ## Services to Open[⇧](#table-of-contents) 
 Note: these services need to be opened by our team (manual labor required!).
-- RocketChat ESUP
-- BBB ESUP 
-- VPN Recia : required to access the development server.
-- GitHub
-- Dev-doc
-- Srv-dev
+- Create account in RECIA LDAP.
+- RocketChat ESUP channels (development and functional).
+- BBB ESUP.
+- VPN RECIA: required to access the development server via ssh with a key ED25519.
+- GitHub (add account to group).
+- Dev-doc.
+- Srv-dev.
 
 ## APC[⇧](#table-of-contents) 
 - In French, APC: Approche Par Compétences.
