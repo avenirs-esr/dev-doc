@@ -214,7 +214,7 @@ le topic utilisé par Debezium est "topic.prefix".schema.table (avenirs_rt.publi
         alt="Vérification des données dans Kafka"
         caption="Vérification des données dans Kafka"
 %}
-
+<br/>
 #### Vérification des données dans KeyDB
 
 ```bash
