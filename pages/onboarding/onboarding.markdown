@@ -24,7 +24,9 @@ Feel free to let us know if anything is missing or unclear.
 
 ## Services to Open[⇧](#table-of-contents) 
 Note: these services need to be opened by our team (manual labor required!).
-- Create account in RECIA LDAP + add to group for RENATER services.
+- Create account in RECIA LDAP
+- add to group for RENATER services
+- add to group for Nextcloud RECIA
 - Send email to explain/provide:
    - RECIA login + password
    - activating RECIA account
@@ -34,7 +36,6 @@ Note: these services need to be opened by our team (manual labor required!).
 - BBB ESUP.
 - VPN RECIA: required to access the development server via ssh with a key ED25519.
 - GitHub (add account to group).
-- Nextcloud RECIA
 - Dev-doc.
 - Srv-dev.
 
