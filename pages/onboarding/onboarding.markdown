@@ -24,7 +24,14 @@ Feel free to let us know if anything is missing or unclear.
 
 ## Services to Open[⇧](#table-of-contents) 
 Note: these services need to be opened by our team (manual labor required!).
-- Create account in RECIA LDAP.
+- Create account in RECIA LDAP
+- add to group for RENATER services
+- add to group for Nextcloud RECIA
+- Send email to explain/provide:
+   - RECIA login + password
+   - activating RECIA account
+   - checking access on [RENATER account attributes](https://test-sp.federation.renater.fr/) using the rigth IDP.
+   - first access [RocketChat](https://rocket.esup-portail.org)
 - RocketChat ESUP channels (development and functional).
 - BBB ESUP.
 - VPN RECIA: required to access the development server via ssh with a key ED25519.
