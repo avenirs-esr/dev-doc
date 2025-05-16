@@ -18,6 +18,7 @@ order: 4000
 - [Frontend](#frontend)
 - [Git](#git)
   - [Git workflow](#git-workflow)
+    - [Branch naming convention](#branch-naming-convention)
   - [Versioning (SemVer)](#versioning-semver)
   - [Conventional commits](#conventional-commits)
   - [Commitlint & husky](#commitlint--husky)
@@ -110,6 +111,13 @@ TODO: [complete the list of libraries eg. Pinia, VueQuery, etc.](../arch-front/)
 
 ### Git workflow
 The selected git flow is [GitHub Flow.](https://docs.github.com/en/get-started/quickstart/github-flow){:target="_blank"}
+
+#### Branch naming convention
+We use the following branch naming convention: <type>/<issue-number>-short-description
+
+**Examples:** 
+- feat/123-add-login
+- fix/456-fix-header
 
 ### Versioning (SemVer)
 The versioning strategy is [Semantic Versioning.](https://semver.org/#semantic-versioning-200){:target="_blank"}
