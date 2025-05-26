@@ -35,6 +35,7 @@ Note: these services need to be opened by our team (manual labor required!).
 - RocketChat ESUP channels (development and functional).
 - BBB ESUP.
 - VPN RECIA: required to access the development server via ssh with a key ED25519.
+- Team's Password manager: VaultWarden (invitation sent by email) - Organization + collection access
 - GitHub (add account to group).
 - Dev-doc.
 - Srv-dev.
@@ -57,6 +58,7 @@ Note: these services need to be opened by our team (manual labor required!).
 
 
 - Sprint duration: 3 weeks.
+- AMOA Backlog management: [AMOA project board on GitHub](https://github.com/orgs/avenirs-esr/projects/3){:target="_blank"}
 - Backlog management: [project board on GitHub](https://github.com/orgs/avenirs-esr/projects/3){:target="_blank"}
 - Weekly Meetings: [ESUP BBB](https://greenlight.esup-portail.org/rooms/tic-lgh-n9r-wkf/join){:target="_blank"}
 - Daily: [ESUP BBB](https://greenlight.esup-portail.org/rooms/tic-lgh-n9r-wkf/join){:target="_blank"}
