@@ -19,9 +19,9 @@ Template used for the ADRs: [Decision record template by Michael Nygard.](https:
 
 ## Architecture Decisions Records
 
-- [SSE preferred over WebSockets for communication microservice.](../adr-sse-versus-websockets/)
+- [WebSockets and SSE for communication microservice (sample).](../adr-websockets-and-sse/)
 
-TODO :
+## Examples of ADRs that could be created
 - Custom RBAC instead of IAM System.
 - Use of API Manager.
 - APISIX choice.
