@@ -92,19 +92,19 @@ master
 AFTER (target):
 main (rename of master - stable code)
 ├── develop (new integration branch)
-    ├── feature/STORY-123-user-authentication
-    ├── feature/STORY-124-dashboard
-    ├── bugfix/BUG-456-navigation-fix
-    └── task/TASK-789-dependency-updates
+    ├── feature/US-123-user-authentication
+    ├── feature/US-124-dashboard
+    ├── bugfix/US-456-navigation-fix
+    └── task/US-789-dependency-updates
 ```
 
 ### Branch Types
 
-| Type | Prefix | Base | Merge to | Example | Notes |
-|------|--------|------|----------|---------|-------|
-| **Feature** | `feature/` | `develop` | `develop` | `feature/STORY-123-login-form` | New features |
-| **Bugfix** | `bugfix/` | `develop` | `develop` | `bugfix/BUG-456-mobile-menu` | Non-critical fixes |
-| **Task** | `task/` | `develop` | `develop` | `task/TASK-789-update-deps` | Technical tasks |
+| Type | Prefix | Base | Merge to | Example                        | Notes |
+|------|--------|------|----------|--------------------------------|-------|
+| **Feature** | `feature/` | `develop` | `develop` | `feature/US-123-login-form`    | New features |
+| **Bugfix** | `bugfix/` | `develop` | `develop` | `bugfix/US-456-mobile-menu`    | Non-critical fixes |
+| **Task** | `task/` | `develop` | `develop` | `task/US-789-update-deps`      | Technical tasks |
 | **Hotfix** | `hotfix/` | `main` | `main` + `develop` | `hotfix/critical-security-fix` | Critical fixes |
 
 ### Naming Convention
@@ -112,9 +112,9 @@ main (rename of master - stable code)
 **Format**: `{type}/{ticket-id}-{short-description}`
 
 **Valid examples**:
-- `feature/STORY-123-oauth-authentication`
-- `bugfix/BUG-456-responsive-fix`
-- `task/TASK-789-vue3-migration`
+- `feature/US-123-oauth-authentication`
+- `bugfix/US-456-responsive-fix`
+- `task/US-789-vue3-migration`
 - `hotfix/critical-security-fix`
 
 **Rules**:
@@ -133,16 +133,19 @@ git checkout develop
 git pull origin develop
 
 # 2. Create feature branch
-git checkout -b feature/STORY-123-user-dashboard
+git checkout -b feature/US-123-user-dashboard
 
-# 3. Develop with conventional commits
+# 3. Create pull request to develop in Draft mode
+Go to GitHub, create PR from `feature/US-123-user-dashboard` to `develop`, then choose Create Draft Pull Request.
+
+# 4. Develop with conventional commits
 git commit -m "feat: add dashboard component"
 git commit -m "test: add dashboard unit tests"
 
-# 4. Push branch
-git push origin feature/STORY-123-user-dashboard
+# 5. Push branch
+git push origin feature/US-123-user-dashboard
 
-# 5. Create Pull Request to develop
+# 6. Mark the PR as ready for review
 ```
 
 ### 2. Review and Merge Process
