@@ -20,6 +20,7 @@ Template used for the ADRs: [Decision record template by Michael Nygard.](https:
 ## Architecture Decisions Records
 
 - [WebSockets and SSE for communication microservice (sample).](../adr-websockets-and-sse/)
+- [ADR-001: Stratégie de Gestion des Branches Git](../adr-001-branch-management/)
 
 ## Examples of ADRs that could be created
 - Custom RBAC instead of IAM System.
