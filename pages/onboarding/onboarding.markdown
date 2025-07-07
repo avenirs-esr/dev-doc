@@ -11,6 +11,7 @@ order: 3000
 - [Services to Open](#services-to-open)  
 - [APC](#apc)  
 - [Team Organization & Project Management](#team-organization--project-management)  
+- [Repositories](#repositories)
 - [Developer Resources](#developer-resources)
 
 
@@ -65,6 +66,16 @@ Note: these services need to be opened by our team (manual labor required!).
 - Chat: 
    - [Development Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_developpement){:target="_blank"}
    - [Functional Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_fonctionnel){:target="_blank"}
+
+## Repositories[⇧](#table-of-contents)    
+- [AVENIRS-Project](https://github.com/avenirs-esr/AVENIRS-Project/projects?query=is%3Aopen){:target="_blank"}: hosts GitHub projects for project management.
+- [dev-doc](https://github.com/avenirs-esr/dev-doc){:target="_blank"}: repository for this documentation (based on GitHub Pages).
+- [srv-dev](https://github.com/avenirs-esr/srv-dev){:target="_blank"}: repository for the development environment.
+- [avenirs-deployment](https://github.com/avenirs-esr/avenirs-deployment){:target="_blank"}: scripts to deploy the srv-dev for different environments.
+- [avenirs-portfolio-api](https://github.com/avenirs-esr/avenirs-portfolio-api){:target="_blank"}: repository for the portfolio domain API.
+- [avenirs-cofolio-client](https://github.com/avenirs-esr/avenirs-cofolio-client){:target="_blank"}: repository for the user interface.
+- [avenirs-workflows](https://github.com/avenirs-esr/avenirs-workflows){:target="_blank"}: repository for reusable GitHub actions & workflows.
+- [avenirs-portfolio-security](https://github.com/avenirs-esr/avenirs-portfolio-security){:target="_blank"}: repository for the security module (RBAC). Needs deep refactoring.
 
 ## Developer resources[⇧](#table-of-contents) 
 - [Dev Handbook](../dev-handbook/){:target="_blank"}: versions, github workflow, tools, etc.
