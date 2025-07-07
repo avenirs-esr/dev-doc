@@ -15,6 +15,9 @@ order: 4000
   - [Tools](#tools)
     - [Sdkman: Java & Maven version management](#sdkman-java--maven-version-management)
     - [Nvm: Node version management](#nvm-node-version-management)
+  - [Developer's agreements](#developers-agreements)
+    - [Code style](#code-style)
+    - [Performance](#performance)
 - [Frontend](#frontend)
 - [Git](#git)
   - [Git workflow](#git-workflow)
@@ -99,6 +102,22 @@ autoload_nvmrc() {
 PROMPT_COMMAND="autoload_nvmrc; $PROMPT_COMMAND"
 
 ```
+
+### Developer's agreements
+
+#### Code style
+The code in java should respect the [Google Java Format](https://github.com/google/google-java-format).<br/>
+- To check if the code is well formatted, you can use the ``mvn spotless:check``
+- To format the code, you can use the ``mvn spotless:apply``
+
+A naming convention for database tables has been adopted, with the aim of ensuring that table names are always in the singular.
+
+Please respect the hexagonal architecture principles, which means that the code should be organized by feature and not by technical layer. This allows for better modularity and easier maintenance.
+
+#### Performance
+Try to optimize requests and responses, to lighten processing in services and limit the amount of non-essential data loaded into memory. For that, use DTOs projection and pagination when possible.
+
+Use FetchType to limit the amount of data loaded in memory. For example, use FetchType.LAZY to load data only when needed, and avoid loading entire collections or entities unless necessary.
 
 ## Frontend[⇧](#table-of-contents) 
 
