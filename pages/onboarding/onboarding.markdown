@@ -72,10 +72,19 @@ Note: these services need to be opened by our team (manual labor required!).
 
 When you log on to RocketChat, we strongly advise you to add a `front_team` or `back_team` tag (depending on your preference) to your user settings. That way, you'll be notified along with the whole team whenever you need to be.
 
+To achieve this, click on your avatar on top left corner > under `Account`, select `Preferences` > go to `En vedette` and add the tags you want.
+
 If you need to tag either team, simply write `front_team` or `back_team` in your message.
+
 ⚠️ Be careful not to put `@` before it, as this will prevent the tag from working.
 
-<img width="1000" height="574" alt="image" src="https://github.com/user-attachments/assets/009850f3-589c-452e-8d52-b7454849d29b" />
+<br>
+{% include img.html
+        src="assets/images/rocket_chat_onboarding_tags.png"
+        alt="Rocket Chat user preferences"
+        width="50%"
+%}
+<br/>
 
 
 ## Repositories[⇧](#table-of-contents)    
