@@ -11,6 +11,7 @@ order: 3000
 - [Services to Open](#services-to-open)  
 - [APC](#apc)  
 - [Team Organization & Project Management](#team-organization--project-management)  
+- [Rocket Chat](#rocket-chat)
 - [Repositories](#repositories)
 - [Developer Resources](#developer-resources)
 
@@ -66,6 +67,16 @@ Note: these services need to be opened by our team (manual labor required!).
 - Chat: 
    - [Development Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_developpement){:target="_blank"}
    - [Functional Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_fonctionnel){:target="_blank"}
+
+## RocketChat[⇧](#table-of-contents) 
+
+When you log on to RocketChat, we strongly advise you to add a `front_team` or `back_team` tag (depending on your preference) to your user settings. That way, you'll be notified along with the whole team whenever you need to be.
+
+If you need to tag either team, simply write `front_team` or `back_team` in your message.
+⚠️ Be careful not to put `@` before it, as this will prevent the tag from working.
+
+<img width="1000" height="574" alt="image" src="https://github.com/user-attachments/assets/009850f3-589c-452e-8d52-b7454849d29b" />
+
 
 ## Repositories[⇧](#table-of-contents)    
 - [AVENIRS-Project](https://github.com/avenirs-esr/AVENIRS-Project/projects?query=is%3Aopen){:target="_blank"}: hosts GitHub projects for project management.
