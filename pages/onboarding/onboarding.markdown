@@ -11,7 +11,7 @@ order: 3000
 - [Services to Open](#services-to-open)  
 - [APC](#apc)  
 - [Team Organization & Project Management](#team-organization--project-management)  
-- [Rocket Chat](#rocket-chat)
+- [Rocket Chat](#rocketchat)
 - [Repositories](#repositories)
 - [Developer Resources](#developer-resources)
 
