@@ -252,16 +252,74 @@ sudo useradd --system --create-home --home-dir /opt/$SRV_RUNNER_USER --shell /bi
 sudo mkdir -p /opt/$SRV_RUNNER_USER
 sudo chown -R $SRV_RUNNER_USER:$SRV_RUNNER_USER /opt/$SRV_RUNNER_USER
 
+# Optional (recommanded): shared group ownership for the base path
+sudo groupadd -f deploy
+sudo usermod -aG deploy $SRV_RUNNER_USER
+sudo usermod -aG deploy $SRV_USER
+sudo chgrp -R deploy /opt/avenirs-dev
+sudo chmod -R g+rwX /opt/avenirs-dev
+sudo find /opt/avenirs-dev -type d -exec chmod g+s {} \;
+
+# Allow $SRV_RUNNER_USER passwordless sudo for everything (use with caution)
+sudo bash -c 'cat >/etc/sudoers.d/99-$SRV_RUNNER_USER-all <<EOF
+Defaults:$SRV_RUNNER_USER !requiretty
+Defaults:$SRV_RUNNER_USER env_keep += "JASYPT_ENCRYPTOR_PASSWORD JAVA_HOME M2_HOME NVM_DIR SDKMAN_DIR NODE_OPTIONS"
+$SRV_RUNNER_USER ALL=(ALL) NOPASSWD:ALL
+EOF'
+sudo chmod 0440 /etc/sudoers.d/99-$SRV_RUNNER_USER-all
+
+# Docker access (either add to group or use sudo for docker)
+sudo usermod -aG docker $SRV_RUNNER_USER
+
 # Switch to runner user and configure
 sudo -iu $SRV_RUNNER_USER
 mkdir -p ~/actions-runner && cd ~/actions-runner
+
+# Before running following command, go on github, create new self-hosted runner (select the correct runner image) and execute download parts commands (except the first mkdir) 
 ./config.sh --url https://github.com/avenirs-esr   --token "$token"   --name "$name"   --runnergroup Default   --work _work   --labels self-hosted,Linux,X64,"$name"
 
 ./run.sh
 # Ctrl+C to stop foreground runner
+
+```
+**Environment variable (already in $SRV_RUNNER_USER):**
+
+```bash
+# Install all dependencies that $SRV_RUNNER_USER will need (Java, Maven, Node).
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install java 21.0.4-oracle
+sdk default java 21.0.4-oracle
+sdk install maven 3.9.9
+sdk default maven 3.9.9
+
+export NVM_DIR="$HOME/.nvm"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  . "$NVM_DIR/nvm.sh"
+nvm install --lts
+nvm alias default "lts/*"
+
+echo "export JASYPT_ENCRYPTOR_PASSWORD='your-secret-value'" >> ~/.bashrc
+
+```
+**Git configuration (already in $SRV_RUNNER_USER):**
+
+```bash
+git config --global --add safe.directory /opt/avenirs-dev/avenirs-deployment
+git config --global --add safe.directory /opt/avenirs-dev/srv-dev
+git config --global --add safe.directory /opt/avenirs-dev/srv-dev/services/apisix/apisix-docker
+git config --global --add safe.directory /opt/avenirs-dev/srv-dev/services/apisix/apisix-dashboard
+git config --global --add safe.directory /opt/avenirs-dev/srv-dev/services/avenirs-portfolio/avenirs-portfolio-security
+git config --global --add safe.directory /opt/avenirs-dev/srv-dev/services/avenirs-portfolio/avenirs-cofolio-client
+git config --global --add safe.directory /opt/avenirs-dev/srv-dev/services/avenirs-portfolio/avenirs-cofolio-api
+git config --global --add safe.directory /opt/avenirs-dev/srv-dev/services/cas/cas-overlay-template
+
 exit
 
-# Install as a service and start
+```
+**Install as a service and start:**
+
+```bash
 cd /opt/$SRV_RUNNER_USER/actions-runner
 sudo ./svc.sh install $SRV_RUNNER_USER
 sudo ./svc.sh start
@@ -274,39 +332,6 @@ sudo systemctl enable "$UNIT"
 systemctl status "$UNIT"
 ```
 
-**Sudo & groups (non-interactive runs):**
-
-```bash
-# Allow $SRV_RUNNER_USER passwordless sudo for everything (use with caution)
-sudo bash -c 'cat >/etc/sudoers.d/99-$SRV_RUNNER_USER-all <<EOF
-Defaults:$SRV_RUNNER_USER !requiretty
-Defaults:$SRV_RUNNER_USER env_keep += "JASYPT_ENCRYPTOR_PASSWORD JAVA_HOME M2_HOME NVM_DIR SDKMAN_DIR NODE_OPTIONS"
-$SRV_RUNNER_USER ALL=(ALL) NOPASSWD:ALL
-EOF'
-sudo chmod 0440 /etc/sudoers.d/99-$SRV_RUNNER_USER-all
-
-# Docker access (either add to group or use sudo for docker)
-sudo usermod -aG docker $SRV_RUNNER_USER
-# Restart the runner service so new group membership is picked up
-sudo systemctl restart "$UNIT"
-
-# Optional: shared group ownership for the base path
-sudo groupadd -f deploy
-sudo usermod -aG deploy $SRV_RUNNER_USER
-sudo usermod -aG deploy $SRV_USER
-sudo chgrp -R deploy /opt/avenirs-dev
-sudo chmod -R g+rwX /opt/avenirs-dev
-sudo find /opt/avenirs-dev -type d -exec chmod g+s {} \;
-```
-
-**Environment variable (example):**
-
-```bash
-# Jasypt secret for deployments (only for the account that runs deployments)
-echo "export JASYPT_ENCRYPTOR_PASSWORD='your-secret-value'" >> ~/.bashrc
-# Or provide via GitHub Secrets to the workflow and preserve via sudo if needed:
-# sudo --preserve-env=JASYPT_ENCRYPTOR_PASSWORD ...
-```
 
 #### Remove / Unregister
 
