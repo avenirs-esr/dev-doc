@@ -209,7 +209,7 @@ We operate **three environments** with the **same architecture**:
 
 **Common traits**
 
-- All servers share the same Unix user: **see in Vaultwarden**.
+- All servers share the same Unix user: **see `SRV_USER` in Vaultwarden**.
 - SSH access is only allowed **over VPN** (OpenVPN).  
   The `.ovpn` client configuration is stored in **Vaultwarden**.
 - You need an SSH keypair (ed25519) to access the servers (public key stored in server).
