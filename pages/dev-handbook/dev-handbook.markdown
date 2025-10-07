@@ -123,11 +123,14 @@ Try to optimize requests and responses, to lighten processing in services and li
 
 Use FetchType to limit the amount of data loaded in memory. For example, use FetchType.LAZY to load data only when needed, and avoid loading entire collections or entities unless necessary.
 
-## Frontend[⇧](#table-of-contents) 
+## Frontend[⇧](#table-of-contents)
 
-- [Vue.js 3](https://endoflife.date/vue){:target="_blank"}
+### Languages and Frameworks
 
-TODO: [complete the list of libraries eg. Pinia, VueQuery, etc.](../arch-front/){:target="_blank"}
+- [Vue.js 3](https://endoflife.date/vue){:target="_blank"} (current version: 3.5.13)
+- Typescript (current version: 5.4.5)
+
+A list of librairies used in frontend projects is available [here](../arch-front/){:target="_blank"}
 
 
 ## Git[⇧](#table-of-contents) 
