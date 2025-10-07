@@ -130,7 +130,8 @@ Use FetchType to limit the amount of data loaded in memory. For example, use Fet
 - [Vue.js 3](https://endoflife.date/vue){:target="_blank"} (current version: 3.5.13)
 - Typescript (current version: 5.4.5)
 
-A list of librairies used in frontend projects is available [here](../arch-front/){:target="_blank"}
+### Technical stack and architecture
+The frontend technical stack and architectures are detailed [here](../arch-front/){:target="_blank"}
 
 
 ## Git[⇧](#table-of-contents) 
