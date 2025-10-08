@@ -4,6 +4,8 @@ title: Architecture - Frontend
 permalink: /arch-front/
 ---
 
+_Last updated: 2025-10-08_
+
 # Technical stack definition
 
 This document defines the technical stack used in frontend projects.
@@ -95,5 +97,3 @@ src/                            # Source code of the design system
 ├── utils/                      # Utility functions and helpers
 └── App.vue                     # Application root component (not used)
 ```
-
-_Last updated: 2025-10-07_
