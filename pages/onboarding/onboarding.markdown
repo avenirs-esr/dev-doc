@@ -93,6 +93,7 @@ If you need to tag either team, simply write `front_team` or `back_team` in your
 - [srv-dev](https://github.com/avenirs-esr/srv-dev){:target="_blank"}: repository for the development environment.
 - [avenirs-deployment](https://github.com/avenirs-esr/avenirs-deployment){:target="_blank"}: scripts to deploy the srv-dev for different environments.
 - [avenirs-portfolio-api](https://github.com/avenirs-esr/avenirs-portfolio-api){:target="_blank"}: repository for the portfolio domain API.
+- [avenirs-portfolio-common](https://github.com/avenirs-esr/avenirs-portfolio-common){:target="_blank"}: repository for shared objects.
 - [avenirs-cofolio-client](https://github.com/avenirs-esr/avenirs-cofolio-client){:target="_blank"}: repository for the user interface.
 - [avenirs-workflows](https://github.com/avenirs-esr/avenirs-workflows){:target="_blank"}: repository for reusable GitHub actions & workflows.
 - [avenirs-portfolio-security](https://github.com/avenirs-esr/avenirs-portfolio-security){:target="_blank"}: repository for the security module (RBAC). Needs deep refactoring.
