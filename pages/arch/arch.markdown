@@ -7,6 +7,7 @@ position: left
 order: 5000
 ---
 - [Software Architecture Specification](../arch-soft-specif-index/)
+- [Interoperability](../interoperability/)
 - [Architecture Decision Log (ADL)](../adl/)
 - [Request For Comments (RFC)](../rfc/)
 - [Draft - Frontend architecture](../arch-front/)
