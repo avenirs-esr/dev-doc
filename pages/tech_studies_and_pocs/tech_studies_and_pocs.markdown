@@ -13,10 +13,13 @@ order: 7000
 - [POC Kong](../apim-kong/){:target="_blank"}
 - [POC Apisix](../apim-apisix/){:target="_blank"}
 
-
 ## Security & Authentication
 - [CAS - OIDC provider](../apim-cas-oidc-provider/){:target="_blank"}
 - [RBAC - Intégration du contrôle d'accès](../arch-soft-specif-security-rbac-integration-experiments/){:target="_blank"}
 
 ## Storage
 - [PostgreSQL Replication tech notes](../storage-postgresql/){:target="_blank"}
+
+## Frontend techs
+- [Doc VueFlow](../vue-flow){:target="_blank"}
+- [POC VueFlow](../vue-flow-poc/){:target="_blank"}
