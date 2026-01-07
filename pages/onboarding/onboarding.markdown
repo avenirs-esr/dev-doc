@@ -10,7 +10,7 @@ order: 3000
 ## Table of Contents  
 
 - [Introduction](#introduction)
-- [Onboarding Dev Team](../onboading-dev-team/)
+- [Onboarding Dev Team](../onboarding-dev-team/)
 - [Onboading Validation Phase](../onboarding-testing/)
 - [APC](#apc)  
 - [Project Management](#project-management)  
