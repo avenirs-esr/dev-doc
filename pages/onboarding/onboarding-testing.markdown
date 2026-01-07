@@ -23,6 +23,7 @@ Ce workflow garantit que chaque US soit validée par plusieurs reviewers avant d
    - Documentation des résultats et observations dans l’issue (commentaire ou checklist collaborative).
 
 3. **Checklist collaborative dans l’issue**
+
    ```markdown
    ### Checklist de validation collaborative
 
@@ -30,6 +31,7 @@ Ce workflow garantit que chaque US soit validée par plusieurs reviewers avant d
    - [ ] Métier – Validation conformité métier
    - [ ] PO – Arbitrage fonctionnel/validation finale
    ```
+
    > Chaque reviewer coche sa case après validation ou ajoute le commentaire « Validation OK [rôle] ».
 
 4. **Bascule en Done**
@@ -82,8 +84,10 @@ graph TD
 ---
 
 ## À mettre en place
+
 - Utiliser le template de checklist dans chaque issue de recette.
 - Àjouter les tests d'acceptances génériques quand ils n'ont pas été listés dans les anciennes US
+
 ```markdown
 ### Critères d'acceptance
 
@@ -99,6 +103,7 @@ graph TD
 - [ ] Critère 1: Describe the first acceptance criterion here.
 ...
 ```
+
 - Automatiser le changement de statut « Recette » → « Done » via GitHub Actions si possible.
 
 ---
