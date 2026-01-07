@@ -2,7 +2,7 @@
 layout: page
 title: Workflow validation of User Stories (US)
 permalink: /onboarding-recette/
-is_menu_entry: true
+up: ../onboarding/
 position: left
 order: 3000
 ---
