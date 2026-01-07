@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Workflow validation of User Stories (US)
-permalink: /onboarding-recette/
+permalink: /onboarding-testing/
 up: ../onboarding/
 position: left
 order: 3000
