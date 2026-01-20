@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "size": 4
+  },
+  "entries": [
+    {
+      "externalId": "agyepong",
+      "eppn": "agyepong@avenirs-esr.fr",
+      "civility": "M.",
+      "firstName": "GIANNI",
+      "lastName": "AGYEPONG",
+      "displayName": "AGYEPONG GIANNI",
+      "audience": "student",
+      "INE": "0000000001B",
+      "mail": "agyepong@etab.fr",
+      "structure": "{UAI}0123456G",
+      "cursusYear": "{SUPANN}X2",
+      "degree": "{UAI:0123456G}T3TCO-841",
+      "degreeType": "{SISE}DR",
+      "affectations": [
+        "909"
+      ],
+      "affectationPrincipale": "909",
+      "step": "{UAI:0123456G}T3PAD3-100",
+      "birthDate": "2003-09-23"
+    },
+    {
+      "externalId": "actisper",
+      "eppn": "actisper@avenirs-esr.fr",
+      "civility": "M.",
+      "firstName": "ROMAIN",
+      "lastName": "ACTIS PERINO",
+      "displayName": "ACTIS PERINO ROMAIN",
+      "audience": "student",
+      "INE": "0000000002B",
+      "mail": "actisper@etab.fr",
+      "structure": "{UAI}0123456G",
+      "cursusYear": "{SUPANN}L2",
+      "degree": "{UAI:0123456G}R8DSD-800",
+      "degreeType": "{SISE}HD",
+      "affectations": [
+        "DDRAG"
+      ],
+      "affectationPrincipale": "DDRAG",
+      "step": "{UAI:0123456G}D5CJU4-100",
+      "birthDate": "2005-08-14"
+    },
+    {
+      "externalId": "amrikssa",
+      "eppn": "amrikssa@avenirs-esr.fr",
+      "civility": "MME",
+      "firstName": "MARION",
+      "lastName": "AMRIKSSA",
+      "displayName": "AMRIKSSA MARION",
+      "audience": "student",
+      "INE": "0000000003B",
+      "mail": "amrikssa@etab.fr",
+      "structure": "{UAI}0123456G",
+      "cursusYear": "{SUPANN}L3",
+      "degree": "{UAI:0123456G}L5LSO-100",
+      "degreeType": "{SISE}XB",
+      "affectations": [
+        "904",
+        "ED548"
+      ],
+      "affectationPrincipale": "DEVE",
+      "step": "{UAI:0123456G}I5DED5-102",
+      "birthDate": "2000-07-07"
+    },
+    {
+      "externalId": "adamczew",
+      "eppn": "adamczew@avenirs-esr.fr",
+      "civility": "MME",
+      "firstName": "TALIA",
+      "lastName": "ADAMCZEWSKA",
+      "displayName": "ADAMCZEWSKA TALIA",
+      "audience": "student",
+      "INE": "0000000004B",
+      "mail": "adamczew@etab.fr",
+      "structure": "{UAI}0123456G",
+      "cursusYear": "{SUPANN}L3",
+      "degree": "{UAI:0123456G}K3PCH-100",
+      "degreeType": "{SISE}XA",
+      "affectations": [
+        "902"
+      ],
+      "affectationPrincipale": "902",
+      "step": "{UAI:0123456G}T3IAL2-830",
+      "birthDate": "1999-11-17"
+    }
+  ]
+}

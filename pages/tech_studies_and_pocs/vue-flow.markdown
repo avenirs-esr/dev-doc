@@ -2918,6 +2918,7 @@ function getHandleIcon (handleType: HandleType) {
 
 Dans un cas où il n'y aurait pas de distinction entre `source` et `target` pour les points d'ancrage des liens, la simplification suivante peut être réalisée.
 
+{% raw %}
 ```js
 <script setup lang="ts">
 import ConfirmationModal from '@/common/components/ConfirmationModal/ConfirmationModal.vue'
@@ -3074,6 +3075,7 @@ const handleIcons = [
 }
 </style>
 ```
+{% endraw %}
 
 <figure>
   <video controls style="width: 50%; height: auto;">

@@ -10,6 +10,7 @@ up: ../interoperability/
 **Projet :** Avenirs-ESR / ePortfolio. <br/>
 **Objet :** Interopérabilité - Référentiel Général d'Interopérabilité.<br/>
 <br/>
+**Révision :** 1.0.0<br/>
 **Date :** 23/10/2025<br/>
 **Auteur :** A. Deman<br/>
 **Commentaire :** Version initiale<br/>
@@ -31,7 +32,7 @@ Il distingue 5 niveaux d'interopérabilité :
 Il regroupe un certain nombre de recommandations concernant les protocoles à utiliser pour les niveaux d'interopérabilité sémantiques.
 
 La version 2 de ce document introduit la notion de profil d'interopérabilité qui est un regroupement de préconisations en fonction de cas d'usage identifiés :
-- A2A : échanges entre Autorités administratives,
+- A2A : échanges entre Autorités Administratives,
 - A2B : échanges entre Autorités Administratives et Entreprises (au sens large, concerne également les associations),
 - A2C : échanges entre Autorités Administratives et Citoyens.
 
