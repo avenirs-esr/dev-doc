@@ -33,6 +33,8 @@ Note: these services need to be opened by our team (manual labor required!).
 - Create account in RECIA LDAP
 - add to group for RENATER services
 - add to group for Nextcloud RECIA
+  - for freelancers creating personal folder
+  - giving access to folders required
 - Send email to explain/provide:
   - RECIA login + password
   - activating RECIA account
@@ -40,7 +42,7 @@ Note: these services need to be opened by our team (manual labor required!).
   - first access [RocketChat](https://rocket.esup-portail.org)
 - RocketChat ESUP channels (development and functional).
 - BBB ESUP.
-- VPN RECIA: required to access the development server via ssh with a key ED25519.
+- VPN RECIA: required to access the development server via ssh with a key ED25519. >> ask to Julien
 - Team's Password manager: VaultWarden (invitation sent by email) - Organization + collection access
 - GitHub (add account to group).
 - Dev-doc.
