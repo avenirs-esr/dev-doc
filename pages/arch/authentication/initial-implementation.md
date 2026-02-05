@@ -21,6 +21,7 @@ up: ../authentication/
 - [Objectifs](#objectifs)
 - [Première mise en œuvre simplifiée](#première-mise-en-œuvre-simplifiée)
   - [Simplifications](#simplifications)
+  - [Diagramme de séquence](#diagramme-de-séquence)
 - [Données nécessaires pour les différents microservices](#données-nécessaires-pour-les-différents-microservices)
   - [Microservices impliqués](#microservices-impliqués)
   - [Modélisation actuelle dans avenirs-portfolio-api](#modélisation-actuelle-dans-avenirs-portfolio-api)
@@ -29,20 +30,22 @@ up: ../authentication/
   - [Microservice de sécurité : avenirs-portfolio-security](#microservice-de-sécurité--avenirs-portfolio-security)
   - [Microservice métier du portfolio : avenirs-portfolio-api](#microservice-métier-du-portfolio--avenirs-portfolio-api)
 - [Architecture possible pour le processus d'alimentation (informatif, non arrêté)](#architecture-possible-pour-le-processus-dalimentation-informatif-non-arrêté)
+  - [Schéma du processus d'alimentation](#schéma-du-processus-dalimentation)
 - [Intégration avec l'API Manager](#intégration-avec-lapi-manager)
   - [Principe](#principe)
   - [Bénéfices de la démarche](#bénéfices-de-la-démarche)
-  - [Remarque](#remarque)
+  - [Remarques](#remarques)
+  - [Diagramme de séquence](#diagramme-de-séquence-2)
 - [Adaptations du filtre de sécurité au payload transmis par l'API Manager](#adaptations-du-filtre-de-sécurité-au-payload-transmis-par-lapi-manager)
 - [Evolutions](#evolutions)
 
 <br/>
 
-## Objectifs (#table-des-matières)
+## Objectifs[⇧](#table-des-matières)
 - Mise en place d'une authentification locale basée sur OIDC de bout en bout faisant intervenir :
    - Le front (client).
    - CAS en tant qu'OIDC provider : authentifie et fournit un access token.
-   - L'API Manager : interagit avec le microservice de sécurité afin de vérifier le token et de fournir un json signé représentant les utilisateurs à l'ensemble des microservices.
+   - L'API Manager : interagit avec le microservice de sécurité afin de vérifier le token et de fournir un json signé représentant l'utilisateur à l'ensemble des microservices.
    - Le microservice avenirs-portfolio-api : pour vérifier que les données transmises par l'API Manager sont suffisantes.
 - Aligner les modèles de données utilisateurs entre les microservices.
 
@@ -51,7 +54,7 @@ up: ../authentication/
 
 La démarche adoptée est de commencer par une version minimaliste, puis d'améliorer par raffinements successifs.
 
-## Première mise en œuvre simplifiée
+## Première mise en œuvre simplifiée[⇧](#table-des-matières)
 
 ### Simplifications
 
@@ -59,6 +62,7 @@ La démarche adoptée est de commencer par une version minimaliste, puis d'amél
 - Le client réalise directement la demande d'authentification auprès de CAS, l'étape de landing page est ignorée pour cette première mise en œuvre.
 - On utilise directement l'access token fourni par l'utilisateur.
 
+### Diagramme de séquence
 
 {% include img.html
         src="assets/images/authentication_first_step.png"
@@ -68,7 +72,7 @@ La démarche adoptée est de commencer par une version minimaliste, puis d'amél
     %}
 
 
-## Données nécessaires pour les différents microservices
+## Données nécessaires pour les différents microservices[⇧](#table-des-matières)
 
 ### Microservices impliqués
 
@@ -98,7 +102,7 @@ Trois microservices sont impliqués :
 L'avantage de cet eppn est qu'il garantit une unicité globale, il est constitué de la concaténation identifiant unique utilisateur + identifiant unique établissement. Exemple : uid@domain-etablissement.fr
 
 
-## Refactoring du modèle de données
+## Refactoring du modèle de données[⇧](#table-des-matières)
 
 #### Microservice d'interopérabilité : avenirs-portfolio-interoperability.
 
@@ -137,15 +141,16 @@ L'avantage de cet eppn est qu'il garantit une unicité globale, il est constitu�
    caption="Modélisation des users dans avenirs-portfolio-api" %}
 <br/>
 
-## Architecture possible pour le processus d'alimentation (informatif, non arrêté)
+## Architecture possible pour le processus d'alimentation (informatif, non arrêté)[⇧](#table-des-matières)
 
 **Remarque :** le processus d'alimentation n'a pas été complètement implémenté, la réflexion est toujours en cours.
 
+### Schéma du processus d'alimentation
 {% include img.html src="assets/images/auth_init_provisioning.svg" alt="Processus d'alimentation" caption="Architecture possible pour le processus d'alimentation" %}
 
 <br/>
 
-## Intégration avec l'API Manager
+## Intégration avec l'API Manager[⇧](#table-des-matières)
 
 ### Principe
 On utilise un plugin Apisix de type serverless en LUA qui va :
@@ -160,17 +165,17 @@ On utilise un plugin Apisix de type serverless en LUA qui va :
 - Découpler les microservices.
 - Garantir que la requête traitée par les microservices provient de l'API Manager.
 
-### Remarque
+### Remarques
 Il s'agit d'une simplification pour tester l'authentification. Pour le contrôle d'accès, le plugin devra également extraire :
  - La méthode HTTP et le end-point pour déterminer l'action utilisateur.
  - La ressource cible.
  - Possiblement d'autres informations comme l'univers actif.
 
-
+### Diagramme de séquence
 {% include img.html src="assets/images/apim_auth_first_steps.png" alt="Intégration avec l'API Manager" caption="Intégration avec l'API Manager" %}
 
 
-## Adaptations du filtre de sécurité au payload transmis par l'API Manager
+## Adaptations du filtre de sécurité au payload transmis par l'API Manager[⇧](#table-des-matières)
 
 Le filtre de sécurité est mutualisé [dans la librairie common](https://github.com/avenirs-esr/avenirs-portfolio-common/blob/219dd0a2b59cb13290bbd68963e87f8785669c57/src/main/java/fr/avenirsesr/portfolio/common/security/infrastructure/filter/DevAuthenticationFilter.java){:target="_blank"}.
 
@@ -178,7 +183,7 @@ Les adaptations devraient être relativement simples :
 - Adapter [UserSecurityPayload](https://github.com/avenirs-esr/avenirs-portfolio-common/blob/219dd0a2b59cb13290bbd68963e87f8785669c57/src/main/java/fr/avenirsesr/portfolio/common/security/infrastructure/adapter/model/UserSecurityPayload.java){:target="_blank"} pour l'aligner sur le payload transmis par l'API Manager : eppn, category, etc.
 - Adapter le [filtre de sécurité](https://github.com/avenirs-esr/avenirs-portfolio-common/blob/219dd0a2b59cb13290bbd68963e87f8785669c57/src/main/java/fr/avenirsesr/portfolio/common/security/infrastructure/filter/HmacAuthenticationFilter.java#L62){:target="_blank"} pour transmettre le payload au microservice.
 
-## Evolutions
+## Evolutions[⇧](#table-des-matières)
 
 - Ajouter la landing page d'authentification.
 - Déterminer s'il faut gérer un access token spécifique au portfolio ou s'il vaut mieux utiliser directement celui du provider OIDC.
