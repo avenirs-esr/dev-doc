@@ -85,7 +85,9 @@ Trois microservices sont impliqués :
 
 {% include img.html 
  src="assets/images/users_in_api_initial_state.png" 
- alt="Modèle actuel" caption="Modèle actuel : tout est dans avenirs-portfolio-api et external_user porte le lien vers user" %}
+ alt="Modèle actuel" caption="Modèle actuel : tout est dans avenirs-portfolio-api et external_user porte le lien vers user" 
+ width="800px"
+ %}
 
 <br/>
 **Modifications à apporter :**
@@ -158,7 +160,7 @@ On utilise un plugin Apisix de type serverless en LUA qui va :
 - interroger le microservice de security pour valider l'access token.
 - si l'access token est valide, le microservice transmet également les informations relatives au principal (eppn, category, etc).
 - le plugin construit un payload qu'il signe et transmet au microservice associé à la route.
-- au niveau du microservice un filtre de sécurité spring extrait et valide le payload.
+- au niveau du microservice un filtre de sécurité spring extrait et valide le payload puis le fourni au microservice (par exemple via SecurityContextHolder.getContext().setAuthentication(...)).
 
 ### Bénéfices de la démarche
 - Centraliser les opérations de sécurisation des routes et de l'accès aux ressources au niveau de l'API Manager.
@@ -186,6 +188,7 @@ Les adaptations devraient être relativement simples :
 ## Evolutions[⇧](#table-des-matières)
 
 - Ajouter la landing page d'authentification.
+- Gestion du mode non connecté côté front.
 - Déterminer s'il faut gérer un access token spécifique au portfolio ou s'il vaut mieux utiliser directement celui du provider OIDC.
 - Gestion du logout, pour un seul terminal ou pour tous les terminaux.
 - Gestion du refresh.
