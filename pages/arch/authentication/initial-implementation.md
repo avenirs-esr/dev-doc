@@ -188,6 +188,7 @@ Les adaptations devraient être relativement simples :
 - Ajouter la landing page d'authentification.
 - Déterminer s'il faut gérer un access token spécifique au portfolio ou s'il vaut mieux utiliser directement celui du provider OIDC.
 - Gestion du logout, pour un seul terminal ou pour tous les terminaux.
+- Gestion du refresh.
 - Ajouter d'autres mécanismes d'authentification :
    - Fédération ESR.
    - France connect +
