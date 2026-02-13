@@ -13,6 +13,7 @@ The aim of this site is to bring together and share all the information related 
 - Legal & Regulatory Resources.
 - Onboarding: information for new developers.
 - Development Handbook: workflow, frameworks, libraries, tools and best practices.
+- Devops: CI/CD, infrastructure, etc.
 - Architecture: backend architecture, frontend architecture (draft), Architecture Decision Log (ADL), RFCs.
 - Security & Privacy: security and privacy by design policy (draft). 
 - Technical studies and POCs.
