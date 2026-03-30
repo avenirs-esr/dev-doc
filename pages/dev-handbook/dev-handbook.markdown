@@ -22,6 +22,7 @@ order: 4000
 - [Git](#git)
   - [Git workflow](#git-workflow)
     - [Branch naming convention](#branch-naming-convention)
+    - [Definition of done (DoD)](#definition-of-done-dod)
   - [Versioning (SemVer)](#versioning-semver)
   - [Conventional commits](#conventional-commits)
   - [Commitlint & husky](#commitlint--husky)
@@ -145,6 +146,115 @@ We use the following branch naming convention: <type>/<issue-number>-short-descr
 **Examples:** 
 - feat/123-add-login
 - fix/456-fix-header
+
+#### Definition of done (DoD)
+##### Introduction
+This workflow ensures that each User Story (US) goes through a complete lifecycle including development, automated validations, qualification, and PO validation before being considered **Done**.
+
+---
+
+##### Detailed Steps
+
+###### 1. Development & Pull Requests
+- Each User Story is split into **subtasks**.
+- Each subtask must be implemented via a **dedicated Pull Request (PR)**.
+- Each PR must be **linked to its corresponding subtask**.
+
+---
+
+###### 2. Continuous Integration (CI)
+For each PR, the CI pipeline automatically verifies:
+
+- Unit Tests (TUs) [BE & FE]
+- Integration Tests (IT) [BE]
+- End-to-End Tests (E2E) [FE]
+- Accessibility tests [FE]
+- Linting rules [BE & FE]
+- Security scans (vulnerability detection) [BE & FE]
+
+👉 All checks must pass successfully before merging.
+
+---
+
+###### 3. Code Review & Merge
+- The PR must be **reviewed and approved**.
+- Once approved and CI is green:
+  - The PR is **rebased and merged into `develop`**.
+  - The associated **subtask is automatically closed**.
+
+---
+
+###### 4. User Story Completion Check
+When all subtasks of a User Story are closed:
+
+- A workflow checks if a **test subtask (developer qualification → **[TEST] subtask**)** exists.
+- If missing:
+  - A **comment is added** to the User Story indicating that the test task is missing.
+- If present:
+  - The User Story is automatically moved to **"In Review"**  
+    👉 This status means **Ready for qualification deployment**.
+
+---
+
+###### 5. Nightly Validation (Dev Environment)
+A nightly workflow runs:
+
+- Full **E2E tests on the development environment**
+
+#### If tests fail:
+- A **comment is added** with the failing run link
+- The User Story remains unchanged
+
+#### If tests pass:
+- A **deployment to the qualification environment is triggered**
+- All User Stories in **"In Review"** are moved to **"Recette"**
+
+---
+
+###### 6. Qualification by Product Owners (PO)
+- Product Owners test the User Stories in the **qualification environment**
+
+#### If issues are detected:
+- They create **[BUG] subtasks** under the User Story
+- The User Story is automatically moved back to **"Backlog Ready"**
+
+#### If everything is valid:
+- The PO clicks **"Close issue"**
+
+---
+
+###### 7. Completion (Done)
+- Closing the User Story automatically moves it to **"Done"**
+- The User Story is now:
+  - Fully developed
+  - Tested (CI + nightly)
+  - Qualified
+  - Validated by POs
+
+---
+
+##### Good Practices
+
+- Always link subtasks to PRs
+- Ensure full CI validation before merging
+- Include a **[TEST] subtask** in every User Story
+- Document issues via **[BUG] subtasks**
+- Rely on automation to reduce manual errors
+
+---
+
+##### Visual Workflow
+
+```
+╔════════════╦═══════════════╦══════════════╦═══════════════╦═══════════════╦══════════╗
+║   US       ║   Dev / PR    ║     CI       ║   In Review   ║    Recette    ║   Done   ║
+╠════════════╬═══════════════╬══════════════╬═══════════════╬═══════════════╬══════════╣
+║ Created    ║ Subtasks + PR ║ Tests + Scan ║ Ready deploy  ║ PO validation ║          ║
+║            ║ Code review   ║ All green    ║ Nightly E2E   ║ Bug → Backlog ║   ✓      ║
+╚════════════╩═══════════════╩══════════════╩═══════════════╩═══════════════╩══════════╝
+```
+
+---
 
 ### Versioning (SemVer)
 The versioning strategy is [Semantic Versioning.](https://semver.org/#semantic-versioning-200){:target="_blank"}
