@@ -13,6 +13,9 @@ order: 7000
 - [POC Kong](../apim-kong/){:target="_blank"}
 - [POC Apisix](../apim-apisix/){:target="_blank"}
 
+## Microservices
+- [Doc inter-features communication](../microservices-contrats/){:target="_blank"}
+
 ## Security & Authentication
 - [CAS - OIDC provider](../apim-cas-oidc-provider/){:target="_blank"}
 - [RBAC - Intégration du contrôle d'accès](../arch-soft-specif-security-rbac-integration-experiments/){:target="_blank"}
