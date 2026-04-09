@@ -76,7 +76,7 @@ Note: these services need to be opened by our team (manual labor required!).
 
 ## RocketChat[⇧](#table-of-contents)
 
-When you log on to RocketChat, we strongly advise you to add a `front_team` or `back_team` tag (depending on your preference) to your user settings. That way, you'll be notified along with the whole team whenever you need to be.
+When you log on to RocketChat, we strongly advise you to add a `front_team` or `back_team` tag (depending on your preference) and add at least `team` tag to your user settings. That way, you'll be notified along with the whole team whenever you need to be.
 
 To achieve this, click on your avatar on top left corner > under `Account`, select `Preferences` > go to `En vedette` and add the tags you want.
 
