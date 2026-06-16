@@ -151,6 +151,9 @@ We use the following branch naming convention: <type>/<issue-number>-short-descr
 
 ➡️ The Definition of Done is documented on a [dedicated page EN 🇬🇧](../definition-of-done/) / [Version FR 🇫🇷](../definition-of-done-fr/)
 
+⚠️ In case of discrepancy, the English version shall prevail.
+⚠️ En cas de divergence, la version anglaise fait foi.
+
 ---
 
 ### Versioning (SemVer)

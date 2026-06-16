@@ -39,6 +39,8 @@ Deux niveaux de critères doivent être satisfaits :
 1. Les **exigences transverses** du projet (qualité, sécurité, accessibilité…)
 2. Le **cycle de vie de la US** (développement, CI, qualification, validation PO)
 
+⚠️ En cas de divergence, la version anglaise fait foi.
+
 ---
 
 ## Exigences transverses
@@ -103,7 +105,7 @@ Le projet vise la conformité **WCAG 2.1 niveau AA**, en référence au **RGAA 4
 
 ### Compatibilité navigateurs
 
-Le projet supporte les navigateurs suivants dans leur **avant-dernière version stable** :
+Le projet supporte les navigateurs suivants dans les **deux dernières versions stables** :
 
 | Navigateur | Versions supportées |
 |---|---|
@@ -184,11 +186,11 @@ Les Product Owners testent les US dans l'**environnement de qualification**.
 
 La clôture de la US la déplace automatiquement en **"Done"**. Elle est alors :
 
-- Développée ✓
-- Testée (CI + nightly) ✓
-- Conforme aux exigences transverses ✓
-- Qualifiée ✓
-- Validée par les POs ✓## Workflow Visuel
+- ✅ Développée
+- ✅ Testée (CI + nightly)
+- ✅ Conforme aux exigences transverses
+- ✅ Qualifiée
+- ✅ Validée par les POs
 
 ---
 
