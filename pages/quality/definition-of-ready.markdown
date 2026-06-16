@@ -90,4 +90,4 @@ It must be sufficiently clear to allow the team to start development without maj
 
 ---
 
-> See also: [Definition of Done (DoD)](/quality/definition-of-done/)
+> See also: [Definition of Done (DoD)](../quality/definition-of-done/)

@@ -83,3 +83,7 @@ Ces éléments sont définis dans :
 Une User Story n’a pas besoin d’être parfaite pour être considérée comme Ready.
 
 Elle doit être suffisamment claire pour permettre à l’équipe de commencer son développement sans blocage majeur et sans ambiguïté fonctionnelle.
+
+---
+
+> Voir aussi: [Definition of Done (DoD)](../quality/definition-of-done-fr/)
