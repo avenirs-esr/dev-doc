@@ -86,4 +86,4 @@ Elle doit être suffisamment claire pour permettre à l’équipe de commencer s
 
 ---
 
-> Voir aussi: [Definition of Done (DoD)](../quality/definition-of-done-fr/)
+> Voir aussi: [Definition of Done (DoD)](../definition-of-done-fr/)
