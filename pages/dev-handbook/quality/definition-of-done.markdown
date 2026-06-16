@@ -1,10 +1,9 @@
 ---
 layout: page
 title: Definition of Done (DoD)
-permalink: /definition-of-done/
-is_menu_entry: true
-position: left
-order: 4100
+permalink: /quality/definition-of-done/
+is_menu_entry: false
+parent: quality
 ---
 
 ## Table of Contents
