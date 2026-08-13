@@ -157,7 +157,7 @@ Pour chaque PR, la CI vérifie automatiquement :
 
 Quand toutes les sous-tâches sont clôturées :
 
-- Un workflow vérifie la présence d'une **sous-tâche de test `[TEST]`**
+- Un workflow vérifie la présence d'une **sous-tâche de qualification `[QUALIF]`**
 - Si absente : un commentaire est ajouté à la US
 - Si présente : la US est automatiquement déplacée en **"In Review"** (prête pour déploiement qualification)
 
@@ -197,7 +197,7 @@ La clôture de la US la déplace automatiquement en **"Done"**. Elle est alors :
 
 - Toujours lier les sous-tâches aux PRs
 - S'assurer de la validation CI complète avant le merge
-- Inclure une **sous-tâche `[TEST]`** dans chaque US
+- Inclure une **sous-tâche `[QUALIF]`** dans chaque US
 - Documenter les anomalies via des **sous-tâches `[BUG]`**
 - Vérifier les exigences transverses **pendant le développement**, pas seulement en fin de sprint
 - S'appuyer sur l'automatisation pour réduire les erreurs manuelles

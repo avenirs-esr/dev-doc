@@ -156,7 +156,7 @@ For each PR, the CI pipeline automatically verifies:
 
 When all subtasks of a User Story are closed:
 
-- A workflow checks if a **`[TEST]` subtask** (developer qualification) exists.
+- A workflow checks if a **`[QUALIF]` subtask** (developer qualification) exists.
 - If missing: a **comment is added** to the User Story.
 - If present: the User Story is automatically moved to **"In Review"**
   👉 This status means *ready for qualification deployment*.
@@ -206,7 +206,7 @@ Closing the User Story automatically moves it to **"Done"**. The User Story is n
 
 - Always link subtasks to PRs.
 - Ensure full CI validation before merging.
-- Include a **`[TEST]` subtask** in every User Story.
+- Include a **`[QUALIF]` subtask** in every User Story.
 - Document issues via **`[BUG]` subtasks**.
 - Verify cross-cutting requirements **during development**, not only at the end of a sprint.
 - Rely on automation to reduce manual errors.
