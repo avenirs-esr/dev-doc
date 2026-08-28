@@ -40,4 +40,4 @@ Feel free to let us know if anything is missing or unclear.
 - AMOA Backlog management: [AMOA project board on GitHub](https://github.com/orgs/avenirs-esr/projects/3){:target="_blank"}
 - Backlog management: [project board on GitHub](https://github.com/orgs/avenirs-esr/projects/3){:target="_blank"}
 - Validation phase: [process description](../onboarding-testing/)
-- Chat: [Functional Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_fonctionnel){:target="_blank"}
+- Chat: [Functional Channel on RocketChat](https://chat.esup-portail.org/group/Avenirs_fonctionnel){:target="_blank"}

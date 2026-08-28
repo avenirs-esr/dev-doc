@@ -39,7 +39,7 @@ Note: these services need to be opened by our team (manual labor required!).
   - RECIA login + password
   - activating RECIA account
   - checking access on [RENATER account attributes](https://test-sp.federation.renater.fr/) using the rigth IDP.
-  - first access [RocketChat](https://rocket.esup-portail.org)
+  - first access [RocketChat](https://chat.esup-portail.org)
 - RocketChat ESUP channels (development and functional).
 - BBB ESUP.
 - VPN RECIA: required to access the development server via ssh with a key ED25519. >> ask to Julien
@@ -71,8 +71,8 @@ Note: these services need to be opened by our team (manual labor required!).
 - Weekly Meetings: [ESUP BBB](https://greenlight.esup-portail.org/rooms/tic-lgh-n9r-wkf/join){:target="_blank"}
 - Daily: [ESUP BBB](https://greenlight.esup-portail.org/rooms/tic-lgh-n9r-wkf/join){:target="_blank"}
 - Chat:
-  - [Development Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_developpement){:target="_blank"}
-  - [Functional Channel on RocketChat](https://rocket.esup-portail.org/group/Avenirs_fonctionnel){:target="_blank"}
+  - [Development Channel on RocketChat](https://chat.esup-portail.org/group/Avenirs_developpement){:target="_blank"}
+  - [Functional Channel on RocketChat](https://chat.esup-portail.org/group/Avenirs_fonctionnel){:target="_blank"}
 
 ## RocketChat[⇧](#table-of-contents)
 
