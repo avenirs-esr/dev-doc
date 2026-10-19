@@ -43,7 +43,7 @@ The project follows a microservice and feature-based architecture to keep the co
 ### Languages and Frameworks
 - [Java 21](https://endoflife.date/eclipse-temurin){:target="_blank"}
 - [Maven 3.9](https://endoflife.date/maven){:target="_blank"}
-- [Node.js 22 (latest LTS at 2025-04)](https://endoflife.date/nodejs){:target="_blank"}
+- [Node.js 24](https://endoflife.date/nodejs){:target="_blank"}
 - NestJS 10: latest major version (no LTS policy) 
 - [Spring boot 3.3](https://endoflife.date/spring-boot){:target="_blank"}
 
@@ -83,6 +83,8 @@ sdk env install
 
 [Nvm](https://github.com/nvm-sh/nvm) can help to manage node.js version.<br/>
 Switching to the target version can be automated by adding this snippet in .bashrc file.
+
+For a coordinated Node.js upgrade across DSAV, Cofolio, Cofolio Backoffice, shared workflows, and Docker builders, follow the [Node.js version upgrades procedure](../devops/#nodejs-version-upgrades).
 
 **Exemple of configuration file: .nvmrc**
 ```
