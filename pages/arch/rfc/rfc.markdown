@@ -11,9 +11,6 @@ Each RFC is open for discussion and serves as a shared foundation for collective
 
 ## RFCs
 
-- [Socle de versionnement et d'historisation (proposition)](../rfc-versionnement-historisation)
-  - [Développement technique](../rfc-versionnement-historisation-developpement)
-
 ## TODO
 - Account Lifecycle.
 - Identity management.
