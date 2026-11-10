@@ -404,13 +404,13 @@ timeline
                                         : Migration des copies de feedback
                                         : Journal d'actions et premiers événements
                                         : Fichiers, empreinte, usages et nettoyage
-    Suite de la V2 : Soumissions successives (#3046)
-                   : Contributions à l'évaluation (#3044)
-                   : Sous-réalisations (#2815)
+    Suite de la V2 : Soumissions successives (US 3046)
+                   : Contributions à l'évaluation (US 3044)
+                   : Sous-réalisations (US 2815)
     Phase 2, historique de travail : Versions temporaires par auteur
-                                   : Restaurer une version d'une trace (#1320)
+                                   : Restaurer une version d'une trace (US 1320)
                                    : Révision attendue avec If-Match
-    Phase 3 et au-delà, selon les US : Publication d'une page libre (#2844)
+    Phase 3 et au-delà, selon les US : Publication d'une page libre (US 2844)
                                      : Corbeille, comparaison
                                      : Édition simultanée
 ```
@@ -430,6 +430,7 @@ Voici les alternatives sérieuses, ce qu'elles simplifient, et pourquoi elles ne
 | Écouteur Spring après commit (`@TransactionalEventListener`) au lieu de l'outbox | Ni table ni relais | L'entrée n'existe qu'en mémoire : si MongoDB est indisponible, ou si l'instance s'arrête entre le commit et l'envoi, elle est perdue et rien ne la rejoue | Si l'on accepte de perdre des entrées |
 
 Une part de la complexité vient du choix de MongoDB, pas du versionnement lui-même (complexité assumée) :
+
 | Élément | Avec MongoDB (proposé) | Tout dans PostgreSQL |
 | --- | --- | --- |
 | Captures, versions, empreintes, mise à niveau à la lecture | oui | oui |
@@ -542,4 +543,4 @@ Les références complètes, et la façon dont chaque proposition se rattache à
 [d-versions-temporaires]: ../rfc-versionnement-historisation-developpement#versions-temporaires
 [d-restauration]: ../rfc-versionnement-historisation-developpement#restauration
 [d-corbeille]: ../rfc-versionnement-historisation-developpement#corbeille
-[d-pratiques]: ../rfc-versionnement-historisation-developpement#pratiques
+[d-pratiques]: ../rfc-versionnement-historisation-developpement#annexe-pratiques
