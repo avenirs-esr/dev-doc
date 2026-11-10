@@ -98,6 +98,7 @@ public interface ActionLogPublisher {
 ### 2.2 Ce qui est figé {#perimetre}
 
 Une capture contient, tel qu'il est au moment de l'action, tout ce que l'utilisateur doit pouvoir consulter ([#985], [#2641]) :
+
 | Élément | Type | Contenu de la version | Remarques |
 | --- | --- | --- | --- |
 | **Réalisation** (`DECLARED_ACTIVITY`) | structuré | dates de début et de fin, `startedAt`, `finishedAt`, `submittedAt`, `valorized`, statut calculé au moment de la capture, identifiants de l'activité et de l'apprenant | Le bilan est versionné à part |
@@ -242,6 +243,7 @@ erDiagram
 Chaque capture reçoit un gel au nom d'un **détenteur**, l'objet métier qui a besoin d'elle. Tant que le détenteur existe, la capture ne peut pas être purgée. Quand il disparaît, le gel reçoit une échéance (date de suppression plus délai de grâce), après laquelle la purge peut agir.
 
 Un gel enregistre quoi, pourquoi, quand, par qui et selon quelle règle :
+
 | Champ | Rôle |
 | --- | --- |
 | **`actionType`** | Action métier qui fige : `FEEDBACK_REQUEST`, `ASSESSMENT_SUBMISSION`, `COMPLETION` |
@@ -258,6 +260,7 @@ Un gel enregistre quoi, pourquoi, quand, par qui et selon quelle règle :
 | **`releaseReason`** | Libération : remplacé par un renvoi (`REPLACED`), transaction annulée (`ORPHAN`), effacement RGPD (`DELETED`) |
 
 Catalogue de la phase 1 :
+
 | Action | Détenteur | Politique | Événement de référence | Délai de grâce par défaut |
 | --- | --- | --- | --- | --- |
 | **`FEEDBACK_REQUEST`** | Feedback | `FEEDBACK_REQUEST`, révision 1 | Suppression du feedback | 0 jour |
@@ -433,6 +436,7 @@ Compléments :
 ### 2.9 Évolution du format des versions {#format}
 
 Le format d'une version évolue avec le modèle : un champ est ajouté, renommé ou supprimé. Deux façons de gérer les versions déjà stockées :
+
 | | Mise à niveau à la lecture | Migration en masse |
 | --- | --- | --- |
 | **Principe** | Chaque version garde son format d'origine (`schemaVersion`) ; à la lecture, une chaîne de convertisseurs l'amène au format courant | Un traitement réécrit toutes les versions au nouveau format |
@@ -610,6 +614,7 @@ Règles :
 ### 3.4 Volumétrie {#volumetrie}
 
 Faute de chiffres réels, voici un ordre de grandeur par capture, à remplacer par des mesures :
+
 | Élément | Taille indicative | Nouvelle version à chaque capture ? |
 | --- | --- | --- |
 | Manifeste | 1 à 2 Ko | oui |
@@ -985,6 +990,7 @@ Le délai d'enregistrement automatique du bilan reste une constante du front (5 
 Il faut distinguer quatre choses : la suppression fonctionnelle (l'utilisateur supprime un élément), la conservation obligatoire, la suppression des versions et l'effacement physique.
 
 Appliqué à COFOLIO :
+
 | Cas | État courant | Versions et captures | Journal |
 | --- | --- | --- | --- |
 | L'apprenant supprime une trace | Supprimée | Ses versions restent dans les captures figées tant que leurs détenteurs existent ; le front l'annonce déjà : la trace "restera consultable depuis" l'activité | `TRACE_DELETED` |
@@ -1231,6 +1237,7 @@ C'est d'abord une question fonctionnelle. Aujourd'hui, l'évaluation porte ses d
 ### Pratiques et standards de référence {#annexe-pratiques}
 
 Chaque proposition reprend une pratique établie, adaptée au projet :
+
 | Approche dans la RFC | Pratique ou standard | Ce qui est repris | Écart assumé |
 | --- | --- | --- | --- |
 | Format du texte riche | Éditeur WYSIWYG Tiptap : export HTML ou JSON ; OWASP : nettoyage du HTML par DOMPurify | Versionner le HTML tel qu'il est stocké ; afficher une version avec le même nettoyage | Pas de normalisation du HTML avant l'empreinte : deux HTML équivalents donnent deux versions, sans risque |
