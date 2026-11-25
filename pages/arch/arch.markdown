@@ -6,6 +6,7 @@ is_menu_entry: true
 position: left
 order: 5000
 ---
+- [Overview and request flow](../arch-overview/)
 - [Software Architecture Specification](../arch-soft-specif-index/)
 - [Interoperability](../interoperability/)
 - [Data provisioning](../data-provisioning/)
@@ -15,6 +16,8 @@ order: 5000
 - [Draft - Frontend architecture](../arch-front/)
 - [Training Reference Service](../arch-ref-formation/)
 - [Development Environment](../srv-dev/)
+- [Deployment (avenirs-deployment)](../deployment/)
+- [CI/CD workflows (avenirs-workflows)](../workflows/)
 - [Load tests](../load-tests/)
 
 ## Simplified architecture overview

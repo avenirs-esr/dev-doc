@@ -77,17 +77,16 @@ On each server, this repository is present at:
 
 Key elements:
 
-- `conf/deployment.conf` — central configuration that selects **branches/tags** to deploy per repository.
-- `conf/tags.conf` — used by the CI/CD pipeline to determine the target **tags for each repository** and automatically update `deployment.conf` on the target server before triggering the deployment.
-- `scripts/` — server-side scripts that actually run the deployment sequence.
+- `conf/deployment.conf` — per-VM configuration (gitignored) that selects the **branch/tag** of each repository, plus `TARGET`, `RESET_DB` and `OVERWRITE_ENV_FILE`.
+- `conf/tags.conf` — human reference of the tags per environment. No script reads it.
+- `scripts/` — server-side scripts that run the deployment.
 
-The main entry points are:
+Entry points (see [Deployment](../deployment/) for the full description):
 
-- `scripts/deploy_srv-dev.sh`
-- `scripts/deploy_srv-qualif.sh`
-- `scripts/deploy_srv-recette.sh`
+- `scripts/deploy_srv-dev.sh` — classic deployment, full downtime
+- `scripts/deploy_srv-dev_zero-downtime.sh` — rolling update with health checks and rollback
 
-> The full step-by-step deployment sequence is described in the `avenirs-deployment` README.
+> The same scripts are used on every environment; `TARGET` in `deployment.conf` selects it.
 
 ### Base paths
 
@@ -99,38 +98,13 @@ The main entry points are:
 
 ## Avenirs Workflows
 
-The repository `avenirs-workflows` centralizes reusable workflows and
-composite GitHub Actions.
+The repository [`avenirs-workflows`](https://github.com/avenirs-esr/avenirs-workflows){:target="_blank"} centralizes the organisation's CI/CD: 21 reusable workflows and 50 composite actions, consumed as `@main`.
 
-Purpose:
+```
+uses: avenirs-esr/avenirs-workflows/.github/workflows/<workflow>.yaml@main
+```
 
--   Avoid duplication
--   Standardize CI/CD
--   Encapsulate deployment logic
--   Accelerate new pipeline creation
-
-Repositories call centralized workflows using:
-
-    uses: avenirs-esr/avenirs-workflows/.github/workflows/<workflow>.yaml@main
-
-Repository structure:
-
-    avenirs-workflows/
-    ├── .github/
-    │   ├── actions/
-    │   └── workflows/
-    ├── gh-page-template/
-    ├── trivy-template/
-    ├── CHANGELOG.md
-    └── README.md
-
-Benefits:
-
--   Single source of truth
--   Clean repositories
--   Faster CI/CD evolution
--   Safer workflow refactoring
-
+Workflows by domain, User Story lifecycle, release chain and required variables/secrets: [CI/CD workflows](../workflows/).
 
 ---
 
@@ -390,12 +364,9 @@ Typical characteristics:
 
 Development is deployed automatically.
 
-Trigger condition:
-- Every time a Pull Request is merged into a `develop` branch
-- Only for repositories that have a direct impact on the application (API, back-office, client, etc.)
+Trigger: every merge of a Pull Request into `develop`. Each repository that impacts the application (API, back-office, client, etc.) has a workflow that calls the deployment workflow of `avenirs-workflows`.
 
 Process:
-- A GitHub Actions workflow is triggered on merge to `develop`
 - The deployment job runs on the **srv-dev** self-hosted runner
 - The server-side deployment script from `avenirs-deployment` is executed
 - Docker images and containers are refreshed accordingly
@@ -462,28 +433,12 @@ This guarantees:
 
 ### Recette deployments
 
-Recette deployments can be:
+Recette is deployed **manually only**, in two steps started from `srv-dev`:
 
-- Manual
-- Or automatically triggered by a release
+1. `create-release-workflow` tags the `develop` HEAD of every repository and creates the sprint release (e.g. `0.14.0-rc`).
+2. `manual-deploy-workflow` resolves the tags of the sprint, rewrites `deployment.conf` on the target server and runs the deployment through `avenirs-deployment`.
 
-#### Automatic deployment
-
-Triggered when:
-- A new GitHub Release is created on `srv-dev` repository
-- The tag contains `-rc` (e.g. `1.2.3-rc`)
-
-Process:
-
-1. The deployment workflow reads `conf/tags.conf` from the `avenirs-deployment` repository.
-2. `tags.conf` defines the exact tag to use for each service.
-3. The workflow updates the server-side `deployment.conf` accordingly.
-4. The deployment command is executed on **srv-recette**.
-5. Docker images are updated and containers restarted.
-
-This ensures:
-- Full control over service versions
-- Cross-service version consistency
+Details: [CI/CD workflows](../workflows/#release-and-deploy-chain).
 
 ---
 
