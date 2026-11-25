@@ -50,11 +50,11 @@ The project follows a microservice and feature-based architecture to keep the co
 ## Backend[⇧](#table-of-contents) 
 
 ### Languages and Frameworks
-- [Java 21](https://endoflife.date/eclipse-temurin){:target="_blank"}
+- [Java 25](https://endoflife.date/eclipse-temurin){:target="_blank"}
 - [Maven 3.9](https://endoflife.date/maven){:target="_blank"}
-- [Node.js 24](https://endoflife.date/nodejs){:target="_blank"}
+- [Node.js 26](https://endoflife.date/nodejs){:target="_blank"}
 - NestJS 10: latest major version (no LTS policy) 
-- [Spring boot 3.3](https://endoflife.date/spring-boot){:target="_blank"}
+- [Spring boot 4.1](https://endoflife.date/spring-boot){:target="_blank"}
 
 ### Tools
 
